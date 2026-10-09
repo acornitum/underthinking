@@ -6,6 +6,10 @@
 	let { data }: PageProps = $props();
 </script>
 
+<svelte:head>
+	<title>underthink.ing</title>
+</svelte:head>
+
 <div class="mb-4 flex items-baseline justify-between gap-4">
 	<h1 class="text-3xl font-bold">Latest motions</h1>
 	<p class="text-sm text-muted">

@@ -12,6 +12,8 @@ features you might not know about:
 
 have something you want added? changed? any feedback? feel free to dm acon on discord! 
 
+want to add the changes yourself? feel free to make a pull request!
+
 tournament you want to add? uhhh feature coming soon to do that probably. feel free to dm until it's updated.
 
 ---

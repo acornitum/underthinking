@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { HAS_NOTES } from '#lib/filters.ts';
-	import favicon from '#lib/assets/favicon.svg';
+	import favicon from '#lib/assets/catfavicon.png';
 	import logo from '#lib/assets/underthinklogo.svg';
 	import cat from '#lib/assets/underthinkcat.png';
 	import SidebarFilters from '#lib/SidebarFilters.svelte';
@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/png" href={favicon} />
 </svelte:head>
 
 {#snippet toggle()}
