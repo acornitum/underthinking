@@ -1,0 +1,12 @@
+node_modules
+.svelte-kit
+build
+notes
+.git
+.claude
+.vscode
+Dockerfile
+.dockerignore
+*.tmp
+# Always build a fresh database from data/motions.csv inside the image.
+motions.db

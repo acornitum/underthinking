@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+@source not '../../notes';
+@plugin '@tailwindcss/typography';
+
+/* `dark:` styles apply in the dark themes (dark, hazel); see the theme switch. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *, [data-theme='hazel'], [data-theme='hazel'] *));
+
+/* Dark palette (after Lospec), used as e.g. bg-page, text-ink, border-line.
+   The light and disc themes swap these values below; components only use the names. */
+@theme {
+	--color-page: #302e36;
+	--color-surface: #27252c;
+	--color-ink: #ffffff;
+	--color-motion: #c5bfca;
+	--color-motion-hover: #9cc3ff;
+	--color-infoslide: #8e8894;
+	--color-round: #57525d;
+	--color-tournament: #dcd8e1;
+	--color-muted: #a7a4b0;
+	--color-subtle: #c4c1cc;
+	--color-line: #46434e;
+	--color-chip: #6a6774;
+	--color-dim: #56535e;
+	--color-selected: #6a6774;
+	/* Tournament heading boxes: the surface colour, except in disc. */
+	--color-heading: var(--color-surface);
+	/* The tournament and details line under motions on the random page. */
+	--color-card-tournament: var(--color-muted);
+	--color-card-details: var(--color-muted);
+	/* The drills timer bar. */
+	--color-progress: var(--color-accent);
+	--color-progress-paused: #e6a23f;
+	/* The sidebar logo. */
+	--color-logo: #9cc3ff;
+	--color-accent: #4771e3;
+	--color-accent-hover: #3a60c9;
+}
+
+:root {
+	color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+	color-scheme: light;
+	--color-page: #ecebf0;
+	--color-surface: #faf9fb;
+	--color-ink: #1f1d24;
+	--color-motion: #3a3642;
+	--color-motion-hover: #2f63d6;
+	--color-infoslide: #767180;
+	--color-round: #a6a1ae;
+	--color-tournament: #2a2731;
+	--color-muted: #6b6775;
+	--color-subtle: #4f4b57;
+	--color-line: #dcd9e2;
+	--color-chip: #b4afbe;
+	--color-dim: #bdb8c6;
+	--color-selected: #b4afbe;
+	--color-logo: #4771e3;
+	--color-accent: #4771e3;
+	--color-accent-hover: #3a60c9;
+}
+
+/* "disc": a light grey-green palette with orange, amber, green and blue accents. */
+:root[data-theme='disc'] {
+	color-scheme: light;
+	--color-page: #e9efec;
+	--color-surface: #dce8e2;
+	--color-ink: #39423e;
+	--color-motion: #3f4743;
+	--color-motion-hover: #e3703f;
+	--color-infoslide: #6b7772;
+	--color-round: #e6a23f;
+	--color-tournament: #2b302d;
+	--color-muted: #58615c;
+	--color-subtle: #4a524e;
+	--color-line: #c5cdcb;
+	--color-chip: #92aca8;
+	--color-dim: #2565fd;
+	--color-selected: #b5ec93;
+	--color-heading: #97d2ed;
+	--color-accent: #3866f5;
+	--color-accent-hover: #2a55d9;
+	--color-card-tournament: #e3703f;
+	--color-card-details: #3866f5;
+	--color-progress-paused: #e3703f;
+	--color-logo: #e3703f;
+}
+
+/* "hazel": a dark editor palette with cyan, mint, pink and purple accents. */
+:root[data-theme='hazel'] {
+	color-scheme: dark;
+	--color-page: #262430;
+	--color-surface: #1c1a23;
+	--color-ink: #f0ecf6;
+	--color-motion: #e3deeb;
+	--color-motion-hover: #f48fb1;
+	--color-infoslide: #9c98a8;
+	--color-round: #7fe0b4;
+	--color-tournament: #8ee6f4;
+	--color-muted: #8e8c9c;
+	--color-subtle: #c9c4d4;
+	--color-line: #3a3944;
+	--color-chip: #6b6878;
+	--color-dim: #6b6878;
+	--color-selected: #7a68db;
+	--color-heading: #1c1a23;
+	--color-accent: #8c7be8;
+	--color-accent-hover: #7a68db;
+	--color-card-tournament: #8ee6f4;
+	--color-card-details: #7fe0b4;
+	--color-progress: #a6e3f0;
+	--color-progress-paused: #f48fb1;
+	--color-logo: #8ee6f4;
+}
