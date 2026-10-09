@@ -1,5 +1,7 @@
 # underthink - debate motions site
 
+<img width="1448" height="1042" alt="image" src="https://github.com/user-attachments/assets/a49091de-2076-46c7-863f-40484aa3cbd4" />
+
 Site for browsing debate motions. 
 
 Also included:
