@@ -1,12 +1,20 @@
-# underthink — debate motions site
+# underthink - debate motions site
 
-A site for browsing debate motions. Also included are filters, random motion picker, and a page with a timer you could drill with. 
+Site for browsing debate motions. 
+
+Also included:
+- Filter for majors, motion genres, etc
+- Random motion generator (choose 1 or 20 or infinite scroll!)
+- Drills - get a random motion + side, and watch a countdown timer too
+- Many different color themes you can choose from
 
 If you clone the site + run it locally, you also get access to a feature where you can take notes on each motion, on the site, and it'll be saved in markdown (viewable in Obsidian). 
 
-Made with SvelteKit. 
+Made with SvelteKit and too much claude. 
 
 ## Setup
+
+(Instructions will probably be updated sometime!)
 
 Requires **Node 22.13+** (the site and scripts use Node's built-in SQLite).
 
