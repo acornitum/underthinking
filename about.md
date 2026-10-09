@@ -2,7 +2,7 @@
 
 underthink.ing is a site for browsing debate motions.
 
-firstly: this site is entirely open source. the github repo with all the code is here: [https://github.com/acornitum/underthinking](https://github.com/acornitum/underthinking). you are encouraged to clone the repo - when run locally, there are notetaking features you'll be able to access.
+this site is entirely open source. the github repo with all the code is here: [https://github.com/acornitum/underthinking](https://github.com/acornitum/underthinking). you are encouraged to clone the repo - when run locally, there are notetaking features you'll be able to access.
 
 features you might not know about:
 - click on a motion to copy it to clipboard! infoslide included.

@@ -80,7 +80,7 @@
 
 <!-- Big, centred motion for showing on a projector or second screen. -->
 <div
-	class="flex min-h-screen flex-col items-center justify-center bg-page px-[6vw] pt-16 pb-24 text-center"
+	class="flex min-h-dvh flex-col items-center justify-center bg-page px-[6vw] pt-16 pb-24 text-center"
 >
 	{#if !edited}
 		<p class="mb-[4vh] text-[clamp(0.875rem,1.6vw,1.25rem)] text-muted">{details}</p>

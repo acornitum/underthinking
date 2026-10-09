@@ -21,6 +21,12 @@
 
 	let sidebarOpen = $state(true);
 
+	// On phones the sidebar covers the page, so following one of its page links
+	// closes it. (On desktop it sits beside the page and stays open.)
+	function closeOnPhone() {
+		if (window.innerWidth < 768) sidebarOpen = false;
+	}
+
 	// "With notes" toggles ?notes=yes on the motion lists, keeping other filters.
 	let notesOn = $derived(page.url.searchParams.get('notes') === HAS_NOTES);
 	let notesHref = $derived.by(() => {
@@ -75,7 +81,7 @@
 {:else}
 	<!-- The notes editor gets the darker surface colour so it reads as a document. -->
 	<div
-		class="flex min-h-screen text-ink {page.url.pathname.startsWith('/notes/')
+		class="flex min-h-dvh text-ink {page.url.pathname.startsWith('/notes/')
 			? 'bg-surface'
 			: 'bg-page'}"
 	>
@@ -95,6 +101,14 @@
 		</header>
 
 		{#if sidebarOpen}
+			<!-- Phones: the sidebar opens over the page, so tapping anywhere else
+			     closes it (without that tap reaching the page underneath). -->
+			<button
+				type="button"
+				class="fixed inset-0 z-[25] cursor-default md:hidden {mounted ? '' : 'hidden'}"
+				aria-label="Close sidebar"
+				onclick={() => (sidebarOpen = false)}
+			></button>
 			<aside
 				class="fixed inset-y-0 left-0 z-30 flex w-64 shrink-0 flex-col border-r border-line bg-surface text-ink shadow-lg md:sticky md:top-0 md:h-screen md:shadow-none {mounted
 					? ''
@@ -103,7 +117,7 @@
 				<div class="flex items-center justify-between px-4 pt-4 pb-3">
 					<!-- The logo is white artwork used as a mask, so it can take each
 					     theme's logo colour. -->
-					<a href="/" aria-label="underthink: all motions">
+					<a href="/" aria-label="underthink: all motions" onclick={closeOnPhone}>
 						<span
 							class="block h-[21px] w-[72px] bg-logo"
 							style:mask="url({logo}) left center / contain no-repeat"
@@ -120,6 +134,7 @@
 							<li>
 								<a
 									href={link.href + page.url.search}
+									onclick={closeOnPhone}
 									class="block rounded-md px-2.5 py-1 text-sm font-bold {page.url.pathname ===
 									link.href
 										? 'bg-line'
@@ -138,18 +153,27 @@
 					<SidebarFilters options={data.filterOptions} />
 				</div>
 
-				<!-- The cat sits on the divider line above the bottom section. -->
+				<!-- Desktop: the cat sits on the divider line above the bottom section.
+				     (On phones it's in the bottom-right corner instead; see below.) -->
 				<img
 					src={cat}
 					alt="The underthink cat, thinking"
 					width="491"
 					height="407"
-					class="pointer-events-none ml-3 block h-auto w-32 shrink-0 opacity-65 select-none"
+					class="pointer-events-none ml-3 hidden h-auto w-32 shrink-0 opacity-65 select-none md:block"
 					draggable="false"
 				/>
 
 				<!-- Pinned to the bottom: the notes filter (when notes are on) and theme toggle. -->
-				<div class="space-y-0.5 border-t border-line px-2 py-3">
+				<div class="relative space-y-0.5 border-t border-line px-2 py-3">
+					<img
+						src={cat}
+						alt=""
+						width="491"
+						height="407"
+						class="pointer-events-none absolute right-4 bottom-0 m-0 h-auto w-20 opacity-65 select-none md:hidden"
+						draggable="false"
+					/>
 					{#if data.notesEnabled}
 						<a
 							href={notesHref}
@@ -220,9 +244,9 @@
 					<div class="flex gap-1 px-1 pt-1 font-mono text-xs">
 						<a
 							href="/about"
+							onclick={closeOnPhone}
 							class="group cursor-pointer text-muted transition-colors hover:text-logo"
-							>[<span
-								class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
+							>[<span class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
 								>about</span
 							>]</a
 						>
@@ -231,8 +255,7 @@
 							target="_blank"
 							rel="noreferrer"
 							class="group cursor-pointer text-muted transition-colors hover:text-logo"
-							>[<span
-								class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
+							>[<span class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
 								>repo</span
 							>]</a
 						>

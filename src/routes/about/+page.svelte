@@ -42,29 +42,33 @@
 </article>
 
 {#if data.commit}
-	<p class="mt-10 font-mono text-sm text-muted">
-		latest commit
-		<a
-			href={data.commit.url}
-			target="_blank"
-			rel="noreferrer"
-			class="underline decoration-1 underline-offset-1 transition-colors hover:text-logo hover:decoration-wavy"
-			>{data.commit.sha.slice(0, 7)}</a
-		>
-		on {formatDate(data.commit.date)}
-	</p>
-	<p class="font-mono text-sm text-muted">
+	<div class="mt-10 font-mono text-xs text-muted flex flex-wrap space-x-4">
+		<p class="">
+			latest commit
+			<a
+				href={data.commit.url}
+				target="_blank"
+				rel="noreferrer"
+				class="underline decoration-1 underline-offset-1 transition-colors hover:text-logo hover:decoration-wavy"
+				>{data.commit.sha.slice(0, 7)}</a
+			>
+			on {formatDate(data.commit.date)}
+		</p>
 
-		made by 
-		<a 
-			href="https://acon.zip"
-			target="_blank"
-			rel="noreferrer"
-			class="underline decoration-1 underline-offset-1 transition-colors hover:text-logo hover:decoration-wavy"
-		>acon</a>
+		<p class="hidden md:block"> // </p>
 
-		:3
+		<p>
+			made by 
+			<a 
+				href="https://acon.zip"
+				target="_blank"
+				rel="noreferrer"
+				class="underline decoration-1 underline-offset-1 transition-colors hover:text-logo hover:decoration-wavy"
+			>acon</a>
 
+			:3
 
-	</p>
+		</p>
+	</div>
+	
 {/if}
