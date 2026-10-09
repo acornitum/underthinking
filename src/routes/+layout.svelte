@@ -214,6 +214,29 @@
 							</button>
 						{/each}
 					</div>
+
+					<!-- [about] and [repo]: monospace, underlined words that go wavy and take
+					     the theme's highlight colour on hover. -->
+					<div class="flex gap-1 px-1 pt-1 font-mono text-xs">
+						<a
+							href="/about"
+							class="group cursor-pointer text-muted transition-colors hover:text-logo"
+							>[<span
+								class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
+								>about</span
+							>]</a
+						>
+						<a
+							href="https://github.com/acornitum/underthinking"
+							target="_blank"
+							rel="noreferrer"
+							class="group cursor-pointer text-muted transition-colors hover:text-logo"
+							>[<span
+								class="underline decoration-1 underline-offset-1 group-hover:decoration-wavy"
+								>repo</span
+							>]</a
+						>
+					</div>
 				</div>
 			</aside>
 		{:else}
