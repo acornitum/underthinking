@@ -45,7 +45,7 @@ const MAJORS = [
 	['Brandeis IV', String.raw`^brandeis IV\b`],
 	['HWS Round Robin', String.raw`^HWS (round robin|RR)\b`],
 	['Hart House IV', String.raw`^hart house (IV|inter-varsity)\b|^hart house 2022$`],
-	['McGill IV', String.raw`^mcgill (IV|intervarsity)\b|^winter carnival`],
+	['McGill IV', String.raw`^mcgill (IV|intervarsity)\b`],
 	['Columbia IV', String.raw`^columbia IV\b`],
 	['SIDO', String.raw`^shanghai international debate open\b`]
 ].map(([group, pattern]) => [group, unicodeRegex(pattern, 'i')]);
