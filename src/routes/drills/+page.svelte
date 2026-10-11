@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
 	import { page } from '$app/state';
+	import TimerBar from '#lib/TimerBar.svelte';
+	import { hoverHint, toast } from '#lib/toast.svelte.ts';
 	import type { Motion } from '#lib/server/db.ts';
 
 	const PRESETS = [1, 3, 5, 10, 15];
@@ -16,12 +18,16 @@
 	];
 	const SIDE_KEY = 'drill-side';
 	const SOUND_KEY = 'drill-sound';
+	const COUNT_UP_KEY = 'drill-count-up';
+	const MARKERS_KEY = 'drill-markers';
 
 	let minutes = $state(DEFAULT_MINUTES);
 	let seconds = $state(0);
 	let chosenMs = $derived(((minutes || 0) * 60 + (seconds || 0)) * 1000);
 	let side = $state<SideChoice>('gov');
 	let sound = $state(true);
+	// Count up from 0:00 to the prep time instead of down to 0:00.
+	let countUp = $state(false);
 	// The side for the current motion (coin flips happen once per motion), and
 	// the setting it came from, so a changed setting re-assigns on "continue".
 	let assigned = $state<{ side: 'Gov' | 'Opp'; from: SideChoice } | null>(null);
@@ -35,11 +41,30 @@
 	let remainingMs = $state(0);
 	let ticker: ReturnType<typeof setInterval> | undefined;
 
-	let remainingText = $derived.by(() => {
-		const total = Math.ceil(remainingMs / 1000);
+	// "m:ss" for the timer text: time elapsed when counting up, else time left.
+	function formatTimer(remaining: number, duration: number) {
+		const total = countUp ? Math.floor((duration - remaining) / 1000) : Math.ceil(remaining / 1000);
+		return formatSeconds(total);
+	}
+
+	function formatSeconds(total: number) {
 		return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}`;
-	});
-	let progress = $derived(durationMs ? remainingMs / durationMs : 0);
+	}
+
+	// Counting down, the bar empties towards the left; counting up, it fills
+	// towards the right.
+	function barFraction(remaining: number, duration: number) {
+		if (!duration) return 0;
+		return countUp ? 1 - remaining / duration : remaining / duration;
+	}
+
+	let timerText = $derived(formatTimer(remainingMs, durationMs));
+	let progress = $derived(barFraction(remainingMs, durationMs));
+
+	// The settings preview shows the timer a quarter of the way through.
+	let previewMs = $derived(chosenMs * 0.75);
+	let previewText = $derived(formatTimer(previewMs, chosenMs));
+	let previewProgress = $derived(barFraction(previewMs, chosenMs));
 	let details = $derived(
 		motion
 			? [motion.tournament_name, motion.round, motion.style]
@@ -57,6 +82,11 @@
 			const savedSide = localStorage.getItem(SIDE_KEY);
 			if (SIDES.some((s) => s.value === savedSide)) side = savedSide as SideChoice;
 			if (localStorage.getItem(SOUND_KEY) === 'off') sound = false;
+			if (localStorage.getItem(COUNT_UP_KEY) === 'on') countUp = true;
+			const savedMarkers = JSON.parse(localStorage.getItem(MARKERS_KEY) ?? '[]');
+			if (Array.isArray(savedMarkers)) {
+				markers = savedMarkers.filter((t) => Number.isInteger(t) && t > 0);
+			}
 		} catch {
 			// Storage blocked: keep the default.
 		}
@@ -162,6 +192,7 @@
 			localStorage.setItem(SECONDS_KEY, String(seconds));
 			localStorage.setItem(SIDE_KEY, side);
 			localStorage.setItem(SOUND_KEY, sound ? 'on' : 'off');
+			localStorage.setItem(COUNT_UP_KEY, countUp ? 'on' : 'off');
 		} catch {
 			// Storage blocked: the choice lasts for this visit only.
 		}
@@ -186,6 +217,48 @@
 			if (!loading) newMotion();
 		} else if (motion && remainingMs > 0) {
 			togglePause();
+		}
+	}
+
+	// Clicking the motion copies it (with its infoslide), like on All motions. A
+	// click that ends a text selection doesn't.
+	async function copyMotion(at: { x: number; y: number }) {
+		if (!motion || window.getSelection()?.toString()) return;
+		const text = motion.infoslide
+			? `${motion.motion}\n\nInfoslide: ${motion.infoslide}`
+			: motion.motion;
+		await navigator.clipboard.writeText(text);
+		toast.show('Copied to clipboard!', at);
+	}
+
+	function onMotionClick(e: MouseEvent) {
+		hoverHint.hide();
+		// Don't keep focus, or space/enter would copy instead of pause/new motion.
+		(e.currentTarget as HTMLElement).blur();
+		copyMotion({ x: e.pageX, y: e.pageY });
+	}
+
+	// From the keyboard (tabbed to the motion), copy instead of the page shortcuts.
+	function onMotionKeydown(e: KeyboardEvent) {
+		if (e.key !== 'Enter' && e.key !== ' ') return;
+		e.preventDefault();
+		e.stopPropagation();
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		copyMotion({ x: window.scrollX + rect.left + rect.width / 2, y: window.scrollY + rect.top });
+	}
+
+	// Markers on the timer bar (see TimerBar.svelte), shared by the drill timer
+	// and the settings preview, and saved in the browser.
+	let markers = $state<number[]>([]);
+
+	function toggleMarker(t: number) {
+		markers = markers.includes(t)
+			? markers.filter((m) => m !== t)
+			: [...markers, t].sort((a, b) => a - b);
+		try {
+			localStorage.setItem(MARKERS_KEY, JSON.stringify(markers));
+		} catch {
+			// Storage blocked: the markers last for this visit only.
 		}
 	}
 
@@ -215,7 +288,7 @@
 {#if !drilling}
 	<div class="flex flex-1 items-center justify-center">
 		<form
-			class="w-full max-w-lg rounded-xl bg-surface p-6 md:p-9"
+			class="w-full max-w-2xl rounded-xl bg-surface p-6 md:p-9"
 			onsubmit={(e) => (e.preventDefault(), start())}
 		>
 			<h1 class="mb-6 text-3xl font-bold">Drills</h1>
@@ -273,6 +346,26 @@
 				{/each}
 			</div>
 
+			<div class="mb-4 flex items-center justify-between gap-3">
+				<span class="text-base font-bold" id="count-up-label">Count up</span>
+				<button
+					type="button"
+					role="switch"
+					aria-checked={countUp}
+					aria-labelledby="count-up-label"
+					class="relative h-7 w-12 shrink-0 cursor-pointer rounded-full transition-colors {countUp
+						? 'bg-selected'
+						: 'bg-line'}"
+					onclick={() => (countUp = !countUp)}
+				>
+					<span
+						class="absolute top-0.5 left-0.5 size-6 rounded-full bg-ink transition-transform {countUp
+							? 'translate-x-5'
+							: ''}"
+					></span>
+				</button>
+			</div>
+
 			<div class="mb-8 flex items-center justify-between gap-3">
 				<span class="text-base font-bold" id="sound-label"
 					>Sound <span class="font-normal text-muted">(when timer finishes)</span></span
@@ -293,6 +386,50 @@
 							: ''}"
 					></span>
 				</button>
+			</div>
+
+			<hr class="mb-6 border-line" />
+
+			<!-- A smaller copy of the drill timer, a quarter of the way through. Markers
+			     can be added here too. -->
+			<div class="mb-8 text-center">
+				<span class="text-base font-bold" id="count-up-label">Timer preview</span>
+				<p class="mb-1 mt-1 text-xs font-bold text-muted" aria-hidden="true">
+					{previewText}
+					{countUp ? 'elapsed' : 'left'}
+				</p>
+				<div class="flex items-center gap-1">
+					<svg
+						class="size-4 shrink-0 text-muted"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<rect x="6" y="4" width="4" height="16" rx="1.5" />
+						<rect x="14" y="4" width="4" height="16" rx="1.5" />
+					</svg>
+					<TimerBar
+						fraction={previewProgress}
+						durationSec={chosenMs / 1000}
+						{markers}
+						ontoggle={toggleMarker}
+						barClass="h-3"
+						fillClass="bg-progress transition-[width] duration-300"
+					/>
+					<svg
+						class="size-4 shrink-0 text-muted"
+						aria-hidden="true"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+						<path d="M3 3v5h5" />
+					</svg>
+				</div>
 			</div>
 
 			<button type="submit" class={startButton}>{motion ? 'continue' : 'start'}</button>
@@ -318,7 +455,17 @@
 				<h1
 					class="max-w-[34em] text-[clamp(1.25rem,2.5vw,2.25rem)] leading-tight font-bold text-pretty text-ink"
 				>
-					{motion.motion}
+					<span
+						class="cursor-pointer transition-colors hover:text-motion-hover"
+						role="button"
+						tabindex="0"
+						onclick={onMotionClick}
+						onkeydown={onMotionKeydown}
+						onmousemove={(e) => hoverHint.move('Copy to clipboard', e)}
+						onmouseleave={() => hoverHint.hide()}
+					>
+						{motion.motion}
+					</span>
 				</h1>
 				{#if motion.infoslide}
 					<p
@@ -346,7 +493,9 @@
 					</p>
 				{/if}
 				<p class="mb-2 text-sm font-bold text-muted md:text-base" aria-live="polite">
-					{remainingMs > 0 ? `${remainingText} left${paused ? ' · paused' : ''}` : "Time's up"}
+					{remainingMs > 0
+						? `${timerText} ${countUp ? 'elapsed' : 'left'}${paused ? ' · paused' : ''}`
+						: "Time's up"}
 				</p>
 				<div class="flex items-center gap-1">
 					<button
@@ -368,21 +517,17 @@
 							{/if}
 						</svg>
 					</button>
-					<div
-						class="h-4 w-full min-w-0 flex-1 overflow-hidden rounded-full bg-line md:h-5"
-						role="progressbar"
-						aria-label="Prep time remaining"
-						aria-valuemin="0"
-						aria-valuemax="100"
-						aria-valuenow={Math.round(progress * 100)}
-					>
-						<div
-							class="h-full rounded-full transition-[width,background-color] duration-300 ease-linear {paused
-								? 'bg-progress-paused'
-								: 'bg-progress'}"
-							style:width="{progress * 100}%"
-						></div>
-					</div>
+					<TimerBar
+						fraction={progress}
+						durationSec={durationMs / 1000}
+						{markers}
+						ontoggle={toggleMarker}
+						barClass="h-4 md:h-5"
+						fillClass="transition-[width,background-color] duration-300 ease-linear {paused
+							? 'bg-progress-paused'
+							: 'bg-progress'}"
+						label={countUp ? 'Prep time elapsed' : 'Prep time remaining'}
+					/>
 					<button
 						type="button"
 						class={iconButton}
@@ -405,7 +550,8 @@
 						</svg>
 					</button>
 				</div>
-				<p class="-mt-1 text-xs text-chip">
+				<!-- Keyboard shortcuts only, so hidden on phones. -->
+				<p class="mt-1 hidden text-xs text-chip md:block">
 					Press space to pause timer. Press enter for new motion.
 				</p>
 			</div>

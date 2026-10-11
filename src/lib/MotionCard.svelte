@@ -17,7 +17,7 @@
 	// text selection doesn't, so you can still select part of a motion.
 	async function copy(at: { x: number; y: number }) {
 		if (window.getSelection()?.toString()) return;
-		await navigator.clipboard.writeText(m.infoslide ? `${m.motion}\n\n${m.infoslide}` : m.motion);
+		await navigator.clipboard.writeText(m.infoslide ? `${m.motion}\n\nInfoslide: ${m.infoslide}` : m.motion);
 		toast.show('Copied to clipboard!', at);
 	}
 

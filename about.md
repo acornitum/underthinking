@@ -8,6 +8,7 @@ features you might not know about:
 - click on a motion to copy it to clipboard! infoslide included.
 - after expanding a motion into a new tab, you can edit it (edits are not saved)
 - change the color theme of the site via the icons on the bottom left
+- you can add markers to the timer! hover over timer preview (or timer) and click to do so
 - ... probably more i'm forgetting
 
 have something you want added? changed? any feedback? feel free to dm acon on discord! 
