@@ -10,3 +10,6 @@ Dockerfile
 *.tmp
 # Always build a fresh database from data/motions.csv inside the image.
 motions.db
+# Local-only admin tools
+src/lib/admin
+src/routes/admin

@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 @source not '../../notes';
+/* The local admin tools are gitignored, which Tailwind skips by default. */
+@source '../lib/admin';
+@source './admin';
 @plugin '@tailwindcss/typography';
 
 /* `dark:` styles apply in the dark themes (dark, hazel); see the theme switch. */

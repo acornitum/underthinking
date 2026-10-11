@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { adminSlot } from '#lib/admin-slots.ts';
 	import { iconButtonClass } from '#lib/iconButton.ts';
 	import InfoSlide from '#lib/InfoSlide.svelte';
 	import { hoverHint, toast } from '#lib/toast.svelte.ts';
@@ -12,6 +13,8 @@
 		grouped = false,
 		fullInfoslide = false
 	}: { motion: Motion; grouped?: boolean; fullInfoslide?: boolean } = $props();
+
+	const AdminActions = adminSlot('MotionActions');
 
 	// Clicking the motion copies it (with its infoslide). A click that ends a
 	// text selection doesn't, so you can still select part of a motion.
@@ -81,6 +84,9 @@
 	</div>
 
 	<div class="flex shrink-0">
+		{#if AdminActions}
+			<AdminActions motion={m} />
+		{/if}
 		<a
 			href="/motion/{m.id}"
 			target="_blank"

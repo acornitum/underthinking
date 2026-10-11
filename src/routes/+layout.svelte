@@ -6,6 +6,7 @@
 	import favicon from '#lib/assets/catfavicon.png';
 	import logo from '#lib/assets/underthinklogo.svg';
 	import cat from '#lib/assets/underthinkcat.png';
+	import { ADMIN_OUTLINE, adminSlot, isAdminPage } from '#lib/admin-slots.ts';
 	import SidebarFilters from '#lib/SidebarFilters.svelte';
 	import Toast from '#lib/Toast.svelte';
 	import { THEMES, theme } from '#lib/theme.svelte.ts';
@@ -18,6 +19,9 @@
 		{ href: '/random', label: 'Random motion' },
 		{ href: '/drills', label: 'Drills' }
 	];
+
+	const AdminNav = adminSlot('SidebarNav');
+	const AdminToggle = adminSlot('SidebarToggle');
 
 	let sidebarOpen = $state(true);
 
@@ -145,6 +149,9 @@
 								</a>
 							</li>
 						{/each}
+						{#if AdminNav}
+							<AdminNav onnavigate={closeOnPhone} />
+						{/if}
 					</ul>
 				</nav>
 
@@ -174,6 +181,9 @@
 						class="pointer-events-none absolute right-4 bottom-0 m-0 h-auto w-20 opacity-65 select-none md:hidden"
 						draggable="false"
 					/>
+					{#if AdminToggle}
+						<AdminToggle />
+					{/if}
 					{#if data.notesEnabled}
 						<a
 							href={notesHref}
@@ -268,16 +278,19 @@
 			</div>
 		{/if}
 
-		<main
-			class="mx-auto w-full min-w-0 px-6 {page.url.pathname === '/drills'
-				? 'flex min-h-dvh flex-col pb-6'
-				: 'max-w-[60rem] pb-10'} pt-24 {sidebarOpen ? 'md:pt-10' : 'md:pt-16'}"
-		>
-			<!-- Re-mount per URL path so per-page state (e.g. a notes editor) starts fresh. -->
-			{#key page.url.pathname}
-				{@render children()}
-			{/key}
-		</main>
+		<!-- Pages only the admin can reach are outlined, edge to edge. -->
+		<div class="min-w-0 flex-1 {isAdminPage(page.url.pathname) ? ADMIN_OUTLINE : ''}">
+			<main
+				class="mx-auto w-full min-w-0 px-6 {page.url.pathname === '/drills'
+					? 'flex min-h-dvh flex-col pb-6'
+					: 'max-w-[60rem] pb-10'} pt-24 {sidebarOpen ? 'md:pt-10' : 'md:pt-16'}"
+			>
+				<!-- Re-mount per URL path so per-page state (e.g. a notes editor) starts fresh. -->
+				{#key page.url.pathname}
+					{@render children()}
+				{/key}
+			</main>
+		</div>
 	</div>
 {/if}
 

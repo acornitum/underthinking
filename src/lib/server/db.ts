@@ -12,6 +12,21 @@ import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
 
 export const db = new DatabaseSync('motions.db', { readOnly: true });
 
+// word_start(text, word): whether `word` appears at the start of a word in
+// `text`, ignoring case, so "hart" finds "Hart House" and "hartes" but not
+// "charter". The regexes are cached, as each search runs it on many rows.
+const wordStarts = new Map<string, RegExp>();
+db.function('word_start', { deterministic: true }, (text, word) => {
+	if (typeof text !== 'string' || typeof word !== 'string') return 0;
+	let re = wordStarts.get(word);
+	if (!re) {
+		if (wordStarts.size > 500) wordStarts.clear();
+		re = new RegExp(`(?<![\\p{L}\\p{N}])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
+		wordStarts.set(word, re);
+	}
+	return re.test(text) ? 1 : 0;
+});
+
 export type Motion = {
 	id: number;
 	motion: string;
@@ -31,6 +46,10 @@ export type Motion = {
 	level_group: string;
 	year_est: number | null;
 	major: string | null;
+	// YYYY-MM-DD; only for motions added with the admin tools.
+	date: string | null;
+	// The date, or January 1st of year_est: what "latest" sorts by.
+	sort_date: string;
 	hasNotes?: boolean;
 };
 
@@ -52,13 +71,14 @@ function where(filters: Filters) {
 	const params: string[] = [];
 	const placeholders = (values: string[]) => values.map(() => '?').join(', ');
 
-	// Every search word must appear in the motion, infoslide or tournament name.
+	// Every search word must start a word in the motion, infoslide or
+	// tournament name. LIKE quickly rules out rows without it anywhere; then
+	// word_start checks it's at the start of a word.
 	for (const word of filters.q.split(/\s+/).filter(Boolean)) {
-		clauses.push(
-			"(motion LIKE ? ESCAPE '\\' OR infoslide LIKE ? ESCAPE '\\' OR tournament_name LIKE ? ESCAPE '\\')"
-		);
+		const column = (name: string) => `(${name} LIKE ? ESCAPE '\\' AND word_start(${name}, ?))`;
+		clauses.push(`(${column('motion')} OR ${column('infoslide')} OR ${column('tournament_name')})`);
 		const pattern = `%${word.replace(/[\\%_]/g, '\\$&')}%`;
-		params.push(pattern, pattern, pattern);
+		params.push(pattern, word, pattern, word, pattern, word);
 	}
 	if (filters.notes && notesEnabled) {
 		const noted = notedMotions();
@@ -129,13 +149,13 @@ function reflow(paragraph: string): string {
 	return out;
 }
 
-// Newest tournaments first (the source CSV is ordered newest-first), then
+// Newest tournaments first (by date, or year; see scripts/motions.js), then
 // rounds in order: in-rounds by number, then outrounds through the grand final.
 export function latestMotions(filters: Filters, offset = 0, limit = PAGE_SIZE): Motion[] {
 	const w = where(filters);
 	return withExtras(
 		prepare(
-			`SELECT * FROM motions ${w.sql} ORDER BY tournament_order, round_order, id LIMIT ? OFFSET ?`
+			`SELECT * FROM motions ${w.sql} ORDER BY sort_date DESC, tournament_order, round_order, id LIMIT ? OFFSET ?`
 		).all(...w.params, limit, offset) as MotionRow[]
 	);
 }
@@ -226,6 +246,11 @@ export function filterOptions(): Record<FilterKey, FilterOption[]> {
 			.all() as FilterOption[]
 	};
 	return options;
+}
+
+// For the local admin tools, after they rebuild motions.db.
+export function clearFilterOptions() {
+	options = undefined;
 }
 
 // How many motions have notes (live, unlike filterOptions).

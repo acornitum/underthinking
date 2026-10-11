@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { SvelteSet } from 'svelte/reactivity';
+	import { adminSlot } from '#lib/admin-slots.ts';
 	import MotionCard from '#lib/MotionCard.svelte';
 	import type { Motion } from '#lib/server/db.ts';
 
@@ -13,6 +14,8 @@
 		query,
 		grouped = true
 	}: { initial: Motion[]; query: string; grouped?: boolean } = $props();
+
+	const AdminActions = adminSlot('TournamentActions');
 
 	let more = $state<Motion[]>([]);
 	let loading = $state(false);
@@ -120,6 +123,9 @@
 						</h2>
 						<p class="text-sm text-muted">{details(first)}</p>
 					</div>
+					{#if AdminActions}
+						<AdminActions motion={first} />
+					{/if}
 					<button
 						type="button"
 						class="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-md text-dim transition-colors hover:bg-line hover:text-muted"

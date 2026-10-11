@@ -32,3 +32,8 @@ notes/**/*.md.tmp
 
 # Obsidian UI state for the notes vault (changes constantly)
 notes/.obsidian/workspace*.json
+
+# Local-only admin tools (adding/editing motions). Never committed or deployed;
+# see src/lib/admin-slots.ts.
+/src/lib/admin/
+/src/routes/admin/

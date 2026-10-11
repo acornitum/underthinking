@@ -7,16 +7,20 @@
 // built from it and gitignored. `npm run dev` / `npm run build` run
 // `build --if-needed` first, so a fresh clone gets the database automatically.
 //
-// The CSV has no date column but is ordered newest-first, so `id` preserves
-// that order (lower id = newer). `tournament_order` is the id of a tournament's
+// The CSV is mostly ordered newest-first, and `id` preserves that order. Its
+// `date` column (YYYY-MM-DD, the tournament's first day) comes from the tab's
+// round times (Tabbycat tabs) or the admin tools, and is blank for the rest.
+// "Latest" sorts by `sort_date`: the date, or for an undated motion the date of
+// the nearest dated row below it in the CSV (if from the same year), else the
+// first of January of `year_est`. `tournament_order` is the id of a tournament's
 // first row, and `round_order` ranks rounds within a tournament: in-rounds by
 // number, then outrounds (octos < quarters < semis < finals < grand final).
 //
 // Motion categories ("types", e.g. "Healthcare|Law") come from the CSV's
 // `types` column and go in the `motion_types` table, one row per type.
 //
-// `year_est` is the year in the tournament name, or else the year of the nearest
-// dated rows (tournaments like "Oxford IV" span many editions under one name).
+// `year_est` is the year in the tournament name (or `date`), or else the year of
+// the nearest dated rows (tournaments like "Oxford IV" span many editions under one name).
 // `major` names the major tournament (see major-tournaments.js) for BP
 // university motions from 2010 on, else NULL.
 import fs from 'node:fs';
@@ -27,11 +31,17 @@ import { majorGroup } from './major-tournaments.js';
 import { toInt, unicodeRegex } from './unicode-regex.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const CSV_PATH = path.join(ROOT, 'data', 'motions.csv');
+export const CSV_PATH = path.join(ROOT, 'data', 'motions.csv');
 const DB_PATH = path.join(ROOT, 'motions.db');
 const MAJOR_FROM_YEAR = 2010;
 
 const YEAR_RE = unicodeRegex(String.raw`\b(19[89]\d|20[0-4]\d)\b`, 'g');
+
+// The (last) year in a tournament's name, e.g. 2026 for "Princeton IV 2026".
+function nameYear(name) {
+	const found = [...name.matchAll(YEAR_RE)];
+	return found.length ? Number(found.at(-1)[1]) : null;
+}
 
 // Outround stages, checked in order (first match wins), so e.g. "Pre-Semis"
 // is caught before "Semis" and "Semi Finals" before "Finals".
@@ -75,7 +85,7 @@ function levelGroup(level) {
 }
 
 const norm = (text) => text.toLowerCase().split(/\s+/).filter(Boolean).join(' ');
-const splitTypes = (types) => [...new Set((types ?? '').split('|').filter(Boolean))];
+export const splitTypes = (types) => [...new Set((types ?? '').split('|').filter(Boolean))];
 
 // --- CSV (RFC 4180: quoted fields may contain commas, quotes and newlines) ---
 
@@ -87,17 +97,17 @@ function parseCsv(text) {
 	for (let i = 0; i < text.length; i++) {
 		const c = text[i];
 		if (quoted) {
-			if (c === '"' && text[i + 1] === '"') (field += '"'), i++;
+			if (c === '"' && text[i + 1] === '"') ((field += '"'), i++);
 			else if (c === '"') quoted = false;
 			else field += c;
 		} else if (c === '"') quoted = true;
-		else if (c === ',') row.push(field), (field = '');
+		else if (c === ',') (row.push(field), (field = ''));
 		else if (c === '\n' || c === '\r') {
 			if (c === '\r' && text[i + 1] === '\n') i++;
-			row.push(field), rows.push(row), (row = []), (field = '');
+			(row.push(field), rows.push(row), (row = []), (field = ''));
 		} else field += c;
 	}
-	if (field || row.length) row.push(field), rows.push(row);
+	if (field || row.length) (row.push(field), rows.push(row));
 	const [header, ...records] = rows.filter((r) => r.length > 1 || r[0]);
 	return {
 		header,
@@ -105,7 +115,7 @@ function parseCsv(text) {
 	};
 }
 
-function toCsv(header, records) {
+export function toCsv(header, records) {
 	const cell = (v) => (/[",\n\r]/.test(v) ? `"${v.replaceAll('"', '""')}"` : v);
 	return [header, ...records.map((r) => header.map((h) => r[h] ?? ''))]
 		.map((row) => row.map(cell).join(','))
@@ -113,19 +123,18 @@ function toCsv(header, records) {
 		.concat('\n');
 }
 
-function readCsv(file) {
+export function readCsv(file) {
 	return parseCsv(fs.readFileSync(file, 'utf8').replace(/^﻿/, ''));
 }
 
 // --- build ---
 
-function build() {
+export function build() {
 	const { records } = readCsv(CSV_PATH);
 
-	const years = records.map((r) => {
-		const found = [...r.tournament_name.matchAll(YEAR_RE)];
-		return found.length ? Number(found.at(-1)[1]) : null;
-	});
+	const years = records.map(
+		(r) => nameYear(r.tournament_name) ?? (r.date ? Number(r.date.slice(0, 4)) : null)
+	);
 	const dated = years.flatMap((y, i) => (y === null ? [] : [i]));
 
 	// Rows are newest-first; an undated row takes the older of the two nearest dated rows.
@@ -138,13 +147,32 @@ function build() {
 			if (dated[mid] < i) lo = mid + 1;
 			else hi = mid;
 		}
-		const around = [lo - 1, lo].filter((j) => j >= 0 && j < dated.length).map((j) => years[dated[j]]);
+		const around = [lo - 1, lo]
+			.filter((j) => j >= 0 && j < dated.length)
+			.map((j) => years[dated[j]]);
 		return around.length ? Math.min(...around) : null;
 	}
 
+	// The date of the nearest dated row below each row (older, as rows are
+	// newest-first), for sorting undated rows between the dated ones.
+	const olderDate = new Array(records.length).fill(null);
+	for (let i = records.length - 2; i >= 0; i--) {
+		olderDate[i] = records[i + 1].date || olderDate[i + 1];
+	}
+
+	// An undated row sorts with the dated row below it (and above it, as ties
+	// keep CSV order), if that's from the same year; else at the start of its year.
+	function sortDate(i, yearEst) {
+		if (records[i].date) return records[i].date;
+		const older = olderDate[i];
+		if (older && yearEst !== null && Number(older.slice(0, 4)) === yearEst) return older;
+		return `${yearEst ?? '0000'}-01-01`;
+	}
+
 	// Replace the tables in place (rather than deleting the file), so a running
-	// dev server sees the new data without a restart.
-	const db = new DatabaseSync(DB_PATH);
+	// dev server sees the new data without a restart. If a dev server is reading
+	// at that moment, wait for it rather than failing.
+	const db = new DatabaseSync(DB_PATH, { timeout: 10_000 });
 	db.exec(`
 		DROP TABLE IF EXISTS motion_types;
 		DROP TABLE IF EXISTS motions;
@@ -166,7 +194,9 @@ function build() {
 			style_group TEXT,
 			level_group TEXT,
 			year_est INTEGER,
-			major TEXT
+			major TEXT,
+			date TEXT,
+			sort_date TEXT
 		);
 		CREATE TABLE motion_types (
 			motion_id INTEGER NOT NULL REFERENCES motions(id),
@@ -174,9 +204,7 @@ function build() {
 			PRIMARY KEY (type, motion_id)
 		) WITHOUT ROWID;
 	`);
-	const insertMotion = db.prepare(
-		`INSERT INTO motions VALUES (${Array(18).fill('?').join(', ')})`
-	);
+	const insertMotion = db.prepare(`INSERT INTO motions VALUES (${Array(20).fill('?').join(', ')})`);
 	const insertType = db.prepare('INSERT INTO motion_types VALUES (?, ?)');
 
 	const firstSeen = new Map();
@@ -210,7 +238,9 @@ function build() {
 			style,
 			level,
 			yearEst,
-			major
+			major,
+			r.date || null,
+			sortDate(index, yearEst)
 		);
 		const types = splitTypes(r.types);
 		if (types.length) typed++;
@@ -218,7 +248,7 @@ function build() {
 	});
 	db.exec('COMMIT');
 	db.exec(`
-		CREATE INDEX idx_motions_order ON motions(tournament_order, round_order, id);
+		CREATE INDEX idx_motions_order ON motions(sort_date DESC, tournament_order, round_order, id);
 		CREATE INDEX idx_motions_year ON motions(year);
 		CREATE INDEX idx_motions_tournament ON motions(tournament_name);
 		CREATE INDEX idx_motion_types_motion ON motion_types(motion_id);
@@ -236,7 +266,9 @@ function isUpToDate() {
 	}
 }
 
-// --- update: replace data/motions.csv with a new export, keeping known types ---
+// --- update: replace data/motions.csv with a new export, keeping known types, dates and adjudicators ---
+
+const roundKey = (r) => [r.motion, r.tournament_name, r.round].map(norm).join('\u0000');
 
 function update(exportPath) {
 	const incoming = readCsv(exportPath);
@@ -245,23 +277,38 @@ function update(exportPath) {
 	// Types already known, by (motion, tournament) and by motion alone.
 	const byPair = new Map();
 	const byMotion = new Map();
+	// Dates already known, by (motion, tournament).
+	const dates = new Map();
+	// Adjudicators already known, by (motion, tournament, round). Kept in the
+	// dataset only; the site doesn't show them.
+	const adjudicators = new Map();
 	for (const r of current) {
+		if (r.date) dates.set(`${norm(r.motion)}\u0000${norm(r.tournament_name)}`, r.date);
+		if (r.adjudicators) adjudicators.set(roundKey(r), r.adjudicators);
 		const types = splitTypes(r.types);
 		if (!types.length) continue;
 		byPair.set(`${norm(r.motion)}\u0000${norm(r.tournament_name)}`, types);
 		if (!byMotion.has(norm(r.motion))) byMotion.set(norm(r.motion), types);
 	}
 
-	const header = incoming.header.includes('types')
+	let header = incoming.header.includes('types')
 		? incoming.header
 		: [...incoming.header.slice(0, 2), 'types', ...incoming.header.slice(2)];
+	if (adjudicators.size && !header.includes('adjudicators')) {
+		const at = header.indexOf('style') + 1 || header.length;
+		header = [...header.slice(0, at), 'adjudicators', ...header.slice(at)];
+	}
+	if (dates.size && !header.includes('date')) header = [...header, 'date'];
 	let kept = 0;
 	const records = incoming.records.map((r) => {
-		if (splitTypes(r.types).length) return r;
 		const key = norm(r.motion);
-		const types = byPair.get(`${key}\u0000${norm(r.tournament_name)}`) ?? byMotion.get(key) ?? [];
+		const pair = `${key}\u0000${norm(r.tournament_name)}`;
+		const date = r.date || dates.get(pair) || '';
+		const adj = r.adjudicators || adjudicators.get(roundKey(r)) || '';
+		if (splitTypes(r.types).length) return { ...r, date, adjudicators: adj };
+		const types = byPair.get(pair) ?? byMotion.get(key) ?? [];
 		if (types.length) kept++;
-		return { ...r, types: types.join('|') };
+		return { ...r, types: types.join('|'), date, adjudicators: adj };
 	});
 
 	fs.mkdirSync(path.dirname(CSV_PATH), { recursive: true });
@@ -273,13 +320,17 @@ function update(exportPath) {
 	build();
 }
 
-const [command, arg] = process.argv.slice(2);
-if (command === 'build') {
-	if (arg === '--if-needed' && isUpToDate()) process.exit(0);
-	build();
-} else if (command === 'update' && arg) {
-	update(path.resolve(arg));
-} else {
-	console.error('Usage: node scripts/motions.js build [--if-needed] | update <export.csv>');
-	process.exit(1);
+// The functions above are also imported by the local admin tools, so only run
+// a command when this file is run directly.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+	const [command, arg] = process.argv.slice(2);
+	if (command === 'build') {
+		if (arg === '--if-needed' && isUpToDate()) process.exit(0);
+		build();
+	} else if (command === 'update' && arg) {
+		update(path.resolve(arg));
+	} else {
+		console.error('Usage: node scripts/motions.js build [--if-needed] | update <export.csv>');
+		process.exit(1);
+	}
 }
