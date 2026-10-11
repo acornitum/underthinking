@@ -199,6 +199,16 @@ export function randomMotions(filters: Filters, count: number): Motion[] {
 	);
 }
 
+// One random motion. Shuffling just the ids, then fetching the chosen row, is
+// much faster than shuffling whole rows (infoslides and all).
+export function randomMotion(filters: Filters): Motion | undefined {
+	const w = where(filters);
+	const row = prepare(
+		`SELECT * FROM motions WHERE id = (SELECT id FROM motions ${w.sql} ORDER BY RANDOM() LIMIT 1)`
+	).get(...w.params) as MotionRow | undefined;
+	return row && withExtras([row])[0];
+}
+
 // Rare motion types (mostly one-off tags) are left out of the filter list.
 const MIN_TYPE_COUNT = 20;
 
