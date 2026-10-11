@@ -27,7 +27,7 @@
 	{/if}
 
 	{#if open}
-		<span class="block min-w-0 flex-1 whitespace-pre-line">{text}</span>
+		<span class="block min-w-0 flex-1 wrap-break-word whitespace-pre-line">{text}</span>
 	{:else}
 		<span
 			{@attach measure}
@@ -41,7 +41,7 @@
 
 <!-- Long infoslides are one big toggle button; short ones are plain text. -->
 {#if alwaysOpen}
-	<p class="mt-2 text-sm whitespace-pre-line text-infoslide">{text}</p>
+	<p class="mt-2 text-sm wrap-break-word whitespace-pre-line text-infoslide">{text}</p>
 {:else if truncated}
 	<button
 		type="button"

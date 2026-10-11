@@ -394,7 +394,7 @@
 			     can be added here too. -->
 			<div class="mb-8 text-center">
 				<span class="text-base font-bold" id="count-up-label">Timer preview</span>
-				<p class="mb-1 mt-1 text-xs font-bold text-muted" aria-hidden="true">
+				<p class="mt-1 mb-1 text-xs font-bold text-muted" aria-hidden="true">
 					{previewText}
 					{countUp ? 'elapsed' : 'left'}
 				</p>
@@ -469,7 +469,7 @@
 				</h1>
 				{#if motion.infoslide}
 					<p
-						class="mt-[3vh] w-0 min-w-full text-[clamp(0.9rem,1.3vw,1.15rem)] leading-relaxed whitespace-pre-line text-infoslide"
+						class="mt-[3vh] w-0 min-w-full text-[clamp(0.9rem,1.3vw,1.15rem)] leading-relaxed wrap-break-word whitespace-pre-line text-infoslide"
 					>
 						{motion.infoslide}
 					</p>

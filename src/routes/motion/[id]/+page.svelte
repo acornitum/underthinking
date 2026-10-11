@@ -59,7 +59,7 @@
 	const motionClass =
 		'max-w-[24em] text-[clamp(2rem,5vw,4.75rem)] leading-tight font-bold text-balance text-ink';
 	const infoslideClass =
-		'max-w-[48em] text-[clamp(1rem,1.9vw,1.6rem)] leading-relaxed whitespace-pre-line text-subtle';
+		'max-w-[48em] text-[clamp(1rem,1.9vw,1.6rem)] leading-relaxed whitespace-pre-line wrap-break-word text-subtle';
 	// Hovering either one highlights both (see `group` on the wrapper).
 	const shownClass = 'cursor-text transition-colors group-hover:bg-surface/60';
 	const fieldClass = 'block resize-none bg-surface placeholder:text-chip focus:outline-none';
