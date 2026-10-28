@@ -160,9 +160,9 @@
 					{/if}
 				</div>
 				<!-- The secondary genres linked to each picked main genre, under their
-				     group headings (all of them show with "Show all subcategories"). -->
+				     group headings (all of them show with "Show subcategories"). -->
 				{#if !showSecondary && linked.length}
-					<div class="mt-3 space-y-2.5">
+					<div class="mt-3 space-y-2.5 pl-2.5">
 						{#each groups(linked) as [group, list] (group)}
 							<div>
 								<h3
@@ -200,8 +200,16 @@
 						{/each}
 					</div>
 				{/if}
+				<button
+					type="button"
+					class="mt-2 cursor-pointer text-xs font-bold text-chip underline hover:text-ink"
+					aria-expanded={showSecondary}
+					onclick={() => (showSecondary = !showSecondary)}
+				>
+					{showSecondary ? 'Hide subcategories' : 'Show subcategories'}
+				</button>
 				{#if showSecondary}
-					<div class="mt-3 space-y-2.5">
+					<div class="mt-3 space-y-2.5 pl-2.5">
 						{#each groups(secondary) as [group, list] (group)}
 							<div>
 								<h3
@@ -242,14 +250,6 @@
 						{/each}
 					</div>
 				{/if}
-				<button
-					type="button"
-					class="mt-2 cursor-pointer text-xs font-bold text-chip underline hover:text-ink"
-					aria-expanded={showSecondary}
-					onclick={() => (showSecondary = !showSecondary)}
-				>
-					{showSecondary ? 'Hide all subcategories' : 'Show all subcategories'}
-				</button>
 			{:else}
 				<div class="flex flex-wrap gap-1">
 					{#each options[key] as option (option.value)}
