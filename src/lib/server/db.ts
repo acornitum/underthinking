@@ -8,9 +8,13 @@ import {
 	type Filters
 } from '#lib/filters.ts';
 import { notesEnabled } from '#lib/server/config.ts';
+import { CATEGORIES, CATEGORY_TAGS } from '#lib/server/motion-types.ts';
 import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
+import { STYLE_GROUPS } from '../../../scripts/motions.js';
 
 export const db = new DatabaseSync('motions.db', { readOnly: true });
+
+const styleRank = (group: string) => STYLE_GROUPS.indexOf(group);
 
 // word_start(text, word): whether `word` appears at the start of a word in
 // `text`, ignoring case, so "hart" finds "Hart House" and "hartes" but not
@@ -92,10 +96,11 @@ function where(filters: Filters) {
 		clauses.push('major IS NOT NULL');
 	}
 	if (filters.type.length) {
+		const tags = [...new Set(filters.type.flatMap((t) => CATEGORY_TAGS.get(t) ?? [t]))];
 		clauses.push(
-			`id IN (SELECT motion_id FROM motion_types WHERE type IN (${placeholders(filters.type)}))`
+			`id IN (SELECT motion_id FROM motion_types WHERE type IN (${placeholders(tags)}))`
 		);
-		params.push(...filters.type);
+		params.push(...tags);
 	}
 	if (filters.style.length) {
 		clauses.push(`style_group IN (${placeholders(filters.style)})`);
@@ -209,8 +214,21 @@ export function randomMotion(filters: Filters): Motion | undefined {
 	return row && withExtras([row])[0];
 }
 
-// Rare motion types (mostly one-off tags) are left out of the filter list.
-const MIN_TYPE_COUNT = 20;
+// The motion type categories with how many motions each matches, in their
+// listed order. Categories no motion is tagged with yet still show, with a count of 0.
+function typeOptions(categories: typeof CATEGORIES): FilterOption[] {
+	return categories.map(({ name, children }) => {
+		const tags = CATEGORY_TAGS.get(name)!;
+		const { n } = db
+			.prepare(
+				`SELECT COUNT(DISTINCT motion_id) AS n FROM motion_types WHERE type IN (${tags.map(() => '?').join(', ')})`
+			)
+			.get(...tags) as { n: number };
+		const option: FilterOption = { value: name, count: n };
+		if (children) option.children = typeOptions(children);
+		return option;
+	});
+}
 
 let options: Record<FilterKey, FilterOption[]> | undefined;
 
@@ -238,22 +256,18 @@ export function filterOptions(): Record<FilterKey, FilterOption[]> {
 				).n
 			}
 		],
-		type: db
-			.prepare(
-				`SELECT type AS value, COUNT(*) AS count FROM motion_types
-				GROUP BY type HAVING count >= ${MIN_TYPE_COUNT} ORDER BY count DESC`
-			)
-			.all() as FilterOption[],
-		style: db
-			.prepare(
-				'SELECT style_group AS value, COUNT(*) AS count FROM motions GROUP BY style_group ORDER BY count DESC'
-			)
-			.all() as FilterOption[],
+		type: typeOptions(CATEGORIES),
+		style: (
+			db
+				.prepare('SELECT style_group AS value, COUNT(*) AS count FROM motions GROUP BY style_group')
+				.all() as { value: string; count: number }[]
+		).sort((a, b) => styleRank(a.value) - styleRank(b.value)),
 		level: db
 			.prepare(
-				'SELECT level_group AS value, COUNT(*) AS count FROM motions GROUP BY level_group ORDER BY count DESC'
+				// Only University, School and Mixed; "Other" is just motions with no level.
+				"SELECT level_group AS value, COUNT(*) AS count FROM motions WHERE level_group != 'Other' GROUP BY level_group ORDER BY count DESC"
 			)
-			.all() as FilterOption[]
+			.all() as { value: string; count: number }[]
 	};
 	return options;
 }

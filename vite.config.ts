@@ -6,7 +6,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	// Notes are written by the app (and Obsidian); they aren't source files.
-	server: { watch: { ignored: ['**/notes/**'] } },
+	// Only the top-level notes/ folder: `**/notes/**` also matched
+	// src/routes/notes/, so edits to the notes page never reloaded.
+	server: { watch: { ignored: [`${import.meta.dirname}/notes/**`] } },
 	plugins: [
 		enhancedImages(),
 		tailwindcss(),

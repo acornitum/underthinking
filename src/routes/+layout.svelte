@@ -160,25 +160,15 @@
 					<SidebarFilters options={data.filterOptions} />
 				</div>
 
-				<!-- Desktop: the cat sits on the divider line above the bottom section.
-				     (On phones it's in the bottom-right corner instead; see below.) -->
-				<img
-					src={cat}
-					alt="The underthink cat, thinking"
-					width="491"
-					height="407"
-					class="pointer-events-none ml-3 hidden h-auto w-32 shrink-0 opacity-65 select-none md:block"
-					draggable="false"
-				/>
-
-				<!-- Pinned to the bottom: the notes filter (when notes are on) and theme toggle. -->
+				<!-- Pinned to the bottom: the notes filter (when notes are on) and theme
+				     toggle, with the cat in the bottom-right corner. -->
 				<div class="relative space-y-0.5 border-t border-line px-2 py-3">
 					<img
 						src={cat}
-						alt=""
+						alt="The underthink cat, thinking"
 						width="491"
 						height="407"
-						class="pointer-events-none absolute right-4 bottom-0 m-0 h-auto w-20 opacity-65 select-none md:hidden"
+						class="pointer-events-none absolute right-4 bottom-0 m-0 h-auto w-20 opacity-65 select-none"
 						draggable="false"
 					/>
 					{#if AdminToggle}

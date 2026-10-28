@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { beforeNavigate, invalidate } from '$app/navigation';
-	import { marked } from 'marked';
+	import { createLivePreview } from '#lib/livePreview.ts';
+	import { untrack } from 'svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -14,15 +15,24 @@
 	let file = $state(loadedFile());
 	let saved = loaded();
 	let status = $state<'saved' | 'unsaved' | 'saving' | 'error'>('saved');
-	let tab = $state<'write' | 'preview'>('write');
+	let tab = $state<'plain' | 'rich'>('rich');
+	// Focus the editor when switching tabs, but not on load (it'd scroll past the motion).
+	let switched = false;
 	let timer: ReturnType<typeof setTimeout>;
 
+	// Words as you'd count them in the rendered note: list bullets, numbers,
+	// heading and quote marks aren't words, and neither is stray punctuation.
+	let words = $derived(
+		body
+			.replace(/^\s*(#{1,6}|[-*+]|\d+[.)]|>)\s+/gm, '')
+			.split(/\s+/)
+			.filter((w) => /[\p{L}\p{N}]/u.test(w)).length
+	);
 	let details = $derived(
 		[m.round, [m.city, m.country].filter((v) => v && v.trim() !== '-').join(', '), m.level, m.style]
 			.filter(Boolean)
 			.join(' · ')
 	);
-	let preview = $derived(marked.parse(body, { async: false }));
 
 	// `keepalive` lets the request finish even if the tab is closing.
 	async function save() {
@@ -62,14 +72,20 @@
 	// Save when leaving: in-app navigation, or closing/hiding the tab.
 	beforeNavigate(() => save());
 
-	function autosize(el: HTMLTextAreaElement) {
-		const resize = () => {
-			el.style.height = 'auto';
-			el.style.height = `${el.scrollHeight}px`;
-		};
-		resize();
-		el.addEventListener('input', resize);
-		return () => el.removeEventListener('input', resize);
+	// The rich-formatting tab edits the same Markdown text (see livePreview.ts),
+	// so the plain-text tab and saving don't need to know which tab was used.
+	function richEditor(element: HTMLElement) {
+		// Untracked, or every change to `body` would rebuild the editor.
+		const view = createLivePreview(
+			element,
+			untrack(() => body),
+			(text) => {
+				body = text;
+				oninput();
+			}
+		);
+		if (switched) view.focus();
+		return () => view.destroy();
 	}
 </script>
 
@@ -132,38 +148,49 @@
 		{/if}
 	</header>
 
-	<div class="mb-4 flex gap-1 font-mono text-xs" role="tablist">
-		{#each ['write', 'preview'] as const as t (t)}
-			<button
-				type="button"
-				role="tab"
-				aria-selected={tab === t}
-				class="cursor-pointer rounded-md px-2.5 py-1 capitalize {tab === t
-					? 'bg-line text-ink'
-					: 'text-muted hover:text-ink'}"
-				onclick={() => (tab = t)}
-			>
-				{t}
-			</button>
-		{/each}
+	<div class="mb-4 flex items-center justify-between gap-4 font-mono text-xs">
+		<div class="flex gap-1" role="tablist">
+			{#each [['rich', 'Rich formatting'], ['plain', 'Plain text']] as const as [t, label] (t)}
+				<button
+					type="button"
+					role="tab"
+					aria-selected={tab === t}
+					class="cursor-pointer rounded-md px-2.5 py-1 {tab === t
+						? 'bg-line text-ink'
+						: 'text-muted hover:text-ink'}"
+					onclick={() => {
+						switched = true;
+						tab = t;
+					}}
+				>
+					{label}
+				</button>
+			{/each}
+		</div>
+		<span class="text-chip">{words.toLocaleString()} {words === 1 ? 'word' : 'words'}</span>
 	</div>
 
-	{#if tab === 'write'}
-		<textarea
-			{@attach autosize}
-			bind:value={body}
-			{oninput}
-			placeholder="Write notes in Markdown…"
-			aria-label="Notes (Markdown)"
-			spellcheck="true"
-			class="block min-h-[60vh] w-full resize-none bg-transparent font-mono text-sm leading-relaxed text-motion placeholder:text-chip focus:outline-none"
-		></textarea>
-	{:else if body.trim()}
-		<div class="prose max-w-none dark:prose-invert">
-			<!-- eslint-disable-next-line svelte/no-at-html-tags -- the user's own notes -->
-			{@html preview}
+	{#if tab === 'plain'}
+		<!-- The textarea grows with its text: an invisible copy of the text sits in
+		     the same grid cell and sets the height, so the textarea never has to
+		     collapse to be measured. The copy has a spare line at the end so it's
+		     never shorter than the text, and the textarea is pinned to the top: if
+		     it ever scrolled inside itself, typing would jump the text so the
+		     cursor sat at its bottom edge. -->
+		<div class="grid min-h-[60vh] font-mono text-sm leading-relaxed">
+			<!-- prettier-ignore -->
+			<div aria-hidden="true" class="invisible [grid-area:1/1] break-words whitespace-pre-wrap">{body}{'\n '}</div>
+			<textarea
+				bind:value={body}
+				{oninput}
+				onscroll={(e) => (e.currentTarget.scrollTop = 0)}
+				placeholder="Write notes in Markdown…"
+				aria-label="Notes (Markdown)"
+				spellcheck="true"
+				class="block w-full resize-none overflow-hidden bg-transparent text-motion [grid-area:1/1] placeholder:text-chip focus:outline-none"
+			></textarea>
 		</div>
 	{:else}
-		<p class="text-sm text-chip">Nothing to preview yet.</p>
+		<div {@attach richEditor} class="text-base"></div>
 	{/if}
 </article>

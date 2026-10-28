@@ -3,7 +3,7 @@
 // filters they're AND'd.
 export const FILTERS = [
 	{ key: 'tournament', label: 'Tournaments' },
-	{ key: 'type', label: 'Motion type' },
+	{ key: 'type', label: 'Motion genre' },
 	{ key: 'style', label: 'Debate style' },
 	{ key: 'level', label: 'Level' }
 ] as const;
@@ -12,7 +12,14 @@ export type FilterKey = (typeof FILTERS)[number]['key'];
 // `q` is the search box text and `notes` the "With notes" sidebar link; both
 // are matched separately from the sidebar filter boxes.
 export type Filters = Record<FilterKey, string[]> & { q: string; notes: boolean };
-export type FilterOption = { value: string; label?: string; count: number };
+// `children` are nested options (motion type subcategories). Selecting a
+// parent matches all its children; selecting a child narrows to that child.
+export type FilterOption = {
+	value: string;
+	label?: string;
+	count: number;
+	children?: FilterOption[];
+};
 
 // `tournament` option: hand-picked major BP university tournaments
 // from 2010 on (see scripts/major-tournaments.js).

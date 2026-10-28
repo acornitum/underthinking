@@ -13,3 +13,9 @@ motions.db
 # Local-only admin tools
 src/lib/admin
 src/routes/admin
+# Hand-labelled motion genres (local only)
+labels
+# Local secrets
+.env
+.env.*
+scripts/classifier

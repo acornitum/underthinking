@@ -37,3 +37,9 @@ notes/.obsidian/workspace*.json
 # see src/lib/admin-slots.ts.
 /src/lib/admin/
 /src/routes/admin/
+
+# Hand-labelled motion genres from /admin/label (local only)
+/labels/
+
+# Local-only labelling script (uses the API key in .env)
+/scripts/classifier/

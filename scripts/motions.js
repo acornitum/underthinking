@@ -68,12 +68,23 @@ function roundOrder(name) {
 	return UNKNOWN_ROUND;
 }
 
+// The style filter's options, in the order the sidebar shows them.
+export const STYLE_GROUPS = [
+	'BP',
+	'Asians/Australs',
+	'World Schools',
+	'Lincoln-Douglas',
+	'Public Forum',
+	'CanPar',
+	'CNDF',
+	'Other'
+];
+
 function styleGroup(style) {
 	const s = style.trim().toLowerCase();
-	if (s === 'bp') return 'BP';
 	if (s.includes('asian') || s.includes('austral')) return 'Asians/Australs';
-	if (s === 'world schools') return 'World Schools';
-	return 'Other';
+	if (s === 'cp') return 'CanPar';
+	return STYLE_GROUPS.find((g) => g.toLowerCase() === s) ?? 'Other';
 }
 
 function levelGroup(level) {
