@@ -4,7 +4,7 @@
 export const FILTERS = [
 	{ key: 'tournament', label: 'Tournaments' },
 	{ key: 'type', label: 'Motion genre' },
-	{ key: 'style', label: 'Debate style' },
+	{ key: 'style', label: 'Format' },
 	{ key: 'level', label: 'Level' }
 ] as const;
 
@@ -19,6 +19,10 @@ export type FilterOption = {
 	label?: string;
 	count: number;
 	children?: FilterOption[];
+	// Secondary motion genres name their group (e.g. "Regions"); main ones don't.
+	group?: string;
+	// The main genre a secondary one pops up under when that main is picked.
+	parent?: string;
 };
 
 // `tournament` option: hand-picked major BP university tournaments

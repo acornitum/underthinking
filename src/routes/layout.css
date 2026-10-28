@@ -25,6 +25,8 @@
 	--color-chip: #6a6774;
 	--color-dim: #56535e;
 	--color-selected: #6a6774;
+	/* Genres included by a picked main genre (outline, text and group heading). */
+	--color-highlight: #9cc3ff;
 	/* Tournament heading boxes: the surface colour, except in disc. */
 	--color-heading: var(--color-surface);
 	/* The tournament and details line under motions on the random page. */
@@ -59,6 +61,7 @@
 	--color-chip: #b4afbe;
 	--color-dim: #bdb8c6;
 	--color-selected: #b4afbe;
+	--color-highlight: #2f63d6;
 	--color-logo: #4771e3;
 	--color-accent: #4771e3;
 	--color-accent-hover: #3a60c9;
@@ -81,6 +84,7 @@
 	--color-chip: #92aca8;
 	--color-dim: #2565fd;
 	--color-selected: #b5ec93;
+	--color-highlight: #2a55d9;
 	--color-heading: #97d2ed;
 	--color-accent: #3866f5;
 	--color-accent-hover: #2a55d9;
@@ -107,6 +111,7 @@
 	--color-chip: #6b6878;
 	--color-dim: #6b6878;
 	--color-selected: #7a68db;
+	--color-highlight: #7a68db;
 	--color-heading: #1c1a23;
 	--color-accent: #8c7be8;
 	--color-accent-hover: #7a68db;

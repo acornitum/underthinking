@@ -9,12 +9,18 @@ import {
 } from '#lib/filters.ts';
 import { notesEnabled } from '#lib/server/config.ts';
 import { CATEGORIES, CATEGORY_TAGS } from '#lib/server/motion-types.ts';
+import { MAIN_GENRES, PREVIEW_TAGS, SECONDARY_GENRES } from '#lib/server/genre-preview.ts';
 import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
 import { STYLE_GROUPS } from '../../../scripts/motions.js';
 
 export const db = new DatabaseSync('motions.db', { readOnly: true });
 
 const styleRank = (group: string) => STYLE_GROUPS.indexOf(group);
+
+// The Format filter lists these debate styles; "Other" covers every other one
+// (Lincoln-Douglas, Public Forum, CanPar, ...).
+const FORMATS = ['BP', 'Asians/Australs', 'World Schools'];
+const OTHER_FORMAT = 'Other';
 
 // word_start(text, word): whether `word` appears at the start of a word in
 // `text`, ignoring case, so "hart" finds "Hart House" and "hartes" but not
@@ -96,15 +102,23 @@ function where(filters: Filters) {
 		clauses.push('major IS NOT NULL');
 	}
 	if (filters.type.length) {
-		const tags = [...new Set(filters.type.flatMap((t) => CATEGORY_TAGS.get(t) ?? [t]))];
+		const tags = [
+			...new Set(filters.type.flatMap((t) => PREVIEW_TAGS.get(t) ?? CATEGORY_TAGS.get(t) ?? [t]))
+		];
 		clauses.push(
 			`id IN (SELECT motion_id FROM motion_types WHERE type IN (${placeholders(tags)}))`
 		);
 		params.push(...tags);
 	}
 	if (filters.style.length) {
-		clauses.push(`style_group IN (${placeholders(filters.style)})`);
-		params.push(...filters.style);
+		const picked = filters.style.filter((f) => FORMATS.includes(f));
+		const either = [`style_group IN (${placeholders(picked)})`];
+		if (filters.style.includes(OTHER_FORMAT)) {
+			either.push(`style_group NOT IN (${placeholders(FORMATS)})`);
+		}
+		clauses.push(`(${either.join(' OR ')})`);
+		params.push(...picked);
+		if (filters.style.includes(OTHER_FORMAT)) params.push(...FORMATS);
 	}
 	if (filters.level.length) {
 		clauses.push(`level_group IN (${placeholders(filters.level)})`);
@@ -230,6 +244,26 @@ function typeOptions(categories: typeof CATEGORIES): FilterOption[] {
 	});
 }
 
+// PREVIEW (temporary): main genres, then the secondary ones with their group.
+function previewOptions(): FilterOption[] {
+	const count = (name: string) => {
+		const tags = [...new Set(PREVIEW_TAGS.get(name)!)];
+		return (
+			db
+				.prepare(
+					`SELECT COUNT(DISTINCT motion_id) AS n FROM motion_types WHERE type IN (${tags.map(() => '?').join(', ')})`
+				)
+				.get(...tags) as { n: number }
+		).n;
+	};
+	return [
+		...MAIN_GENRES.map(({ name }) => ({ value: name, count: count(name) })),
+		...SECONDARY_GENRES.flatMap(({ group, main, genres }) =>
+			genres.map((g) => ({ value: g.name, count: count(g.name), group, parent: g.main ?? main }))
+		)
+	];
+}
+
 let options: Record<FilterKey, FilterOption[]> | undefined;
 
 // Every option with its total motion count, most common first. Motion data
@@ -256,12 +290,21 @@ export function filterOptions(): Record<FilterKey, FilterOption[]> {
 				).n
 			}
 		],
-		type: typeOptions(CATEGORIES),
-		style: (
-			db
+		type: previewOptions(),
+		style: (() => {
+			const counts = db
 				.prepare('SELECT style_group AS value, COUNT(*) AS count FROM motions GROUP BY style_group')
-				.all() as { value: string; count: number }[]
-		).sort((a, b) => styleRank(a.value) - styleRank(b.value)),
+				.all() as { value: string; count: number }[];
+			const other = counts
+				.filter((c) => !FORMATS.includes(c.value))
+				.reduce((n, c) => n + c.count, 0);
+			return [
+				...counts
+					.filter((c) => FORMATS.includes(c.value))
+					.sort((a, b) => styleRank(a.value) - styleRank(b.value)),
+				{ value: OTHER_FORMAT, count: other }
+			];
+		})(),
 		level: db
 			.prepare(
 				// Only University, School and Mixed; "Other" is just motions with no level.
