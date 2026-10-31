@@ -8,8 +8,7 @@ import {
 	type Filters
 } from '#lib/filters.ts';
 import { notesEnabled } from '#lib/server/config.ts';
-import { CATEGORIES, CATEGORY_TAGS } from '#lib/server/motion-types.ts';
-import { MAIN_GENRES, PREVIEW_TAGS, SECONDARY_GENRES } from '#lib/server/genre-preview.ts';
+import { GENRE_TAGS, MAIN_GENRES, SECONDARY_GENRES } from '#lib/server/genres.ts';
 import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
 import { STYLE_GROUPS } from '../../../scripts/motions.js';
 
@@ -102,9 +101,7 @@ function where(filters: Filters) {
 		clauses.push('major IS NOT NULL');
 	}
 	if (filters.type.length) {
-		const tags = [
-			...new Set(filters.type.flatMap((t) => PREVIEW_TAGS.get(t) ?? CATEGORY_TAGS.get(t) ?? [t]))
-		];
+		const tags = [...new Set(filters.type.flatMap((t) => GENRE_TAGS.get(t) ?? [t]))];
 		clauses.push(
 			`id IN (SELECT motion_id FROM motion_types WHERE type IN (${placeholders(tags)}))`
 		);
@@ -228,26 +225,11 @@ export function randomMotion(filters: Filters): Motion | undefined {
 	return row && withExtras([row])[0];
 }
 
-// The motion type categories with how many motions each matches, in their
-// listed order. Categories no motion is tagged with yet still show, with a count of 0.
-function typeOptions(categories: typeof CATEGORIES): FilterOption[] {
-	return categories.map(({ name, children }) => {
-		const tags = CATEGORY_TAGS.get(name)!;
-		const { n } = db
-			.prepare(
-				`SELECT COUNT(DISTINCT motion_id) AS n FROM motion_types WHERE type IN (${tags.map(() => '?').join(', ')})`
-			)
-			.get(...tags) as { n: number };
-		const option: FilterOption = { value: name, count: n };
-		if (children) option.children = typeOptions(children);
-		return option;
-	});
-}
-
-// PREVIEW (temporary): main genres, then the secondary ones with their group.
-function previewOptions(): FilterOption[] {
+// Main genres, then the secondary ones with their group and the main genre
+// they show up under.
+function genreOptions(): FilterOption[] {
 	const count = (name: string) => {
-		const tags = [...new Set(PREVIEW_TAGS.get(name)!)];
+		const tags = [...new Set(GENRE_TAGS.get(name)!)];
 		return (
 			db
 				.prepare(
@@ -290,7 +272,7 @@ export function filterOptions(): Record<FilterKey, FilterOption[]> {
 				).n
 			}
 		],
-		type: previewOptions(),
+		type: genreOptions(),
 		style: (() => {
 			const counts = db
 				.prepare('SELECT style_group AS value, COUNT(*) AS count FROM motions GROUP BY style_group')

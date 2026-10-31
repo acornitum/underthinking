@@ -12,13 +12,10 @@ export type FilterKey = (typeof FILTERS)[number]['key'];
 // `q` is the search box text and `notes` the "With notes" sidebar link; both
 // are matched separately from the sidebar filter boxes.
 export type Filters = Record<FilterKey, string[]> & { q: string; notes: boolean };
-// `children` are nested options (motion type subcategories). Selecting a
-// parent matches all its children; selecting a child narrows to that child.
 export type FilterOption = {
 	value: string;
 	label?: string;
 	count: number;
-	children?: FilterOption[];
 	// Secondary motion genres name their group (e.g. "Regions"); main ones don't.
 	group?: string;
 	// The main genre a secondary one pops up under when that main is picked.
