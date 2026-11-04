@@ -55,15 +55,20 @@ const OUTROUND = [
 const OUTROUND_RE = new RegExp(`\\b(?:${OUTROUND.map(([p]) => p).join('|')})\\b`, 'i');
 
 // Tournaments with separate breaks (ESL, novice, ...) set each its own motions.
-const BREAK_RE = /\b(esl|efl|novice|junior)\b/i;
-export const breakOf = (text) => text.match(BREAK_RE)?.[1].toLowerCase() ?? 'open';
+const BREAK_RE = /\b(esl|efl|novice|junior|schools?|pro-?am|masters)\b/i;
+export const breakOf = (text) =>
+	text
+		.match(BREAK_RE)?.[1]
+		.toLowerCase()
+		.replace(/^school$/, 'schools')
+		.replace('-', '') ?? 'open';
 
 // A round's key within an edition: its break, and its number or outround
 // stage. The final and grand final are the same round.
 export function roundKey(name) {
 	const order = roundOrder(name);
 	const stage = order === 150 ? 140 : order;
-	if (stage === 0 || stage === 999 || (stage >= 100 && stage < 110)) return null;
+	if (stage === 0 || stage === 999) return null;
 	return `${breakOf(name)}|${stage}`;
 }
 
@@ -165,13 +170,46 @@ export async function listUploads(url) {
 		});
 }
 
-// data/videos.json: `videos` (matched, each with its channel) and `unmatched`.
+// A channel's name, its YouTube link and profile picture (176px square).
+export async function channelInfo(url) {
+	const { stdout } = await promisify(execFile)(
+		YTDLP(),
+		['--flat-playlist', '--playlist-items', '0', '-J', url],
+		{ encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }
+	);
+	const info = JSON.parse(stdout);
+	const pictures = info.thumbnails ?? [];
+	const picture =
+		pictures.find((t) => t.width && t.width === t.height) ??
+		pictures.find((t) => t.id === 'avatar_uncropped');
+	return {
+		url,
+		name: info.channel || info.uploader || url,
+		link: info.uploader_url || info.channel_url || url.replace(/\/videos$/, ''),
+		avatar: picture ? picture.url.replace(/=s\d+/, '=s176') : null
+	};
+}
+
+// data/videos.json: `videos` (matched, each with its channel), `unmatched`,
+// and `channels` (each channel's name and picture, see channelInfo).
 export function readVideos() {
 	try {
-		return JSON.parse(fs.readFileSync(VIDEOS_PATH, 'utf8'));
+		return { channels: [], ...JSON.parse(fs.readFileSync(VIDEOS_PATH, 'utf8')) };
 	} catch {
-		return { videos: [], unmatched: [] };
+		return { videos: [], unmatched: [], channels: [] };
 	}
+}
+
+// Add or replace channels' names and pictures.
+export function writeChannels(infos) {
+	const current = readVideos();
+	const urls = infos.map((c) => c.url);
+	const out = {
+		...current,
+		channels: [...current.channels.filter((c) => !urls.includes(c.url)), ...infos]
+	};
+	fs.writeFileSync(VIDEOS_PATH, JSON.stringify(out, null, '\t') + '\n');
+	return out;
 }
 
 // Replace the given channels' videos with `videos` (and `unmatched`).
@@ -180,7 +218,8 @@ export function writeVideos(channels, videos, unmatched = []) {
 	const others = (list) => (list ?? []).filter((v) => v.channel && !channels.includes(v.channel));
 	const out = {
 		videos: [...others(current.videos), ...videos],
-		unmatched: [...others(current.unmatched), ...unmatched]
+		unmatched: [...others(current.unmatched), ...unmatched],
+		channels: current.channels
 	};
 	fs.writeFileSync(VIDEOS_PATH, JSON.stringify(out, null, '\t') + '\n');
 	return out;
@@ -247,6 +286,10 @@ async function update() {
 		videos,
 		unmatched
 	);
+	// Every channel's name and picture, which can change.
+	const urls = [...new Set(readVideos().videos.map((v) => v.channel))].filter(Boolean);
+	writeChannels(await Promise.all(urls.map(channelInfo)));
+
 	console.log(
 		`Matched ${videos.length} videos; ${unmatched.length} unmatched (see ${VIDEOS_PATH}).`
 	);

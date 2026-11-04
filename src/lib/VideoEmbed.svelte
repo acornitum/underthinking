@@ -218,10 +218,23 @@
 		<span class="shrink-0 whitespace-nowrap text-card-details">{m.round}</span>
 	</p>
 
-	{#if video.views !== null || video.published}
+	{#if video.channelName || video.views !== null || video.published}
 		<p class="flex items-center gap-1 text-[0.6875rem] text-muted">
+			{#if video.channelName}
+				<a
+					href={video.channelLink}
+					target="_blank"
+					rel="noreferrer"
+					class="truncate hover:text-ink hover:underline"
+					title="{video.channelName} on YouTube">{video.channelName}</a
+				>
+				<span aria-hidden="true">·</span>
+			{/if}
 			{#if video.views !== null}
-				<span class="flex items-center gap-0.5" title="{video.views.toLocaleString()} views">
+				<span
+					class="flex shrink-0 items-center gap-0.5"
+					title="{video.views.toLocaleString()} views"
+				>
 					<svg
 						class="size-3"
 						viewBox="0 0 24 24"
@@ -238,7 +251,7 @@
 				</span>
 			{/if}
 			{#if video.views !== null && video.published}<span aria-hidden="true">·</span>{/if}
-			{#if video.published}<span>{ago(video.published)}</span>{/if}
+			{#if video.published}<span class="shrink-0">{ago(video.published)}</span>{/if}
 		</p>
 	{/if}
 

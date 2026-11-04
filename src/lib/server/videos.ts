@@ -7,6 +7,10 @@ import data from '../../../data/videos.json';
 export type Video = {
 	id: string;
 	title: string;
+	// The channel's video list URL, and its name and YouTube page (see Channel).
+	channel: string;
+	channelName: string | null;
+	channelLink: string | null;
 	label: string;
 	views: number | null;
 	published: string | null;
@@ -23,6 +27,7 @@ let byRound: Map<string, Round[]> | undefined;
 function rounds(): Map<string, Round[]> {
 	if (byRound) return byRound;
 	byRound = new Map();
+	const channelsByUrl = new Map(data.channels.map((c) => [c.url, c]));
 	const collator = new Intl.Collator('en', { numeric: true });
 	for (const v of data.videos) {
 		const key = `${v.tournament_name}|${v.round}`;
@@ -33,6 +38,9 @@ function rounds(): Map<string, Round[]> {
 		round.videos.push({
 			id: v.id,
 			title: v.title,
+			channel: v.channel,
+			channelName: channelsByUrl.get(v.channel)?.name ?? null,
+			channelLink: channelsByUrl.get(v.channel)?.link ?? null,
 			label: v.label,
 			views: v.views ?? null,
 			published: v.published ?? null,
@@ -56,7 +64,17 @@ function sameMotion(a: string, b: string) {
 	return shared / Math.min(x.size, y.size) >= 0.8;
 }
 
-export function videosFor(m: { tournament_name: string; round: string; motion: string }): Video[] {
+// Recordings of school tournaments aren't shown. Mixed ones (university
+// tournaments that also had a schools break) are.
+const HIDDEN_LEVELS = new Set(['School']);
+
+export function videosFor(m: {
+	tournament_name: string;
+	round: string;
+	motion: string;
+	level_group: string;
+}): Video[] {
+	if (HIDDEN_LEVELS.has(m.level_group)) return [];
 	const list = rounds().get(`${m.tournament_name}|${m.round}`);
 	return list?.find((r) => r.motion === m.motion || sameMotion(r.motion, m.motion))?.videos ?? [];
 }
@@ -64,4 +82,11 @@ export function videosFor(m: { tournament_name: string; round: string; motion: s
 // Each matched round's tournament, round and motion, as in the CSV.
 export function recordedRounds(): Round[] {
 	return [...rounds().values()].flat();
+}
+
+// A channel videos were scraped from: its name, YouTube link and picture.
+export type Channel = { url: string; name: string; link: string; avatar: string | null };
+
+export function channels(): Channel[] {
+	return data.channels;
 }

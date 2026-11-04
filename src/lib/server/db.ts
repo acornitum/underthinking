@@ -11,7 +11,13 @@ import {
 import { notesEnabled } from '#lib/server/config.ts';
 import { GENRE_TAGS, MAIN_GENRES, SECONDARY_GENRES } from '#lib/server/genres.ts';
 import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
-import { recordedRounds, videosFor, type Video } from '#lib/server/videos.ts';
+import {
+	channels,
+	recordedRounds,
+	videosFor,
+	type Channel,
+	type Video
+} from '#lib/server/videos.ts';
 import { STYLE_GROUPS } from '../../../scripts/motions.js';
 
 export const db = new DatabaseSync('motions.db', { readOnly: true });
@@ -197,10 +203,10 @@ function recordedIds() {
 	const all = rounds.flatMap((r) =>
 		(
 			prepare(
-				'SELECT id, tournament_name, round, motion FROM motions WHERE tournament_name = ? AND round = ?'
+				'SELECT id, tournament_name, round, motion, level_group FROM motions WHERE tournament_name = ? AND round = ?'
 			).all(r.tournament_name, r.round) as Pick<
 				MotionRow,
-				'id' | 'tournament_name' | 'round' | 'motion'
+				'id' | 'tournament_name' | 'round' | 'motion' | 'level_group'
 			>[]
 		)
 			.filter((row) => videosFor(row).length)
@@ -224,7 +230,30 @@ export function recordedMotions(filters: Filters): Motion[] {
 			`SELECT * FROM motions ${w.sql ? `${w.sql} AND ${idList}` : `WHERE ${idList}`}
 			ORDER BY sort_date DESC, tournament_order, round_order, id`
 		).all(...w.params, ...ids) as MotionRow[]
-	);
+	).filter((m) => m.videos?.length); // not school tournaments (see videosFor)
+}
+
+let channelOrder: Channel[] | undefined;
+
+// The channels with recorded rounds, the one with the newest recorded
+// tournament first (as recordedMotions orders them).
+export function recordedChannels(): Channel[] {
+	if (channelOrder) return channelOrder;
+	const motions = recordedMotions({
+		q: '',
+		tournament: [],
+		type: [],
+		style: [],
+		level: [],
+		notes: false
+	});
+	const newest = (c: Channel) => {
+		const i = motions.findIndex((m) => m.videos?.some((v) => v.channel === c.url));
+		return i === -1 ? Infinity : i;
+	};
+	return (channelOrder = channels()
+		.filter((c) => newest(c) !== Infinity)
+		.sort((a, b) => newest(a) - newest(b)));
 }
 
 // The id of the motion set at this tournament and round.
