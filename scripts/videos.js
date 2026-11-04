@@ -135,29 +135,53 @@ function motionsByRound(db, tournaments) {
 	return byRound;
 }
 
-// Every upload on a channel ("…/@name/videos"): its id, title, view count,
-// upload date (YYYY-MM-DD) and length in seconds. The date is estimated from
-// YouTube's "2 years ago", which is all the channel's video list says; the
-// exact one would mean opening each video. Missing numbers are null.
+// One tab of a channel ("…/videos" or "…/streams"), as tab-separated lines.
+// A channel that has never streamed has no streams tab (and one that only
+// streams has no videos tab): that's no videos.
+async function listTab(url) {
+	try {
+		const { stdout } = await promisify(execFile)(
+			YTDLP(),
+			[
+				'--flat-playlist',
+				'--extractor-args',
+				'youtubetab:approximate_date',
+				'--print',
+				'%(id)s\t%(live_status)s\t%(view_count)s\t%(upload_date)s\t%(duration)s\t%(title)s',
+				url
+			],
+			{ encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }
+		);
+		return stdout.split('\n').filter(Boolean);
+	} catch (e) {
+		if (/does not have an? \w+ tab/.test(String(e.stderr ?? e))) {
+			return [];
+		}
+		throw e;
+	}
+}
+
+// Every upload on a channel ("…/@name/videos"), and its past livestreams (the
+// Live tab, which many tournaments record rounds on): its id, title, view
+// count, upload date (YYYY-MM-DD) and length in seconds. The date is estimated
+// from YouTube's "2 years ago", which is all the channel's video list says; the
+// exact one would mean opening each video. Missing numbers are null. Streams
+// that are live now or scheduled are left out until they've finished.
 export async function listUploads(url) {
-	const { stdout } = await promisify(execFile)(
-		YTDLP(),
-		[
-			'--flat-playlist',
-			'--extractor-args',
-			'youtubetab:approximate_date',
-			'--print',
-			'%(id)s\t%(view_count)s\t%(upload_date)s\t%(duration)s\t%(title)s',
-			url
-		],
-		{ encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }
-	);
+	const tabs = [url];
+	if (/\/videos$/.test(url)) tabs.push(url.replace(/\/videos$/, '/streams'));
+	const lines = (await Promise.all(tabs.map(listTab))).flat();
+	if (!lines.length) await listTab(url.replace(/\/(videos|streams)$/, '')); // a bad link throws
 	const number = (text) => (/^\d+(\.\d+)?$/.test(text) ? Math.round(Number(text)) : null);
-	return stdout
-		.split('\n')
-		.filter(Boolean)
-		.map((line) => {
-			const [id, views, date, duration, ...title] = line.split('\t');
+	const seen = new Set();
+	return lines
+		.map((line) => line.split('\t'))
+		.filter(([id, live]) => {
+			if (seen.has(id) || live === 'is_live' || live === 'is_upcoming') return false;
+			seen.add(id);
+			return true;
+		})
+		.map(([id, , views, date, duration, ...title]) => {
 			return {
 				id,
 				title: title.join('\t').trim(),
