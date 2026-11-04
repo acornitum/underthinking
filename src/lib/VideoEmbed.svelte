@@ -55,6 +55,17 @@
 		);
 	}
 
+	// A click on the card's empty parts (its padding, the tournament line's
+	// gaps, the stats) opens the video on YouTube; the thumbnail, the motion,
+	// links and buttons keep their own clicks. Keyboard users have the link
+	// on the thumbnail.
+	function openOnYouTube(e: MouseEvent) {
+		const target = e.target as Element;
+		if (target.closest('a, button, iframe, [data-title]')) return;
+		if (window.getSelection()?.toString()) return; // selecting text
+		window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank', 'noreferrer');
+	}
+
 	function onmessage(e: MessageEvent) {
 		if (e.origin !== PLAYER_ORIGIN || !player || e.source !== player.contentWindow) return;
 		let data: { event?: string; info?: unknown };
@@ -75,7 +86,11 @@
 
 <!-- Hovering a card tints a rounded box around it, as on YouTube. The negative
      margin lets that padding spill into the grid gap, so cards stay in place. -->
-<article class="group/card -m-2 rounded-xl p-2 transition-colors hover:bg-line/50">
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+<article
+	class="group/card -m-2 cursor-pointer rounded-xl p-2 transition-colors hover:bg-line/50"
+	onclick={openOnYouTube}
+>
 	<!-- Stacked edges above the thumbnail mark a card with several videos; the
 	     same space is kept on single ones so the cards in a row line up. -->
 	<div class="flex h-2 flex-col justify-end gap-0.5" aria-hidden="true">
@@ -111,9 +126,9 @@
 					loading="lazy"
 					class="m-0 size-full object-cover"
 				/>
-				<!-- Dims the thumbnail until the thumbnail or the motion is hovered. -->
+				<!-- Dims the thumbnail until the card is hovered. -->
 				<span
-					class="pointer-events-none absolute inset-0 bg-black/25 transition-opacity group-hover:opacity-0 group-has-[[data-title]:hover]/card:opacity-0"
+					class="pointer-events-none absolute inset-0 bg-black/25 transition-opacity group-hover/card:opacity-0"
 					aria-hidden="true"
 				></span>
 				<span
@@ -167,9 +182,7 @@
 		</a>
 	</div>
 
-	<!-- The title's popup sits over the cards below; its top padding bridges
-	     the gap so the mouse can move onto it (e.g. to scroll a long infoslide). -->
-	<div class="group/title relative mt-2" data-title>
+	<div class="group/title relative mt-2 cursor-auto" data-title>
 		<h2 class="line-clamp-3 text-[0.8125rem] leading-snug font-medium text-motion">
 			{m.motion}
 			{#if m.infoslide}
@@ -189,15 +202,19 @@
 				</svg>
 			{/if}
 		</h2>
-		<div class="absolute inset-x-0 top-full z-20 hidden pt-1 group-hover/title:block">
-			<div
-				class="max-h-96 overflow-y-auto rounded-lg border border-line bg-surface p-3 text-sm shadow-lg"
-			>
-				<p class="font-medium text-motion">{m.motion}</p>
-				{#if m.infoslide}
-					<p class="mt-2 wrap-break-word whitespace-pre-line text-infoslide">{m.infoslide}</p>
-				{/if}
-			</div>
+		<!-- On hover the title opens out in place: the full motion, set exactly
+		     where the cut-off one was, then the infoslide, over the cards below. -->
+		<div
+			class="absolute -inset-x-2 -top-2 z-20 hidden max-h-96 overflow-y-auto rounded-lg border border-line bg-surface p-2 pt-[calc(0.5rem-1px)] shadow-lg group-hover/title:block"
+		>
+			<p class="-mx-px text-[0.8125rem] leading-snug font-medium text-motion">{m.motion}</p>
+			{#if m.infoslide}
+				<p
+					class="-mx-px mt-2 border-t border-line pt-2 text-xs leading-relaxed wrap-break-word whitespace-pre-line text-infoslide"
+				>
+					{m.infoslide}
+				</p>
+			{/if}
 		</div>
 	</div>
 
