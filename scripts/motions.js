@@ -59,7 +59,7 @@ const OUTROUNDS = [
 const UNKNOWN_ROUND = 999;
 const DIGITS = unicodeRegex(String.raw`\d+`);
 
-function roundOrder(name) {
+export function roundOrder(name) {
 	const s = name.toLowerCase();
 	for (const [pattern, rank] of OUTROUNDS) if (pattern.test(s)) return rank;
 	if (s.includes('practice')) return 0;

@@ -1,176 +1,387 @@
 {
 	"videos": [
 		{
+			"id": "o6HTyWH5YPw",
+			"title": "HWS Round Robin 2026  Final   SD 480p",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Grand Final",
+			"motion": "This house believes that depictions of Satan as tragic are more socially valuable than depictions of him as purely evil"
+		},
+		{
+			"id": "vCMJD1A1_Zc",
+			"title": "HWS Round Robin 2026- Round 5, Room 303",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 303",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 5",
+			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies"
+		},
+		{
+			"id": "fv1v0oBQyt4",
+			"title": "HWS Round Robin 2026- Round 5, Room 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 103",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 5",
+			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies"
+		},
+		{
+			"id": "baZJzYEDPQY",
+			"title": "HWS Round Robin 2026- Round 5, Room 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 204",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 5",
+			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies"
+		},
+		{
+			"id": "Y-9cdha9MhQ",
+			"title": "HWS Round Robin 2026- Round 5, Room 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 201",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 5",
+			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies"
+		},
+		{
+			"id": "YZTQWFPzk7A",
+			"title": "HWS Round Robin 2026- Round 4, Room 303",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 303",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 4",
+			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today"
+		},
+		{
+			"id": "f6ylaMSjzVA",
+			"title": "HWS Round Robin 2026- Round 4, Room 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 204",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 4",
+			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today"
+		},
+		{
+			"id": "AZRgKXoevVo",
+			"title": "HWS Round Robin 2026-  Round 4, Room 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 201",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 4",
+			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today"
+		},
+		{
+			"id": "UIiWSbfMxwQ",
+			"title": "2026 HWS Round Robin- Round 4, Room 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 103",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 4",
+			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today"
+		},
+		{
+			"id": "TWTPBzinyCU",
+			"title": "2026 HWS Round Robin  Round 3, Room 204   SD 480p",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 204",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 3",
+			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle"
+		},
+		{
+			"id": "04-k1Wy7Jqo",
+			"title": "2026 HWS Round Robin  Round 3, Room 303",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 303",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 3",
+			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle"
+		},
+		{
+			"id": "TAdHKZu-JPk",
+			"title": "2026 HWS Round Robin- Round 3, Room 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 201",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 3",
+			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle"
+		},
+		{
+			"id": "xnQSVDR86Bg",
+			"title": "2026 HWS Round Robin- Round 3, Room 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 103",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 3",
+			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle"
+		},
+		{
+			"id": "jF5BNRkaeUo",
+			"title": "2026 HWS Open Round Robin- Round 2, Stern 303",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 303",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 2",
+			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation"
+		},
+		{
+			"id": "mqC8jme3Lgg",
+			"title": "2026 HWS Open Round Robin- Round 2, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 204",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 2",
+			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation"
+		},
+		{
+			"id": "aSkwlXAlDYY",
+			"title": "2026 HWS Open Round Robin- Round 2, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 103",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 2",
+			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation"
+		},
+		{
+			"id": "02jRiP3u4R4",
+			"title": "2026 HWS Open Round Robin- Round 2, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 201",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 2",
+			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation"
+		},
+		{
+			"id": "Q2yzLgahFwI",
+			"title": "2026 HWS Open Round Robin- Round 1, Stern 303",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 303",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 1",
+			"motion": "This house regrets the rise of abstract (i.e., non-representational) art"
+		},
+		{
+			"id": "vZJRxoOBlvM",
+			"title": "2026 HWS Open Round Robin- Round 1, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 103",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 1",
+			"motion": "This house regrets the rise of abstract (i.e., non-representational) art"
+		},
+		{
+			"id": "L80kUC3Ojp4",
+			"title": "2026 HWS Open Round Robin- Round 1, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 204",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 1",
+			"motion": "This house regrets the rise of abstract (i.e., non-representational) art"
+		},
+		{
+			"id": "JhOLyJnxlbo",
+			"title": "2026 HWS Open Round Robin- Round 1, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Stern 201",
+			"tournament_name": "HWS Round Robin 2026",
+			"round": "Round 1",
+			"motion": "This house regrets the rise of abstract (i.e., non-representational) art"
+		},
+		{
 			"id": "pqkZPGyjIEQ",
 			"title": "2025 HWS Open Round Robin- Round 5, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 5-A",
+			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion)."
 		},
 		{
 			"id": "T5VgMkiIUB4",
 			"title": "2025 HWS Open Round Robin- Round 5, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 201",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 5-A",
+			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion)."
 		},
 		{
 			"id": "a4JEGgKbN5k",
 			"title": "2025 HWS Open Round Robin- Round 5, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 5-A",
+			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion)."
 		},
 		{
 			"id": "vI-i89HAkbw",
 			"title": "2025 HWS Open Round Robin- Round 5, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 5-A",
+			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion)."
 		},
 		{
 			"id": "bDqucPwoHdY",
 			"title": "2025 HWS Open Round Robin- Round 4, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 4-A",
+			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies)."
 		},
 		{
 			"id": "883beB3Wj9I",
 			"title": "2025 HWS Open Round Robin- Round 4, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 4-A",
+			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies)."
 		},
 		{
 			"id": "Tmkmx9os2Mg",
 			"title": "2025 HWS Open Round Robin- Round 4, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 201",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 4-A",
+			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies)."
 		},
 		{
 			"id": "6qXRiu8nQ5w",
 			"title": "2025 HWS Open Round Robin- Round 5, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 5-A",
+			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion)."
 		},
 		{
 			"id": "_Tut-SqKh_4",
 			"title": "2025 HWS Open Round Robin- Round 4, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 4-A",
+			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies)."
 		},
 		{
 			"id": "kwpOOH9EPa4",
 			"title": "2025 HWS Open Round Robin- Round 3, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 201",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 3-A",
+			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare."
 		},
 		{
 			"id": "RFtKUVrrAa0",
 			"title": "2025 HWS Open Round Robin- Round 3, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 3-A",
+			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare."
 		},
 		{
 			"id": "pU6CTDx15to",
 			"title": "2025 HWS Open Round Robin- Round 3, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 3-A",
+			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare."
 		},
 		{
 			"id": "BCsxyxxFeuk",
 			"title": "2025 HWS Open Round Robin- Round 3, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 3-A",
+			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare."
 		},
 		{
 			"id": "HOhHc-HaGEg",
 			"title": "2025 HWS Open Round Robin- Round 2, Stern 204",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 2-A",
+			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League."
 		},
 		{
 			"id": "76CI4RvUz1I",
 			"title": "2025 HWS Open Round Robin- Round 2, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 2-A",
+			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League."
 		},
 		{
 			"id": "J8qhbDeFCUg",
 			"title": "2025 HWS Open Round Robin- Round 2, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 201",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 2-A",
+			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League."
 		},
 		{
 			"id": "5s0SAYmBtXw",
 			"title": "2025 HWS Open Round Robin- Round 2, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 2-A",
+			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League."
 		},
 		{
 			"id": "VGbYzMBGXhA",
 			"title": "2025 HWS Open Round Robin  Round 1, Stern 304",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 304",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 1-B",
+			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms."
 		},
 		{
 			"id": "ofFoNOJ3bec",
 			"title": "2025 HWS Open Round Robin  Round 1, Stern 204   SD 480p",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 1-B",
+			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms."
 		},
 		{
 			"id": "ASIUeZscT6o",
 			"title": "2025 HWS Open Round Robin  Round 1, Stern 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 201",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 1-B",
+			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms."
 		},
 		{
 			"id": "9u95gnVB538",
 			"title": "2025 HWS Open Round Robin- Round 1, Stern 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103",
 			"tournament_name": "HWS Round Robin 2025",
-			"round": "Round 1-B",
+			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms."
 		},
 		{
 			"id": "vxpftBJBrCg",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 103(Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103 Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -179,6 +390,7 @@
 		{
 			"id": "HY4JBr4O3mo",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 103(Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 103 Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -187,6 +399,7 @@
 		{
 			"id": "Q_GqIiquU34",
 			"title": "2024 HWS Open Round Robin - Round 4, Sanford(Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Sanford Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -195,6 +408,7 @@
 		{
 			"id": "ojODytTXREU",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 204(Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204 Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -203,6 +417,7 @@
 		{
 			"id": "GEtkHQq-nmU",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 117(Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 117 Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -211,6 +426,7 @@
 		{
 			"id": "0LJzlnq8I9w",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 204(Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 204 Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -219,6 +435,7 @@
 		{
 			"id": "SHA9alIPt88",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 203(Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 203 Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -227,6 +444,7 @@
 		{
 			"id": "0de66Wp9nGc",
 			"title": "2024 HWS Open Round Robin - Round 4, Sanford(Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Sanford Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -235,6 +453,7 @@
 		{
 			"id": "z7KsUiatpa4",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 203(Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 203 Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -243,6 +462,7 @@
 		{
 			"id": "F5-AqY2gG6A",
 			"title": "2024 HWS Open Round Robin - Round 4, Stern 117(Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern 117 Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
@@ -251,6 +471,7 @@
 		{
 			"id": "DD6UYwTKsJ0",
 			"title": "2024 HWS Open Round Robin - Round 8, Stern (Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -259,6 +480,7 @@
 		{
 			"id": "S92WiVJKu_I",
 			"title": "2024 HWS Open Round Robin - Round 8, Stern (Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -267,6 +489,7 @@
 		{
 			"id": "zfpAL0SNveE",
 			"title": "2024 HWS Open Round Robin - Round 8, Stern (Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -275,6 +498,7 @@
 		{
 			"id": "WJ3JwcsSPU8",
 			"title": "2024 HWS Open Round Robin - Round 8, Stern (Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Stern Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -283,6 +507,7 @@
 		{
 			"id": "i1czs6WA4gQ",
 			"title": "2024 HWS Open Round Robin - Round 8, Geneva Room (Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Geneva Room Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -291,6 +516,7 @@
 		{
 			"id": "OtHV8YAoi3I",
 			"title": "2024 HWS Open Round Robin - Round 8, Geneva Room (Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Geneva Room Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -299,6 +525,7 @@
 		{
 			"id": "xU128nOEDQs",
 			"title": "2024 HWS Open Round Robin - Round 8, Sanford Room (Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Sanford Room Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -307,6 +534,7 @@
 		{
 			"id": "cTleKE7Mtg0",
 			"title": "2024 HWS Open Round Robin - Grand Final (Part 1)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Part 1",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Grand Final",
@@ -315,6 +543,7 @@
 		{
 			"id": "jAWjPSYIA2I",
 			"title": "2024 HWS Open Round Robin - Round 8, Sanford Room (Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Sanford Room Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
@@ -323,6 +552,7 @@
 		{
 			"id": "6xXRfen9XJI",
 			"title": "2024 HWS Open Round Robin - Grand Final (Part 2)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Part 2",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Grand Final",
@@ -331,6 +561,7 @@
 		{
 			"id": "rn4fiCOuqHA",
 			"title": "2024 HWS Open Round Robin - Round 3, Room 217",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 217",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 3",
@@ -339,6 +570,7 @@
 		{
 			"id": "_LzU6daMy_o",
 			"title": "2024 HWS Open Round Robin - Round 3, Room Sanford",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room Sanford",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 3",
@@ -347,6 +579,7 @@
 		{
 			"id": "0DPdnVy8WBk",
 			"title": "2024 HWS Open Round Robin - Round 2, Room 103",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 103",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 2",
@@ -355,6 +588,7 @@
 		{
 			"id": "SBgSX7F1O2A",
 			"title": "2024 HWS Open Round Robin - Round 2, Room 117",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 117",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 2",
@@ -363,6 +597,7 @@
 		{
 			"id": "WClBw8PGYP4",
 			"title": "2024 HWS Open Round Robin - Round 1, Room Sanford",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room Sanford",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 1",
@@ -371,6 +606,7 @@
 		{
 			"id": "FWvognsZ4Ok",
 			"title": "2024 HWS Open Round Robin - Round 1, Room 201",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 201",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 1",
@@ -379,6 +615,7 @@
 		{
 			"id": "NNAUTOx2Frc",
 			"title": "2023 HWS Round Robin - Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS RR 2023",
 			"round": "Grand Final",
@@ -387,6 +624,7 @@
 		{
 			"id": "A6N9WS68ark",
 			"title": "2023 HWS Round Robin - Round 5, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS RR 2023",
 			"round": "5",
@@ -395,6 +633,7 @@
 		{
 			"id": "U6C4rJEaZfU",
 			"title": "2023 HWS Round Robin - Round 5, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2023",
 			"round": "5",
@@ -403,6 +642,7 @@
 		{
 			"id": "kp_gZqduGwg",
 			"title": "2023 HWS Round Robin - Round 5, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2023",
 			"round": "5",
@@ -411,6 +651,7 @@
 		{
 			"id": "f5zsFq9lIV4",
 			"title": "2023 HWS Round Robin - Round 4, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2023",
 			"round": "4",
@@ -419,6 +660,7 @@
 		{
 			"id": "48vQ0NId-4A",
 			"title": "2023 HWS Round Robin - Round 4, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2023",
 			"round": "4",
@@ -427,6 +669,7 @@
 		{
 			"id": "JpN5vdLsgLc",
 			"title": "2023 HWS Round Robin - Round 4, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2023",
 			"round": "4",
@@ -435,6 +678,7 @@
 		{
 			"id": "DjG7hV_pQ90",
 			"title": "2023 HWS Round Robin - Round 3, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2023",
 			"round": "3",
@@ -443,6 +687,7 @@
 		{
 			"id": "i9FVsEWH5bU",
 			"title": "2023 HWS Round Robin - Round 3, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2023",
 			"round": "3",
@@ -451,6 +696,7 @@
 		{
 			"id": "YIBjR17WBLs",
 			"title": "2023 HWS Round Robin - Round 2, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2023",
 			"round": "2",
@@ -459,6 +705,7 @@
 		{
 			"id": "CN6NsS8qPFs",
 			"title": "2023 HWS Round Robin - Round 1, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2023",
 			"round": "1",
@@ -467,6 +714,7 @@
 		{
 			"id": "i8lFyT3TXfg",
 			"title": "2023 HWS Round Robin - Round 1, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2023",
 			"round": "1",
@@ -475,6 +723,7 @@
 		{
 			"id": "j9rPPfQgPsQ",
 			"title": "2022 HWS Round Robin - Round 2, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 2",
@@ -483,6 +732,7 @@
 		{
 			"id": "vukchxzZWx8",
 			"title": "2022 HWS Round Robin - Round 1, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 1",
@@ -491,6 +741,7 @@
 		{
 			"id": "XtEsL1slFEg",
 			"title": "2022 HWS Round Robin - Round 2, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 2",
@@ -499,6 +750,7 @@
 		{
 			"id": "BSHwRNrawNU",
 			"title": "2022 HWS Round Robin - Round 1, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 1",
@@ -507,6 +759,7 @@
 		{
 			"id": "NIBop6YDA3Y",
 			"title": "2022 HWS Round Robin - Round 5, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 5",
@@ -515,6 +768,7 @@
 		{
 			"id": "vvIMztz7HAk",
 			"title": "2022 HWS Round Robin - Round 2, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 2",
@@ -523,6 +777,7 @@
 		{
 			"id": "PePWTpAfhoQ",
 			"title": "2022 HWS Round Robin - Round 1, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2022",
 			"round": "Round 1",
@@ -531,6 +786,7 @@
 		{
 			"id": "XGSwBfDLMlM",
 			"title": "2021 HWS Round Robin - Round 4, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
@@ -539,6 +795,7 @@
 		{
 			"id": "Dbm-l-Hq9f4",
 			"title": "2021 HWS Round Robin - Round 4, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
@@ -547,6 +804,7 @@
 		{
 			"id": "dmC_ORsCs8o",
 			"title": "2021 HWS Round Robin - Round 4, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
@@ -555,6 +813,7 @@
 		{
 			"id": "E7aD8iSx1CM",
 			"title": "2021 HWS Round Robin - Round 4, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
@@ -563,6 +822,7 @@
 		{
 			"id": "9gpenf_A06g",
 			"title": "2021 HWS Round Robin - Round 3, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 3",
@@ -571,6 +831,7 @@
 		{
 			"id": "0PoDsMMH1k4",
 			"title": "2021 HWS Round Robin - Round 3, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 3",
@@ -579,6 +840,7 @@
 		{
 			"id": "3wUvheAZseU",
 			"title": "2021 HWS Round Robin - Round 3, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 3",
@@ -587,6 +849,7 @@
 		{
 			"id": "V6aL2dk5dMQ",
 			"title": "2021 HWS Round Robin - Round 2, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 2",
@@ -595,6 +858,7 @@
 		{
 			"id": "4LJmw68bhSY",
 			"title": "2021 HWS Round Robin - Round 2, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 2",
@@ -603,6 +867,7 @@
 		{
 			"id": "twUEcyJo6ng",
 			"title": "2021 HWS Round Robin - Round 2, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 2",
@@ -611,6 +876,7 @@
 		{
 			"id": "u8b2hK_iVzQ",
 			"title": "2021 HWS Round Robin - Round 1, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 1",
@@ -619,6 +885,7 @@
 		{
 			"id": "ap8Pg8v6KWQ",
 			"title": "2021 HWS Round Robin - Round 1, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 1",
@@ -627,6 +894,7 @@
 		{
 			"id": "FZb8_qcnRzs",
 			"title": "2021 HWS Round Robin - Round 1, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 1",
@@ -635,6 +903,7 @@
 		{
 			"id": "l8PNvJ9TUlE",
 			"title": "2021 HWS Round Robin - Round 1, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 1",
@@ -643,6 +912,7 @@
 		{
 			"id": "LgkOwi9qHsM",
 			"title": "2020 HWS Round Robin -- Round 5, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 5",
@@ -651,6 +921,7 @@
 		{
 			"id": "UwGN0iWZwrM",
 			"title": "2020 HWS Round Robin -- Round 5, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 5",
@@ -659,6 +930,7 @@
 		{
 			"id": "XjhNnR2bid4",
 			"title": "2020 HWS Round Robin -- Round 4, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 4",
@@ -667,6 +939,7 @@
 		{
 			"id": "ZoIh-tKKI4Q",
 			"title": "2020 HWS Round Robin -- Round 3, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 3",
@@ -675,6 +948,7 @@
 		{
 			"id": "aBuEj3he0gQ",
 			"title": "2020 HWS Round Robin - Round 2, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 2",
@@ -683,6 +957,7 @@
 		{
 			"id": "dWO9s16SKsk",
 			"title": "2020 HWS Round Robin -- Round 2, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 2",
@@ -691,6 +966,7 @@
 		{
 			"id": "E4V1rjFxllY",
 			"title": "2020 HWS Round Robin -- Round 1, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 1",
@@ -699,6 +975,7 @@
 		{
 			"id": "j1WpJz2xDhw",
 			"title": "2020 HWS Round Robin -- Round 1, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 1",
@@ -707,6 +984,7 @@
 		{
 			"id": "_kCwXt7A8kU",
 			"title": "2020 HWS Round Robin -- Round 1, Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 1",
@@ -715,6 +993,7 @@
 		{
 			"id": "kJFdtN-8nN4",
 			"title": "2020 HWS Round Robin Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS RR 2020",
 			"round": "Open Finals",
@@ -723,6 +1002,7 @@
 		{
 			"id": "RupsU0wfzok",
 			"title": "2018 HWS Round Robin Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "Open Final",
@@ -731,6 +1011,7 @@
 		{
 			"id": "0fu-I19gbcQ",
 			"title": "2019 Round Robin -- Round 4, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "4",
@@ -739,6 +1020,7 @@
 		{
 			"id": "qIsDkxJyDJc",
 			"title": "2019 Round Robin -- Round 5, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "5",
@@ -747,6 +1029,7 @@
 		{
 			"id": "z53iHOKCmQw",
 			"title": "2019 Round Robin -- Round 3, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "3",
@@ -755,6 +1038,7 @@
 		{
 			"id": "UFlmwBBL0Qg",
 			"title": "2019 Round Robin -- Round 4, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "4",
@@ -763,6 +1047,7 @@
 		{
 			"id": "PGqo08LIjT0",
 			"title": "2019 Round Robin -- Round 2, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "2",
@@ -771,6 +1056,7 @@
 		{
 			"id": "GyepTI8cnPs",
 			"title": "2019 Round Robin -- Round 1, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "1",
@@ -779,6 +1065,7 @@
 		{
 			"id": "lvEUrYRh2B4",
 			"title": "2019 Round Robin -- Round 5, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "5",
@@ -787,6 +1074,7 @@
 		{
 			"id": "8F9glAJW6vg",
 			"title": "2019 Round Robin -- Round 4, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "4",
@@ -795,6 +1083,7 @@
 		{
 			"id": "0yNHhc_0s6U",
 			"title": "2019 Round Robin -- Round 3, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "3",
@@ -803,6 +1092,7 @@
 		{
 			"id": "f6FsWFEgVg8",
 			"title": "2019 Round Robin -- Round 2, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "2",
@@ -811,6 +1101,7 @@
 		{
 			"id": "ZGevc53wU6E",
 			"title": "2019 Round Robin -- Round 1, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "1",
@@ -819,6 +1110,7 @@
 		{
 			"id": "dkOS9d59gqQ",
 			"title": "2019 HWS Round Robin Debate Final",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin 2019",
 			"round": "Open Final",
@@ -827,6 +1119,7 @@
 		{
 			"id": "kgnUMFNNzQ4",
 			"title": "2018 Round Robin -- Round 4, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "4",
@@ -835,6 +1128,7 @@
 		{
 			"id": "UtaVVxZvHpM",
 			"title": "2018 Round Robin -- Round 1, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "1",
@@ -843,6 +1137,7 @@
 		{
 			"id": "Hnu3pH3y_54",
 			"title": "2018 Round Robin - Round 2, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "2",
@@ -851,6 +1146,7 @@
 		{
 			"id": "SfPQlXPewSI",
 			"title": "2018 Round Robin -- Round 1, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "1",
@@ -859,6 +1155,7 @@
 		{
 			"id": "ocxXSzpdIF4",
 			"title": "2018 Round Robin -- Round 4, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "4",
@@ -867,6 +1164,7 @@
 		{
 			"id": "-oSfHZ46h9A",
 			"title": "2018 Round Robin -- Round 5, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "5",
@@ -875,6 +1173,7 @@
 		{
 			"id": "369IQj1IlOo",
 			"title": "2018 Round Robin -- Round 4, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "4",
@@ -883,6 +1182,7 @@
 		{
 			"id": "RLaxvezOBR4",
 			"title": "2018 Round Robin -- Round 3, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "3",
@@ -891,6 +1191,7 @@
 		{
 			"id": "UW-w3Kou1xA",
 			"title": "2018 Round Robin -- Round 3, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "3",
@@ -899,6 +1200,7 @@
 		{
 			"id": "OPNJSY_JqRA",
 			"title": "2018 Round Robin -- Round 2, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "2",
@@ -907,6 +1209,7 @@
 		{
 			"id": "k-rGkTeWm0o",
 			"title": "2018 Round Robin -- Round 1, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2018",
 			"round": "1",
@@ -915,6 +1218,7 @@
 		{
 			"id": "KR9RfcjOcqI",
 			"title": "2017 Round Robin -- Round 4, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -923,6 +1227,7 @@
 		{
 			"id": "jI_sOxFVvkE",
 			"title": "2017 Round Robin -- Round 5, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
@@ -931,6 +1236,7 @@
 		{
 			"id": "cEegjMCsxOg",
 			"title": "2017 Round Robin -- Round 4, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -939,6 +1245,7 @@
 		{
 			"id": "01S6OUfDYOM",
 			"title": "2017 Round Robin -- Round 5, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
@@ -947,6 +1254,7 @@
 		{
 			"id": "B4Az-WZz2D4",
 			"title": "2017 Round Robin -- Round 3, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -955,6 +1263,7 @@
 		{
 			"id": "yLKUfmq0kec",
 			"title": "2017 Round Robin -- Round 4, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -963,6 +1272,7 @@
 		{
 			"id": "kC5Sht97t7w",
 			"title": "2017 Round Robin -- Round 3, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -971,6 +1281,7 @@
 		{
 			"id": "fOwUS7uNooE",
 			"title": "2017 Round Robin -- Round 3, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -979,6 +1290,7 @@
 		{
 			"id": "rAEH8Z57WqI",
 			"title": "2017 Round Robin -- Round 2, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -987,6 +1299,7 @@
 		{
 			"id": "mDDQNakTCnA",
 			"title": "2017 Round Robin -- Round 2, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -995,6 +1308,7 @@
 		{
 			"id": "RJdZyOGouEI",
 			"title": "2017 Round Robin -- Round 1, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1003,6 +1317,7 @@
 		{
 			"id": "-cXDy9ISR8U",
 			"title": "2017 Round Robin -- Round 2, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1011,6 +1326,7 @@
 		{
 			"id": "ZVjCkMi7Lfc",
 			"title": "2017 HWS Round Robin -- Round 1, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1019,6 +1335,7 @@
 		{
 			"id": "WiU54l6aUO0",
 			"title": "2016 HWS Round Robin Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "Open Final",
@@ -1027,6 +1344,7 @@
 		{
 			"id": "3WX-4i9FqvE",
 			"title": "2017 HWS Round Robin Debate Finals  (April 8, 2017)",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
@@ -1035,6 +1353,7 @@
 		{
 			"id": "7A7LSclItIQ",
 			"title": "2016 HWS Round Robin -- Round 4, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "4",
@@ -1043,6 +1362,7 @@
 		{
 			"id": "QbRSVZpvslg",
 			"title": "2016 HWS Round Robin -- Round 3, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "3",
@@ -1051,6 +1371,7 @@
 		{
 			"id": "F-CbicBClys",
 			"title": "2016 HWS Round Robin -- Round 2, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "2",
@@ -1059,6 +1380,7 @@
 		{
 			"id": "rduXNZilwKQ",
 			"title": "2016 HWS Round Robin -- Round 2, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "2",
@@ -1067,6 +1389,7 @@
 		{
 			"id": "7GfSfslS-w4",
 			"title": "2016 HWS Round Robin -- Round 2, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "2",
@@ -1075,6 +1398,7 @@
 		{
 			"id": "4EGWWvrhgZw",
 			"title": "2016 HWS Round Robin -- Round 1, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "1",
@@ -1083,6 +1407,7 @@
 		{
 			"id": "gGcQOt1ngvo",
 			"title": "2016 HWS Round Robin -- Round 1, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "1",
@@ -1091,6 +1416,7 @@
 		{
 			"id": "HKJQAqzu_j0",
 			"title": "2016 HWS Round Robin -- Round 3, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "3",
@@ -1099,6 +1425,7 @@
 		{
 			"id": "-jJQy4rNsEw",
 			"title": "2016 HWS Round Robin -- Round 5, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "5",
@@ -1107,6 +1434,7 @@
 		{
 			"id": "38KRZWZxfAw",
 			"title": "2016 HWS Round Robin -- Round 1, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "1",
@@ -1115,6 +1443,7 @@
 		{
 			"id": "OlWRuxLnl94",
 			"title": "2016 HWS Round Robin -- Round 4, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "4",
@@ -1123,6 +1452,7 @@
 		{
 			"id": "u4JMeo7zIJo",
 			"title": "2016 HWS Round Robin -- Round 2, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "2",
@@ -1131,6 +1461,7 @@
 		{
 			"id": "PPMfJHD-9uw",
 			"title": "2016 HWS Round Robin -- Round 4, Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "4",
@@ -1139,6 +1470,7 @@
 		{
 			"id": "z8D0Yx2IxAg",
 			"title": "2016 HWS Round Robin -- Round 3, Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "3",
@@ -1147,6 +1479,7 @@
 		{
 			"id": "n-1cUrVzXTA",
 			"title": "2016 HWS Round Robin -- Round 5, Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "5",
@@ -1155,6 +1488,7 @@
 		{
 			"id": "Xu8g7H8BR5g",
 			"title": "2016 HWS Round Robin -- Round 4,  Room 4",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 4",
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "4",
@@ -1163,6 +1497,7 @@
 		{
 			"id": "3FuV9pCAFMo",
 			"title": "2015 RR Round 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1171,6 +1506,7 @@
 		{
 			"id": "JO8MJgii-80",
 			"title": "2015 HWS Round Robin -- Round 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -1179,6 +1515,7 @@
 		{
 			"id": "KOItg6aNR6E",
 			"title": "2015 HWS Round Robin Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
@@ -1187,6 +1524,7 @@
 		{
 			"id": "AbZLV-GAn2c",
 			"title": "2015 HWS Round Robin -- Round 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1195,7 +1533,8 @@
 		{
 			"id": "NZ2JQpgV5hU",
 			"title": "HWS Round Robin 2014 Final Round",
-			"label": "",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Round",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
 			"motion": "This house believes that, within broad budgetary constraints, environmental policy should be decided by unelected scientific experts selected by their peers."
@@ -1203,7 +1542,8 @@
 		{
 			"id": "IkS5rzM9sCo",
 			"title": "Round Robin 2014 Round 5 Room 2 (missing PM speech)",
-			"label": "Room 2 missing PM speech",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Room 2 missing Pm speech",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
 			"motion": "This house would permit parents to stunt physical development of their severely mentally disabled children."
@@ -1211,6 +1551,7 @@
 		{
 			"id": "45g7lsSgabQ",
 			"title": "HWS Round Robin 2014 Round 5 Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
@@ -1219,6 +1560,7 @@
 		{
 			"id": "L8TWurZCfsM",
 			"title": "HWS Round Robin 2014 Round 4 Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1227,6 +1569,7 @@
 		{
 			"id": "0Jb46uNU2WE",
 			"title": "HWS Round Robin 2014 Round 4 Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1235,6 +1578,7 @@
 		{
 			"id": "QPI5YyxWBLk",
 			"title": "HWS Round Robin 2014 Round 4 Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1243,6 +1587,7 @@
 		{
 			"id": "h358kyJfAPw",
 			"title": "HWS Round Robin 2014 Round 3 Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -1251,6 +1596,7 @@
 		{
 			"id": "gb1K6PZFc20",
 			"title": "HWS Round Robin 2014 Round 3 Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -1259,6 +1605,7 @@
 		{
 			"id": "9ge9b4d3SfA",
 			"title": "HWS Round Robin 2014 Round 2 Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1267,6 +1614,7 @@
 		{
 			"id": "1qPrS56uU7Q",
 			"title": "HWS Round Robin 2014 Round 2 Room 3",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 3",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1275,6 +1623,7 @@
 		{
 			"id": "K6CBu7R8JQg",
 			"title": "HWS Round Robin 2014, Round 1, Room 2",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1283,6 +1632,7 @@
 		{
 			"id": "ZKTNBMXahDk",
 			"title": "HWS Round Robin 2014 Round 2 Room 1",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room 1",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1291,6 +1641,7 @@
 		{
 			"id": "Vk7-aQhOjyA",
 			"title": "HWS Round Robin 2014 Round 1 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1299,7 +1650,8 @@
 		{
 			"id": "GP1TrQxm4pY",
 			"title": "HWS/IDEA Debate Round Robin 2013 Final Round",
-			"label": "",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "Round",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
 			"motion": "This house supports diversity quotas for university admissions. "
@@ -1307,6 +1659,7 @@
 		{
 			"id": "okKjXsoy-I4",
 			"title": "HWS/IDEA Round Robin 2013 Round 5 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
@@ -1315,6 +1668,7 @@
 		{
 			"id": "Zfr_Gjdyifk",
 			"title": "HWS/IDEA Round Robin 2013 Round 4 Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1323,6 +1677,7 @@
 		{
 			"id": "DtrhYjxhF7Y",
 			"title": "HWS/IDEA Round Robin 2013 Round 4 Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1331,6 +1686,7 @@
 		{
 			"id": "W7nAxOVJ3hc",
 			"title": "HWS/IDEA Round Robin 2013 Round 4 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
@@ -1339,6 +1695,7 @@
 		{
 			"id": "kf-f6uwZO9c",
 			"title": "HWS/IDEA Round Robin 2013 Round 3 Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -1347,6 +1704,7 @@
 		{
 			"id": "iEOZqmA0-hw",
 			"title": "HWS/IDEA Round Robin 2013 Round 3 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
@@ -1355,6 +1713,7 @@
 		{
 			"id": "3-H2YaRvIYs",
 			"title": "HWS/IDEA Round Robin 2013 Round 2 Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1363,6 +1722,7 @@
 		{
 			"id": "Tv990AohsJA",
 			"title": "HWS/IDEA Round Robin 2013 Round 2 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "2",
@@ -1371,6 +1731,7 @@
 		{
 			"id": "ywV4Xb3BOpQ",
 			"title": "HWS/IDEA Round Robin 2013 Round 1 Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room D",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1379,6 +1740,7 @@
 		{
 			"id": "8VSlf3oauXE",
 			"title": "HWS/IDEA Round Robin 2013 Round 1 Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room C",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1387,6 +1749,7 @@
 		{
 			"id": "uaRxu-C3Rqc",
 			"title": "HWS/IDEA Round Robin 2013 Round 1 Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room B",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
@@ -1395,146 +1758,525 @@
 		{
 			"id": "n3bYN-6w_mU",
 			"title": "HWS/IDEA Round Robin 2013 Round1 Room A",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "Room A",
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
 			"motion": "This house would allow legislation through voter initiated referenda. "
+		},
+		{
+			"id": "l9ynI_b5dWA",
+			"title": "Princeton IV 2026 Round 1 Room 12",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 12",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 1",
+			"motion": "This house supports the narrative that artists have a strong obligation to take political stances throughout their career"
+		},
+		{
+			"id": "lzJbutdaIUU",
+			"title": "Princeton IV 2026 Round 4 Room 5",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 5",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 4",
+			"motion": "This house Prefers a world in which former Yugoslav states adopted a shared history curriculum in the aftermath of the Yugoslav wars"
+		},
+		{
+			"id": "E086Il9_U1c",
+			"title": "Princeton IV 2026 Round 3 Room 3",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 3",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 3",
+			"motion": "This house believes that the CJP should form an independent political party to contest the 2029 general election, rather than forming an alliance with the INC"
+		},
+		{
+			"id": "d4B5TOpCelo",
+			"title": "Princeton IV 2026 Round 2 Room 14",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 14",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 2",
+			"motion": "This house prefers citizenship models that prioritise jus sanguinis over those that prioritise jus soli"
+		},
+		{
+			"id": "Yqlv3YmsOmw",
+			"title": "Princeton IV 2026 Round 1 Room 32",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 32",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 1",
+			"motion": "This house supports the narrative that artists have a strong obligation to take political stances throughout their career"
+		},
+		{
+			"id": "oh2X2xox8pw",
+			"title": "Princeton IV 2026 Round 4 Room 3",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 3",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 4",
+			"motion": "This house Prefers a world in which former Yugoslav states adopted a shared history curriculum in the aftermath of the Yugoslav wars"
+		},
+		{
+			"id": "H6tAE3YznBU",
+			"title": "Princeton IV 2026 Round 3 Room 14",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 14",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Round 3",
+			"motion": "This house believes that the CJP should form an independent political party to contest the 2029 general election, rather than forming an alliance with the INC"
+		},
+		{
+			"id": "XnRva7VzX1k",
+			"title": "PRINCETON IV 2026 OPEN QUARTER FINALS ROOM 4",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 4",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Quarterfinals",
+			"motion": "This house believes that the advent of Protestantism has done more harm than good"
+		},
+		{
+			"id": "gQjhvNxsMOY",
+			"title": "PRINCETON IV 2026 OPEN PARTIAL DOUBLE QUARTER FINALS ROOM 1",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 1",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Partial-double Quarterfinals",
+			"motion": "This house supports a quieter US Federal Reserve"
+		},
+		{
+			"id": "Awt5Nn3tWbQ",
+			"title": "PRINCETON IV 2026 OPEN SEMI FINALS ROOM 3",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 3",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Semifinals",
+			"motion": "This house supports the collapse of OPEC"
+		},
+		{
+			"id": "HBTmo_oquVg",
+			"title": "PRINCETON IV 2026 ESL SEMI FINALS ROOM 7",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 7",
+			"tournament_name": "Princeton IV 2026",
+			"round": "ESL Semifinal",
+			"motion": "This house believes that the advent of Protestantism has done more harm than good"
+		},
+		{
+			"id": "V7S_2Pjsm7Q",
+			"title": "PRINCETON IV 2026 ESL FINALS",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "",
+			"tournament_name": "Princeton IV 2026",
+			"round": "ESL Final",
+			"motion": "This house supports the collapse of OPEC"
+		},
+		{
+			"id": "75BklFZ3ZMw",
+			"title": "PRINCETON IV 2026 OPEN PARTIAL DOUBLE QUARTER FINALS ROOM 2",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 2",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Partial-double Quarterfinals",
+			"motion": "This house supports a quieter US Federal Reserve"
+		},
+		{
+			"id": "D3YR5xq3EKU",
+			"title": "PRINCETON IV 2026 OPEN QUARTER FINALS ROOM 3",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 3",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Quarterfinals",
+			"motion": "This house believes that the advent of Protestantism has done more harm than good"
+		},
+		{
+			"id": "EQ72mNO3yNo",
+			"title": "PRINCETON IV 2026 OPEN SEMI FINALS ROOM 2",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 2",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Semifinals",
+			"motion": "This house supports the collapse of OPEC"
+		},
+		{
+			"id": "rteCBTdQVUM",
+			"title": "PRINCETON IV 2026 OPEN FINALS",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "",
+			"tournament_name": "Princeton IV 2026",
+			"round": "Grand Final",
+			"motion": "This house regrets the AI safety community's focus on existential risk"
+		},
+		{
+			"id": "HnyAmwOqbo0",
+			"title": "Princeton IV 2024 | Round 3 | NCW",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Ncw",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Round 3",
+			"motion": "This house believes that the prevalence of civil litigation in American society has done more harm than good"
+		},
+		{
+			"id": "Dbq470SjCl8",
+			"title": "Princeton IV 2024 | Round 2 | Mathey",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Mathey",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Round 2",
+			"motion": "This house opposes the trend towards increasing pathologization of mental health in Western liberal democracies"
+		},
+		{
+			"id": "20MxHnQvRow",
+			"title": "Princeton IV 2024 | Grand Finals",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Grand Final",
+			"motion": "This house supports the living having a strong duty to the dead"
+		},
+		{
+			"id": "ml-KRT1WjFc",
+			"title": "Princeton IV 2024 Quarterfinals room 4",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "room 4",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Quarterfinals",
+			"motion": "This house prefers a world in which IMF Special Drawing Rights became the primary world reserve currency rather than the US Dollar in the 1970s"
+		},
+		{
+			"id": "ySbA4cuiumc",
+			"title": "Princeton IV 2024 | QFs | Forbes",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Forbes",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Quarterfinals",
+			"motion": "This house prefers a world in which IMF Special Drawing Rights became the primary world reserve currency rather than the US Dollar in the 1970s"
+		},
+		{
+			"id": "YsUv-1yxNWU",
+			"title": "Princeton IV 2024 | PDQFs | Whig",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Whig",
+			"tournament_name": "Princeton IV 2024",
+			"round": "Partial-double Quarterfinals",
+			"motion": "This house prefers the narrative that committed long-term romantic relationships should be start ups over the narrative that they should be mergers"
+		},
+		{
+			"id": "QRCr2SiqQeg",
+			"title": "Princeton IV 2023 | Round 5 | Fire Nation",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Fire Nation",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 5",
+			"motion": "This house believes that religions advocating for religious pluralism is within the interest of religious people"
+		},
+		{
+			"id": "PbyOfvaFRag",
+			"title": "Princeton IV 2023 | PDQF | Room 4",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 4",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Pre-Quarterfinals",
+			"motion": "This house supports the proliferation of AI trading models"
+		},
+		{
+			"id": "E0lVYwoXIrY",
+			"title": "Princeton IV 2023 | Open Final",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Grand Final",
+			"motion": "This house would cantonise Israel"
+		},
+		{
+			"id": "KPO6gFT40Vw",
+			"title": "Princeton IV 2023 | Round 3 | Naruto Kamui Dimension",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Naruto Kamui Dimension",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 3",
+			"motion": "This house believes that the Attorney General should be an elected position in a general election as opposed to appointed by the executive branch."
+		},
+		{
+			"id": "_E6qUn_Blxo",
+			"title": "Princeton IV 2023 | Round 2 | Naruto Kirigakure",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Naruto Kirigakure",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 2",
+			"motion": "This house regrets the rise of parasocial relationships"
+		},
+		{
+			"id": "Co6_oG5OsZM",
+			"title": "Princeton IV 2023 | Semifinals | Room 1",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 1",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Semifinals",
+			"motion": "This house believes that the embryo belongs to the woman who carried the embryo and her partner, as opposed to the people who provided the genetic material"
+		},
+		{
+			"id": "HFJoavss4yM",
+			"title": "Princeton IV 2023 | Round 5 | Arcane Paradise Pier",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Arcane Paradise Pier",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 5",
+			"motion": "This house believes that religions advocating for religious pluralism is within the interest of religious people"
+		},
+		{
+			"id": "fF9GBp4jDug",
+			"title": "Princeton IV 2023 | PDQFs | Room 3",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 3",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Pre-Quarterfinals",
+			"motion": "This house supports the proliferation of AI trading models"
+		},
+		{
+			"id": "M9BJB46GxQg",
+			"title": "Princeton IV 2023 | Round 4 | Room: Arcane The Dragons Jewel",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Arcane The Dragons Jewel",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 4",
+			"motion": "This house, as the LGBTQ+ movement, would aggressively push the narrative that gender is a social construct"
+		},
+		{
+			"id": "BQ1sVcWwuvQ",
+			"title": "Princeton IV 2023 | Round 2 | Room: Avatar High Temple",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Avatar High Temple",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 2",
+			"motion": "This house regrets the rise of parasocial relationships"
+		},
+		{
+			"id": "CoWRPYjFFKI",
+			"title": "Princeton IV 2023 | Round 5 | Room: Arcane Stronghold",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Arcane Stronghold",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 5",
+			"motion": "This house believes that religions advocating for religious pluralism is within the interest of religious people"
+		},
+		{
+			"id": "8geLG2fBNT0",
+			"title": "Princeton IV 2023 | Round 4 | Room: Arcane Glintstone",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Arcane Glintstone",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 4",
+			"motion": "This house, as the LGBTQ+ movement, would aggressively push the narrative that gender is a social construct"
+		},
+		{
+			"id": "T-dMHN7GQUk",
+			"title": "Princeton IV 2023 | Round 4 | Room: Arcane Chancel of Light",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Arcane Chancel of Light",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 4",
+			"motion": "This house, as the LGBTQ+ movement, would aggressively push the narrative that gender is a social construct"
+		},
+		{
+			"id": "w680Kd4V5eY",
+			"title": "Princeton IV 2023 | Round 3 | Room: Avater Temple",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Avater Temple",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Round 3",
+			"motion": "This house believes that the Attorney General should be an elected position in a general election as opposed to appointed by the executive branch."
+		},
+		{
+			"id": "U4Q-tgW8yrg",
+			"title": "Princeton IV 2023 | Semifinal | Room 2",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"label": "Room 2",
+			"tournament_name": "Princeton IV 2023",
+			"round": "Semifinals",
+			"motion": "This house believes that the embryo belongs to the woman who carried the embryo and her partner, as opposed to the people who provided the genetic material"
+		},
+		{
+			"id": "SgCayi5Lq3k",
+			"title": "Dutch EUDC 2026 | Open PDQ: Technion C vs UCL A vs Oxford C vs Zagreb A (audio only)",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Technion C vs UCL A vs Oxford C vs Zagreb A",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Partial Double Quarters",
+			"motion": "This House Opposes the belief that loyalty is a virtue."
+		},
+		{
+			"id": "tRWWZakjk_o",
+			"title": "Dutch EUDC 2026 | ESL Quarterfinal: NU A vs Technion C vs Ljubljana DM vs ASDVB MJ (audio only)",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "NU A vs Technion C vs Ljubljana DM vs ASDVB MJ",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "ESL Quarterfinals",
+			"motion": "This House Believes That LGBTQ+ Pride month* does more harm than good. \r\n*e.g. pride parades, other pride events"
+		},
+		{
+			"id": "jtqkCf2Lywg",
+			"title": "Dutch EUDC 2026 | Round 9: TAU B vs Bristol B vs Vienna E vs AUEB A",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "TAU B vs Bristol B vs Vienna E vs AUEB A",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 9",
+			"motion": "This House Prefers the institutional model to the project model for the public funding of research."
+		},
+		{
+			"id": "ZkeZJUTXt7A",
+			"title": "Dutch EUDC 2026 | Round 9: Cambridge C vs TCD Phil PW vs Liverpool A vs Utrecht A",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Cambridge C vs TCD Phil PW vs Liverpool A vs Utrecht A",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 9",
+			"motion": "This House Prefers the institutional model to the project model for the public funding of research."
+		},
+		{
+			"id": "uYwEszM-t4E",
+			"title": "Dutch EUDC 2026 | Round 9: LSE B vs Cambridge A vs Zagreb A vs St Andrews D",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "LSE B vs Cambridge A vs Zagreb A vs St Andrews D",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 9",
+			"motion": "This House Prefers the institutional model to the project model for the public funding of research."
+		},
+		{
+			"id": "BMVxTlnfq7w",
+			"title": "Dutch EUDC 2026 | ESL Quarterfinal: Oxford B vs BGU A vs Belgrade A vs Belgrade B (audio only)",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Oxford B vs BGU A vs Belgrade A vs Belgrade B",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "ESL Quarterfinals",
+			"motion": "This House Believes That LGBTQ+ Pride month* does more harm than good. \r\n*e.g. pride parades, other pride events"
+		},
+		{
+			"id": "IGrk_7hCWTY",
+			"title": "Dutch EUDC 2026 | Round 8: Belgrade B vs Copenhagen B vs Sofia A vs KDUW PS",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Belgrade B vs Copenhagen B vs Sofia A vs KDUW PS",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 8",
+			"motion": "This House Believes That Andy Burnham should call an immediate general election."
+		},
+		{
+			"id": "q7s5gV0Y2yM",
+			"title": "Dutch EUDC 2026 | Open Quarterfinal: Copenhagen A vs LSE B vs EUDU KS vs Belgrade B (audio only)",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Copenhagen A vs LSE B vs EUDU KS vs Belgrade B",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Quarterfinals",
+			"motion": "This House Regrets the centrality of individual redemption* to religions.\r\n*the ability of an individual to attain salvation or spiritual reconciliation despite their moral failings or sins."
+		},
+		{
+			"id": "1W-qhekAfqo",
+			"title": "Dutch EUDC 2026 | Open PDQ: Belgrade B vs LSE B vs Durham A vs Vienna A (audio only)",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Belgrade B vs LSE B vs Durham A vs Vienna A",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Partial Double Quarters",
+			"motion": "This House Opposes the belief that loyalty is a virtue."
+		},
+		{
+			"id": "99nGelYKKKY",
+			"title": "Dutch EUDC 2026 | Round 7: Vienna A vs Technion D vs Erasmus A vs Bristol C",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Vienna A vs Technion D vs Erasmus A vs Bristol C",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 7",
+			"motion": "This House Believes That psychiatric deinstitutionalisation did more harm than good."
+		},
+		{
+			"id": "7CCj6Qic3mw",
+			"title": "Dutch EUDC 2026 | Round 7: Tartu E vs RUNI D vs Tartu D vs ACG B",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Tartu E vs RUNI D vs Tartu D vs ACG B",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 7",
+			"motion": "This House Believes That psychiatric deinstitutionalisation did more harm than good."
+		},
+		{
+			"id": "_EwNyqYGu5o",
+			"title": "Dutch EUDC 2026 | Round 6: Cambridge A vs Vienna A vs Oxford B vs Oxford C",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "Cambridge A vs Vienna A vs Oxford B vs Oxford C",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Round 6",
+			"motion": "This House Hopes for the rise of energy-intensive facilities that use behind-the-meter generation in the European Union."
+		},
+		{
+			"id": "6sdozhAW4l4",
+			"title": "Dutch EUDC 2026 | Open Grand Final",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "Grand Final",
+			"motion": "This House Believes That American frontier AI firms* should cease all cooperation with the US military.\r\n\r\n*e.g. OpenAI, Anthropic, Google, Meta"
+		},
+		{
+			"id": "AUjn0lyakQ0",
+			"title": "Dutch EUDC 2026 | ESL Grand Final",
+			"channel": "https://www.youtube.com/@DutchEUDC2026/videos",
+			"label": "",
+			"tournament_name": "Dutch European Universities Debating Championships 2026",
+			"round": "ESL Finals",
+			"motion": "This House Regrets the cultural dominance of sport."
 		}
 	],
 	"unmatched": [
 		{
-			"id": "o6HTyWH5YPw",
-			"title": "HWS Round Robin 2026  Final   SD 480p",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "vCMJD1A1_Zc",
-			"title": "HWS Round Robin 2026- Round 5, Room 303",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "fv1v0oBQyt4",
-			"title": "HWS Round Robin 2026- Round 5, Room 103",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "baZJzYEDPQY",
-			"title": "HWS Round Robin 2026- Round 5, Room 204",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "Y-9cdha9MhQ",
-			"title": "HWS Round Robin 2026- Round 5, Room 201",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "YZTQWFPzk7A",
-			"title": "HWS Round Robin 2026- Round 4, Room 303",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "f6ylaMSjzVA",
-			"title": "HWS Round Robin 2026- Round 4, Room 204",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "AZRgKXoevVo",
-			"title": "HWS Round Robin 2026-  Round 4, Room 201",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "UIiWSbfMxwQ",
-			"title": "2026 HWS Round Robin- Round 4, Room 103",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "TWTPBzinyCU",
-			"title": "2026 HWS Round Robin  Round 3, Room 204   SD 480p",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "04-k1Wy7Jqo",
-			"title": "2026 HWS Round Robin  Round 3, Room 303",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "TAdHKZu-JPk",
-			"title": "2026 HWS Round Robin- Round 3, Room 201",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "xnQSVDR86Bg",
-			"title": "2026 HWS Round Robin- Round 3, Room 103",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "jF5BNRkaeUo",
-			"title": "2026 HWS Open Round Robin- Round 2, Stern 303",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "mqC8jme3Lgg",
-			"title": "2026 HWS Open Round Robin- Round 2, Stern 204",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "aSkwlXAlDYY",
-			"title": "2026 HWS Open Round Robin- Round 2, Stern 103",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "02jRiP3u4R4",
-			"title": "2026 HWS Open Round Robin- Round 2, Stern 201",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "Q2yzLgahFwI",
-			"title": "2026 HWS Open Round Robin- Round 1, Stern 303",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "vZJRxoOBlvM",
-			"title": "2026 HWS Open Round Robin- Round 1, Stern 103",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "L80kUC3Ojp4",
-			"title": "2026 HWS Open Round Robin- Round 1, Stern 204",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "JhOLyJnxlbo",
-			"title": "2026 HWS Open Round Robin- Round 1, Stern 201",
-			"reason": "no motion for this round"
-		},
-		{
 			"id": "hhg-ig7BxOA",
 			"title": "2025 HWS Open Round Robin  Keynote Speaker",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"reason": "no round in title"
 		},
 		{
 			"id": "HTJDuhnhL2s",
 			"title": "2022 HWS Round Robin - Round 3, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"reason": "no motion for this round"
 		},
 		{
 			"id": "j56GAP7wi0c",
 			"title": "2022 HWS Round Robin - Round 3, Room B",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"reason": "no motion for this round"
 		},
 		{
 			"id": "vakAFZQml7w",
 			"title": "2022 HWS Round Robin - Round 4, Room C",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"reason": "no motion for this round"
 		},
 		{
 			"id": "RVwwNsVAjvs",
 			"title": "2022 HWS Round Robin - Round 3, Room D",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"reason": "no motion for this round"
 		},
 		{
 			"id": "KwAMglcgW_w",
 			"title": "2011 HWS Round Robin Finals",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"reason": "no motion for this round"
+		},
+		{
+			"id": "xb7No1iM_Y8",
+			"title": "Princeton IV 2025 | Grand Finals",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"reason": "no motion for this round"
+		},
+		{
+			"id": "pRp6_ELK-m8",
+			"title": "Princeton IV 2025 | Semifinals | Firestone",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
+			"reason": "no motion for this round"
+		},
+		{
+			"id": "BUCqShJlaJU",
+			"title": "Princeton IV 2025 | Semifinals | Nassau",
+			"channel": "https://www.youtube.com/@PrincetonDebatePanel/videos",
 			"reason": "no motion for this round"
 		}
 	]

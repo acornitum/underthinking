@@ -1,36 +1,51 @@
 // Recorded rounds: YouTube videos matched to motions by scripts/videos.js
 // (npm run videos:update), which writes data/videos.json.
-import type { Filters } from '#lib/filters.ts';
-import { filterMotions, findMotionId, type Motion } from '#lib/server/db.ts';
 import data from '../../../data/videos.json';
 
 export type Video = { id: string; title: string; label: string };
-export type RecordedRound = { motion: Motion; videos: Video[] };
 
-let byMotion: Map<number, Video[]> | undefined;
+// A matched round: the motion as scripts/videos.js picked it, and its videos.
+type Round = { tournament_name: string; round: string; motion: string; videos: Video[] };
 
-// Motion id → its videos. The JSON names motions by tournament, round and text
-// (ids change when the CSV is updated), so they're looked up once here.
-function videosByMotion(): Map<number, Video[]> {
-	if (byMotion) return byMotion;
-	byMotion = new Map();
+let byRound: Map<string, Round[]> | undefined;
+
+// "tournament|round" → the rounds with videos there. A key can hold several
+// rounds when one tournament name covers many editions (e.g. "HWS Round Robin").
+function rounds(): Map<string, Round[]> {
+	if (byRound) return byRound;
+	byRound = new Map();
+	const collator = new Intl.Collator('en', { numeric: true });
 	for (const v of data.videos) {
-		const id = findMotionId(v.tournament_name, v.round, v.motion);
-		if (id === undefined) continue;
-		if (!byMotion.has(id)) byMotion.set(id, []);
-		byMotion.get(id)!.push({ id: v.id, title: v.title, label: v.label });
+		const key = `${v.tournament_name}|${v.round}`;
+		if (!byRound.has(key)) byRound.set(key, []);
+		const list = byRound.get(key)!;
+		let round = list.find((r) => r.motion === v.motion);
+		if (!round) list.push((round = { ...v, videos: [] }));
+		round.videos.push({ id: v.id, title: v.title, label: v.label });
 	}
 	// Rooms in order, e.g. "Room A" before "Room B", "Part 1" before "Part 2".
-	const collator = new Intl.Collator('en', { numeric: true });
-	for (const videos of byMotion.values()) videos.sort((a, b) => collator.compare(a.label, b.label));
-	return byMotion;
+	for (const list of byRound.values()) {
+		for (const r of list) r.videos.sort((a, b) => collator.compare(a.label, b.label));
+	}
+	return byRound;
 }
 
-// Rounds with videos whose motion matches the filters, newest first.
-export function recordedRounds(filters: Filters): RecordedRound[] {
-	const videos = videosByMotion();
-	return filterMotions(filters, [...videos.keys()]).map((motion) => ({
-		motion,
-		videos: videos.get(motion.id)!
-	}));
+// Motions are sometimes entered twice with small differences (see
+// scripts/videos.js), so every copy of a round's motion gets its videos.
+const words = (motion: string) => new Set(motion.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []);
+
+function sameMotion(a: string, b: string) {
+	const [x, y] = [words(a), words(b)];
+	const shared = [...x].filter((w) => y.has(w)).length;
+	return shared / Math.min(x.size, y.size) >= 0.8;
+}
+
+export function videosFor(m: { tournament_name: string; round: string; motion: string }): Video[] {
+	const list = rounds().get(`${m.tournament_name}|${m.round}`);
+	return list?.find((r) => r.motion === m.motion || sameMotion(r.motion, m.motion))?.videos ?? [];
+}
+
+// Each matched round's tournament, round and motion, as in the CSV.
+export function recordedRounds(): Round[] {
+	return [...rounds().values()].flat();
 }

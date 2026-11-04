@@ -1,8 +1,8 @@
 import { parseFilters } from '#lib/filters.ts';
-import { recordedRounds } from '#lib/server/videos.ts';
+import { recordedMotions } from '#lib/server/db.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ url }) => {
-	const rounds = recordedRounds(parseFilters(url.searchParams));
-	return { rounds, videoCount: rounds.reduce((n, r) => n + r.videos.length, 0) };
+	const motions = recordedMotions(parseFilters(url.searchParams));
+	return { motions, videoCount: motions.reduce((n, m) => n + (m.videos?.length ?? 0), 0) };
 };

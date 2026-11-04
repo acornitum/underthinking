@@ -17,6 +17,7 @@
 	const links = [
 		{ href: '/', label: 'All motions' },
 		{ href: '/random', label: 'Random motion' },
+		{ href: '/videos', label: 'Recorded rounds' },
 		{ href: '/drills', label: 'Drills' }
 	];
 

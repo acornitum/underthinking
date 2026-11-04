@@ -41,6 +41,7 @@
 		"build": "vite build",
 		"motions:build": "node --disable-warning=ExperimentalWarning scripts/motions.js build",
 		"motions:update": "node --disable-warning=ExperimentalWarning scripts/motions.js update",
+		"videos:update": "node --disable-warning=ExperimentalWarning scripts/videos.js",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

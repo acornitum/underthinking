@@ -8,3 +8,4 @@ export function readCsv(file: string): { header: string[]; records: CsvRecord[] 
 export function toCsv(header: string[], records: CsvRecord[]): string;
 export function splitTypes(types: string | undefined): string[];
 export const STYLE_GROUPS: string[];
+export function roundOrder(name: string): number;
