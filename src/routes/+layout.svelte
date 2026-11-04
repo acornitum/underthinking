@@ -274,7 +274,9 @@
 			<main
 				class="mx-auto w-full min-w-0 px-6 {page.url.pathname === '/drills'
 					? 'flex min-h-dvh flex-col pb-6'
-					: 'max-w-[60rem] pb-10'} pt-24 {sidebarOpen ? 'md:pt-10' : 'md:pt-16'}"
+					: page.url.pathname === '/videos'
+						? 'max-w-[72rem] pb-10'
+						: 'max-w-[60rem] pb-10'} pt-24 {sidebarOpen ? 'md:pt-10' : 'md:pt-16'}"
 			>
 				<!-- Re-mount per URL path so per-page state (e.g. a notes editor) starts fresh. -->
 				{#key page.url.pathname}

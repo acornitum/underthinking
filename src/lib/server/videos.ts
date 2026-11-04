@@ -2,7 +2,16 @@
 // (npm run videos:update), which writes data/videos.json.
 import data from '../../../data/videos.json';
 
-export type Video = { id: string; title: string; label: string };
+// `views`, `published` (YYYY-MM-DD, estimated from YouTube's "2 years ago") and
+// `duration` (seconds) are as of the last scrape, and null if YouTube didn't say.
+export type Video = {
+	id: string;
+	title: string;
+	label: string;
+	views: number | null;
+	published: string | null;
+	duration: number | null;
+};
 
 // A matched round: the motion as scripts/videos.js picked it, and its videos.
 type Round = { tournament_name: string; round: string; motion: string; videos: Video[] };
@@ -21,7 +30,14 @@ function rounds(): Map<string, Round[]> {
 		const list = byRound.get(key)!;
 		let round = list.find((r) => r.motion === v.motion);
 		if (!round) list.push((round = { ...v, videos: [] }));
-		round.videos.push({ id: v.id, title: v.title, label: v.label });
+		round.videos.push({
+			id: v.id,
+			title: v.title,
+			label: v.label,
+			views: v.views ?? null,
+			published: v.published ?? null,
+			duration: v.duration ?? null
+		});
 	}
 	// Rooms in order, e.g. "Room A" before "Room B", "Part 1" before "Part 2".
 	for (const list of byRound.values()) {

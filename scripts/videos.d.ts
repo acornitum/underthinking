@@ -1,5 +1,6 @@
 // Types for what scripts/videos.js exports (used by the local admin tools).
-type SavedVideo = {
+type VideoStats = { views: number | null; published: string | null; duration: number | null };
+type SavedVideo = VideoStats & {
 	id: string;
 	title: string;
 	channel: string;
@@ -16,7 +17,7 @@ export function breakOf(text: string): string;
 export function roundKey(name: string): string | null;
 export function sameMotion(a: string, b: string): boolean;
 export function cleanest<T extends { id: number; motion: string }>(rows: T[]): T;
-export function listUploads(url: string): Promise<{ id: string; title: string }[]>;
+export function listUploads(url: string): Promise<({ id: string; title: string } & VideoStats)[]>;
 export function readVideos(): VideosFile;
 export function writeVideos(
 	channels: string[],

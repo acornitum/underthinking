@@ -140,7 +140,9 @@
 										loading="lazy"
 										class="m-0 aspect-video w-full rounded object-cover"
 									/>
-									<span class="mt-0.5 block truncate">{v.label || 'Watch'}</span>
+									{#if v.label}
+										<span class="mt-0.5 block truncate">{v.label}</span>
+									{/if}
 								</a>
 							{/each}
 						</div>

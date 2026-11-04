@@ -1,5 +1,4 @@
 <script lang="ts">
-	import MotionCard from '#lib/MotionCard.svelte';
 	import VideoEmbed from '#lib/VideoEmbed.svelte';
 	import type { PageProps } from './$types';
 
@@ -14,18 +13,10 @@
 </div>
 
 {#if data.motions.length}
-	<div class="divide-y-[0.5px] divide-line md:divide-y">
+	<!-- One card per round, newest first; each holds all of that round's videos. -->
+	<div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
 		{#each data.motions as m (m.id)}
-			<section class="pb-6">
-				<ul>
-					<MotionCard motion={m} showVideos={false} />
-				</ul>
-				<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-					{#each m.videos ?? [] as v (v.id)}
-						<VideoEmbed video={v} />
-					{/each}
-				</div>
-			</section>
+			<VideoEmbed motion={m} videos={m.videos ?? []} />
 		{/each}
 	</div>
 {:else}

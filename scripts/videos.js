@@ -130,19 +130,38 @@ function motionsByRound(db, tournaments) {
 	return byRound;
 }
 
-// Every upload on a channel ("…/@name/videos"): its id and title.
+// Every upload on a channel ("…/@name/videos"): its id, title, view count,
+// upload date (YYYY-MM-DD) and length in seconds. The date is estimated from
+// YouTube's "2 years ago", which is all the channel's video list says; the
+// exact one would mean opening each video. Missing numbers are null.
 export async function listUploads(url) {
 	const { stdout } = await promisify(execFile)(
 		YTDLP(),
-		['--flat-playlist', '--print', '%(id)s\t%(title)s', url],
+		[
+			'--flat-playlist',
+			'--extractor-args',
+			'youtubetab:approximate_date',
+			'--print',
+			'%(id)s\t%(view_count)s\t%(upload_date)s\t%(duration)s\t%(title)s',
+			url
+		],
 		{ encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }
 	);
+	const number = (text) => (/^\d+(\.\d+)?$/.test(text) ? Math.round(Number(text)) : null);
 	return stdout
 		.split('\n')
 		.filter(Boolean)
 		.map((line) => {
-			const [id, ...title] = line.split('\t');
-			return { id, title: title.join('\t').trim() };
+			const [id, views, date, duration, ...title] = line.split('\t');
+			return {
+				id,
+				title: title.join('\t').trim(),
+				views: number(views),
+				published: /^\d{8}$/.test(date)
+					? `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6)}`
+					: null,
+				duration: number(duration)
+			};
 		});
 }
 
@@ -179,7 +198,7 @@ async function update() {
 		}
 		const byRound = motionsByRound(db, channel.tournaments);
 
-		for (const { id, title } of uploads) {
+		for (const { id, title, ...stats } of uploads) {
 			const parsed = parseTitle(title);
 			if (!parsed) {
 				unmatched.push({ id, title, channel: channel.url, reason: 'no round in title' });
@@ -199,9 +218,28 @@ async function update() {
 				label: parsed.label,
 				tournament_name: row.tournament_name,
 				round: row.round,
-				motion: row.motion
+				motion: row.motion,
+				...stats
 			});
 		}
+	}
+
+	// Channels added at /admin/recordings keep their matches; only their views,
+	// dates and lengths are refreshed.
+	const others = [...new Set(readVideos().videos.map((v) => v.channel))].filter(
+		(c) => c && !CHANNELS.some((channel) => channel.url === c)
+	);
+	for (const url of others) {
+		const stats = new Map((await listUploads(url)).map(({ id, title, ...s }) => [id, s]));
+		const current = readVideos();
+		const refreshed = current.videos
+			.filter((v) => v.channel === url)
+			.map((v) => ({ ...v, ...(stats.get(v.id) ?? {}) }));
+		writeVideos(
+			[url],
+			refreshed,
+			current.unmatched.filter((v) => v.channel === url)
+		);
 	}
 
 	writeVideos(
