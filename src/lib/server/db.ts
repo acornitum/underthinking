@@ -3,6 +3,7 @@ import {
 	MAJOR,
 	RECENT,
 	RECENT_FROM_YEAR,
+	RECORDED,
 	type FilterKey,
 	type FilterOption,
 	type Filters
@@ -10,6 +11,13 @@ import {
 import { notesEnabled } from '#lib/server/config.ts';
 import { GENRE_TAGS, MAIN_GENRES, SECONDARY_GENRES } from '#lib/server/genres.ts';
 import { motionsWithNotes, notedMotions } from '#lib/server/notes.ts';
+import {
+	channels,
+	recordedRounds,
+	videosFor,
+	type Channel,
+	type Video
+} from '#lib/server/videos.ts';
 import { STYLE_GROUPS } from '../../../scripts/motions.js';
 
 export const db = new DatabaseSync('motions.db', { readOnly: true });
@@ -60,10 +68,12 @@ export type Motion = {
 	// The date, or January 1st of year_est: what "latest" sorts by.
 	sort_date: string;
 	hasNotes?: boolean;
+	// Recorded rounds of this motion (see videos.ts).
+	videos?: Video[];
 };
 
 // A motion as stored, before articles are attached.
-type MotionRow = Omit<Motion, 'hasNotes'>;
+type MotionRow = Omit<Motion, 'hasNotes' | 'videos'>;
 
 export const PAGE_SIZE = 20;
 
@@ -100,6 +110,10 @@ function where(filters: Filters) {
 	if (filters.tournament.includes(MAJOR)) {
 		clauses.push('major IS NOT NULL');
 	}
+	if (filters.tournament.includes(RECORDED)) {
+		const ids = recordedIds().all;
+		clauses.push(ids.length ? `id IN (${ids.join(', ')})` : '0');
+	}
 	if (filters.type.length) {
 		const tags = [...new Set(filters.type.flatMap((t) => GENRE_TAGS.get(t) ?? [t]))];
 		clauses.push(
@@ -133,7 +147,8 @@ function withExtras(motions: MotionRow[]): Motion[] {
 	return motions.map((m) => ({
 		...m,
 		infoslide: m.infoslide && tidyInfoslide(m.infoslide),
-		hasNotes: withNotes.has(m.motion)
+		hasNotes: withNotes.has(m.motion),
+		videos: videosFor(m)
 	}));
 }
 
@@ -174,6 +189,79 @@ export function latestMotions(filters: Filters, offset = 0, limit = PAGE_SIZE): 
 			`SELECT * FROM motions ${w.sql} ORDER BY sort_date DESC, tournament_order, round_order, id LIMIT ? OFFSET ?`
 		).all(...w.params, limit, offset) as MotionRow[]
 	);
+}
+
+// The ids of motions with recorded rounds: `main` has one per round (the copy
+// the videos were matched to), `all` every copy of its motion (see videosFor).
+// The videos name motions by tournament, round and text (ids change when the
+// CSV is updated), so they're looked up once.
+let recorded: { main: number[]; all: number[] } | undefined;
+
+function recordedIds() {
+	if (recorded) return recorded;
+	const rounds = recordedRounds();
+	const all = rounds.flatMap((r) =>
+		(
+			prepare(
+				'SELECT id, tournament_name, round, motion, level_group FROM motions WHERE tournament_name = ? AND round = ?'
+			).all(r.tournament_name, r.round) as Pick<
+				MotionRow,
+				'id' | 'tournament_name' | 'round' | 'motion' | 'level_group'
+			>[]
+		)
+			.filter((row) => videosFor(row).length)
+			.map((row) => row.id)
+	);
+	const main = rounds
+		.map((r) => findMotionId(r.tournament_name, r.round, r.motion))
+		.filter((id) => id !== undefined);
+	return (recorded = { main, all: [...new Set(all)] });
+}
+
+// Motions with recorded rounds that match the filters, newest first (as
+// latestMotions).
+export function recordedMotions(filters: Filters): Motion[] {
+	const ids = recordedIds().main;
+	if (!ids.length) return [];
+	const w = where(filters);
+	const idList = `id IN (${ids.map(() => '?').join(', ')})`;
+	return withExtras(
+		prepare(
+			`SELECT * FROM motions ${w.sql ? `${w.sql} AND ${idList}` : `WHERE ${idList}`}
+			ORDER BY sort_date DESC, tournament_order, round_order, id`
+		).all(...w.params, ...ids) as MotionRow[]
+	).filter((m) => m.videos?.length); // not school tournaments (see videosFor)
+}
+
+let channelOrder: Channel[] | undefined;
+
+// The channels with recorded rounds, the one with the newest recorded
+// tournament first (as recordedMotions orders them).
+export function recordedChannels(): Channel[] {
+	if (channelOrder) return channelOrder;
+	const motions = recordedMotions({
+		q: '',
+		tournament: [],
+		type: [],
+		style: [],
+		level: [],
+		notes: false
+	});
+	const newest = (c: Channel) => {
+		const i = motions.findIndex((m) => m.videos?.some((v) => v.channel === c.url));
+		return i === -1 ? Infinity : i;
+	};
+	return (channelOrder = channels()
+		.filter((c) => newest(c) !== Infinity)
+		.sort((a, b) => newest(a) - newest(b)));
+}
+
+// The id of the motion set at this tournament and round.
+function findMotionId(tournament: string, round: string, motion: string): number | undefined {
+	const row = prepare(
+		'SELECT id FROM motions WHERE tournament_name = ? AND round = ? AND motion = ? ORDER BY id LIMIT 1'
+	).get(tournament, round, motion) as { id: number } | undefined;
+	return row?.id;
 }
 
 export function getMotion(id: number): Motion | undefined {
@@ -270,7 +358,8 @@ export function filterOptions(): Record<FilterKey, FilterOption[]> {
 						.prepare('SELECT COUNT(*) AS n FROM motions WHERE year_est >= ?')
 						.get(RECENT_FROM_YEAR) as { n: number }
 				).n
-			}
+			},
+			{ value: RECORDED, label: 'With recording', count: recordedIds().all.length }
 		],
 		type: genreOptions(),
 		style: (() => {

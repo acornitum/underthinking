@@ -7,12 +7,19 @@
 	import type { Motion } from '#lib/server/db.ts';
 
 	// Inside a tournament group the heading already names the tournament, so
-	// only the round is shown.
+	// only the round is shown. The recorded rounds page shows the videos
+	// itself, so it turns off the play button.
 	let {
 		motion: m,
 		grouped = false,
-		fullInfoslide = false
-	}: { motion: Motion; grouped?: boolean; fullInfoslide?: boolean } = $props();
+		fullInfoslide = false,
+		showVideos = true
+	}: {
+		motion: Motion;
+		grouped?: boolean;
+		fullInfoslide?: boolean;
+		showVideos?: boolean;
+	} = $props();
 
 	const AdminActions = adminSlot('MotionActions');
 
@@ -20,7 +27,9 @@
 	// text selection doesn't, so you can still select part of a motion.
 	async function copy(at: { x: number; y: number }) {
 		if (window.getSelection()?.toString()) return;
-		await navigator.clipboard.writeText(m.infoslide ? `${m.motion}\n\nInfoslide: ${m.infoslide}` : m.motion);
+		await navigator.clipboard.writeText(
+			m.infoslide ? `${m.motion}\n\nInfoslide: ${m.infoslide}` : m.motion
+		);
 		toast.show('Copied to clipboard!', at);
 	}
 
@@ -84,6 +93,63 @@
 	</div>
 
 	<div class="flex shrink-0">
+		{#if showVideos && m.videos?.length}
+			<!-- Recorded rounds: hovering (or tapping, which focuses it) shows the
+			     videos' thumbnails, each opening on YouTube. The popup's top
+			     padding bridges the gap so the mouse can move onto it. -->
+			<div class="group relative">
+				<button
+					type="button"
+					class={iconButtonClass}
+					aria-label="Recorded rounds ({m.videos.length})"
+					title="Recorded rounds"
+				>
+					<svg
+						class="size-[0.9rem] md:size-[1.1rem]"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M6 4l13 8-13 8z" />
+					</svg>
+				</button>
+				<div
+					class="absolute top-full right-0 z-10 hidden pt-1 group-focus-within:block group-hover:block"
+				>
+					<div
+						class="max-h-80 w-72 overflow-y-auto rounded-lg border border-line bg-surface p-2 shadow-lg"
+					>
+						<p class="mb-1 px-1 text-xs font-semibold text-muted">
+							{m.videos.length === 1 ? '1 recorded round' : `${m.videos.length} recorded rounds`}
+						</p>
+						<div class="grid {m.videos.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}">
+							{#each m.videos as v (v.id)}
+								<a
+									href="https://www.youtube.com/watch?v={v.id}"
+									target="_blank"
+									rel="noreferrer"
+									class="block rounded-md p-1 text-xs text-card-details transition-colors hover:bg-line hover:not-in-data-[theme=hazel]:text-highlight"
+									title={v.title}
+								>
+									<img
+										src="https://i.ytimg.com/vi/{v.id}/mqdefault.jpg"
+										alt={v.title}
+										loading="lazy"
+										class="m-0 aspect-video w-full rounded object-cover"
+									/>
+									{#if v.label}
+										<span class="mt-0.5 block truncate">{v.label}</span>
+									{/if}
+								</a>
+							{/each}
+						</div>
+					</div>
+				</div>
+			</div>
+		{/if}
 		{#if AdminActions}
 			<AdminActions motion={m} />
 		{/if}

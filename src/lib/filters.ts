@@ -31,6 +31,9 @@ export const MAJOR = 'major';
 export const RECENT = 'recent';
 export const RECENT_FROM_YEAR = 2020;
 
+// And motions with a recorded round on YouTube (see src/lib/server/videos.ts).
+export const RECORDED = 'recorded';
+
 // `?notes=yes` limits motions to those you've written notes for.
 export const HAS_NOTES = 'yes';
 

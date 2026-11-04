@@ -59,7 +59,7 @@ const OUTROUNDS = [
 const UNKNOWN_ROUND = 999;
 const DIGITS = unicodeRegex(String.raw`\d+`);
 
-function roundOrder(name) {
+export function roundOrder(name) {
 	const s = name.toLowerCase();
 	for (const [pattern, rank] of OUTROUNDS) if (pattern.test(s)) return rank;
 	if (s.includes('practice')) return 0;
@@ -218,14 +218,33 @@ export function build() {
 	const insertMotion = db.prepare(`INSERT INTO motions VALUES (${Array(20).fill('?').join(', ')})`);
 	const insertType = db.prepare('INSERT INTO motion_types VALUES (?, ?)');
 
+	// Same name in different years is a different edition of the tournament.
+	const yearEsts = records.map((_, i) => estimateYear(i));
+	const editionKeys = records.map((r, i) => `${r.tournament_name}\u0000${yearEsts[i]}`);
+
+	// One sort_date per edition, so its rounds stay together when sorted (the
+	// motion list groups consecutive rows by tournament_order, and a round
+	// split off from the rest repeats a group key). An edition's rows aren't
+	// always next to each other in the CSV, so undated ones can get different
+	// sortDates: use a dated row's date if the edition has one, else its first
+	// row's sortDate.
+	const editionSortDate = new Map();
+	records.forEach((r, i) => {
+		const key = editionKeys[i];
+		if (r.date && !editionSortDate.get(key)?.dated) {
+			editionSortDate.set(key, { value: r.date, dated: true });
+		} else if (!editionSortDate.has(key)) {
+			editionSortDate.set(key, { value: sortDate(i, yearEsts[i]), dated: false });
+		}
+	});
+
 	const firstSeen = new Map();
 	let typed = 0;
 	db.exec('BEGIN');
 	records.forEach((r, index) => {
 		const id = index + 1;
-		const yearEst = estimateYear(index);
-		// Same name in different years is a different edition of the tournament.
-		const editionKey = `${r.tournament_name}\u0000${yearEst}`;
+		const yearEst = yearEsts[index];
+		const editionKey = editionKeys[index];
 		if (!firstSeen.has(editionKey)) firstSeen.set(editionKey, id);
 		const style = styleGroup(r.style);
 		const level = levelGroup(r.level);
@@ -251,7 +270,7 @@ export function build() {
 			yearEst,
 			major,
 			r.date || null,
-			sortDate(index, yearEst)
+			editionSortDate.get(editionKey).value
 		);
 		const types = splitTypes(r.types);
 		if (types.length) typed++;
