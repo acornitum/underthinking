@@ -56,14 +56,28 @@
 	}
 
 	// A click on the card's empty parts (its padding, the tournament line's
-	// gaps, the stats) opens the video on YouTube; the thumbnail, the motion,
-	// links and buttons keep their own clicks. Keyboard users have the link
+	// gaps, the stats) opens the video on YouTube; the thumbnail, links and
+	// buttons keep their own clicks. Keyboard users have the link
 	// on the thumbnail.
 	function openOnYouTube(e: MouseEvent) {
 		const target = e.target as Element;
-		if (target.closest('a, button, iframe, [data-title]')) return;
+		if (target.closest('a, button, iframe')) return;
+		// The motion opens it too when it's shown in full; a cut-off one opens
+		// out on hover instead, and the infoslide is for reading.
+		if (target.closest('[data-title]') && (clamped || !target.closest('h2'))) return;
 		if (window.getSelection()?.toString()) return; // selecting text
 		window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank', 'noreferrer');
+	}
+
+	// Whether the title is cut off at three lines. If it is, hovering opens it
+	// out in full; if not, hovering only adds the infoslide below it.
+	let clamped = $state(false);
+	function measureTitle(el: HTMLElement) {
+		const check = () => (clamped = el.scrollHeight > el.clientHeight + 1);
+		check();
+		const observer = new ResizeObserver(check);
+		observer.observe(el);
+		return () => observer.disconnect();
 	}
 
 	function onmessage(e: MessageEvent) {
@@ -183,7 +197,12 @@
 	</div>
 
 	<div class="group/title relative mt-2 cursor-auto" data-title>
-		<h2 class="line-clamp-3 text-[0.8125rem] leading-snug font-medium text-motion">
+		<h2
+			{@attach measureTitle}
+			class="line-clamp-3 text-[0.8125rem] {clamped
+				? ''
+				: 'cursor-pointer'} leading-snug font-medium text-motion"
+		>
 			{m.motion}
 			{#if m.infoslide}
 				<!-- Marks that hovering shows an infoslide too. -->
@@ -202,25 +221,38 @@
 				</svg>
 			{/if}
 		</h2>
-		<!-- On hover the title opens out in place: the full motion, set exactly
-		     where the cut-off one was, then the infoslide, over the cards below. -->
-		<div
-			class="absolute -inset-x-2 -top-2 z-20 hidden max-h-96 overflow-y-auto rounded-lg border border-line bg-surface p-2 pt-[calc(0.5rem-1px)] shadow-lg group-hover/title:block"
-		>
-			<p class="-mx-px text-[0.8125rem] leading-snug font-medium text-motion">{m.motion}</p>
-			{#if m.infoslide}
+		{#if clamped}
+			<!-- Cut off: on hover the title opens out in place, the full motion set
+			     exactly where the cut-off one was, then the infoslide, over the
+			     cards below. -->
+			<div
+				class="absolute -inset-x-2 -top-2 z-20 hidden max-h-96 overflow-y-auto rounded-lg border border-line bg-surface p-2 pt-[calc(0.5rem-1px)] shadow-lg group-hover/title:block"
+			>
+				<p class="-mx-px text-[0.8125rem] leading-snug font-medium text-motion">{m.motion}</p>
+				{#if m.infoslide}
+					<p
+						class="-mx-px mt-2 border-t border-line pt-2 text-xs leading-relaxed wrap-break-word whitespace-pre-line text-infoslide"
+					>
+						{m.infoslide}
+					</p>
+				{/if}
+			</div>
+		{:else if m.infoslide}
+			<!-- Shown in full already: just the infoslide, in a box below. Its top
+			     padding bridges the gap so the mouse can move onto it. -->
+			<div class="absolute -inset-x-2 top-full z-20 hidden pt-1 group-hover/title:block">
 				<p
-					class="-mx-px mt-2 border-t border-line pt-2 text-xs leading-relaxed wrap-break-word whitespace-pre-line text-infoslide"
+					class="max-h-80 overflow-y-auto rounded-lg border border-line bg-surface p-2 text-xs leading-relaxed wrap-break-word whitespace-pre-line text-infoslide shadow-lg"
 				>
 					{m.infoslide}
 				</p>
-			{/if}
-		</div>
+			</div>
+		{/if}
 	</div>
 
-	<!-- Tournament (linking to its tab) on the left, round on the right. A long
-	     tournament name is cut short before the round is. -->
-	<p class="mt-1 flex justify-between gap-2 text-[0.6875rem]">
+	<!-- Tournament (linking to its tab) · round. A long tournament name is cut
+	     short before the round is. -->
+	<p class="mt-1 flex gap-1 text-[0.6875rem]">
 		{#if m.tab_url}
 			<a
 				href={m.tab_url}
@@ -232,6 +264,7 @@
 		{:else}
 			<span class="truncate text-card-tournament">{m.tournament_name}</span>
 		{/if}
+		<span class="shrink-0 text-muted" aria-hidden="true">·</span>
 		<span class="shrink-0 whitespace-nowrap text-card-details">{m.round}</span>
 	</p>
 
