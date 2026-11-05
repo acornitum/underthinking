@@ -119,6 +119,12 @@
 			"name": "Diliman Debate Open",
 			"link": "https://www.youtube.com/@DilimanDebateOpen",
 			"avatar": "https://yt3.googleusercontent.com/KdUOtqEOa8Ym1Pyr0y9H6xJFnIAToFxB0j3CHnBpoWNr7hMcqJm5cSXmpl6iuPA9M3Rtzzy1=s176-c-k-c0x00ffffff-no-rj"
+		},
+		{
+			"url": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"name": "Ottawa WUDC 2027",
+			"link": "https://www.youtube.com/@OttawaWUDC2027",
+			"avatar": "https://yt3.googleusercontent.com/hSxn_2J9kFEyhYTGj-pIWen_zGJ_nHgU3IFFIWVnqLGSNiMxs1aD32mzevCz0FaIrc0YSlAGFIs=s176-c-k-c0x00ffffff-no-rj"
 		}
 	],
 	"videos": [
@@ -10441,6 +10447,114 @@
 			"views": 397,
 			"published": "2025-11-05",
 			"duration": 3007
+		},
+		{
+			"id": "JV6kp0V7q_I",
+			"title": "Ottawa Summer 2026 - Open Semi Finals (Room 2)",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "Room 2",
+			"tournament_name": "Ottawa Summer 2026",
+			"round": "Semifinals",
+			"motion": "This House Supports the de-personalisation* of warfare.\r\n\r\n*increased use of armed drones operated from different continents, AI-assisted targeting systems, cyber warfare capabilities, and emerging autonomous weapons",
+			"views": 270,
+			"published": "2026-09-05",
+			"duration": 3622
+		},
+		{
+			"id": "JZiugGgJGJE",
+			"title": "Ottawa Summer 2026 - Open Grand Final",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Summer 2026",
+			"round": "Grand Final",
+			"motion": "This House Would would heavily tax the use of AI",
+			"views": 558,
+			"published": "2026-09-05",
+			"duration": 2955
+		},
+		{
+			"id": "faDdcujAvzU",
+			"title": "Ottawa Open 2025 Round 3",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Round 3",
+			"motion": "This House believes that K-pop has done more harm than good for Korean women",
+			"views": 1100,
+			"published": "2025-11-05",
+			"duration": 3756
+		},
+		{
+			"id": "4xO5vVXlIT8",
+			"title": "Ottawa Open 2025 Round 2",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Round 2",
+			"motion": "This House supports slow parenting",
+			"views": 299,
+			"published": "2025-11-05",
+			"duration": 3429
+		},
+		{
+			"id": "URJHl4RZBnc",
+			"title": "Ottawa Open 2025 Round 1",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Round 1",
+			"motion": "This House believes that the vegan movement should significantly expand its promotion of animal offsetting over continuing to promote animal-free lifestyles",
+			"views": 305,
+			"published": "2025-11-05",
+			"duration": 3782
+		},
+		{
+			"id": "2NYgT9X71ec",
+			"title": "Ottawa Open 2025 Round 4",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Round 4",
+			"motion": "This House supports countries relaxing anti-trust policies for industries experiencing significant decline",
+			"views": 1200,
+			"published": "2025-11-05",
+			"duration": 3854
+		},
+		{
+			"id": "StOOWquSuS8",
+			"title": "Ottawa Open 2025 Round 5",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Round 5",
+			"motion": "This House believes the US should provide public home insurance",
+			"views": 353,
+			"published": "2025-11-05",
+			"duration": 3924
+		},
+		{
+			"id": "wGXoq0nlpfc",
+			"title": "Ottawa Open 2025 Open Finals",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Grand Final",
+			"motion": "This House opposes the body as a temple narrative",
+			"views": 971,
+			"published": "2025-11-05",
+			"duration": 3703
+		},
+		{
+			"id": "F5FqJK7U63Q",
+			"title": "Ottawa Open Quarterfinals - Room Bronson",
+			"channel": "https://www.youtube.com/@OttawaWUDC2027/videos",
+			"label": "Room Bronson",
+			"tournament_name": "Ottawa Open 2025",
+			"round": "Quarterfinals",
+			"motion": "This House supports mainstream European left wing parties adopting socialist agendas",
+			"views": 1100,
+			"published": "2025-11-05",
+			"duration": 3797
 		}
 	],
 	"unmatched": [
