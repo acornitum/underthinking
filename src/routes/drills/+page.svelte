@@ -2,6 +2,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { page } from '$app/state';
 	import TimerBar from '#lib/TimerBar.svelte';
+	import VideosButton from '#lib/VideosButton.svelte';
 	import { hoverHint, toast } from '#lib/toast.svelte.ts';
 	import type { Motion } from '#lib/server/db.ts';
 
@@ -65,11 +66,13 @@
 	let previewMs = $derived(chosenMs * 0.75);
 	let previewText = $derived(formatTimer(previewMs, chosenMs));
 	let previewProgress = $derived(barFraction(previewMs, chosenMs));
+	// After the tournament name, which links to its tab when there is one.
 	let details = $derived(
 		motion
-			? [motion.tournament_name, motion.round, motion.style]
+			? [motion.round, motion.style]
 					.filter((v) => v && v.trim() !== '-')
-					.join(' · ')
+					.map((v) => ` · ${v}`)
+					.join('')
 			: ''
 	);
 
@@ -294,31 +297,31 @@
 			<h1 class="mb-6 text-3xl font-bold">Drills</h1>
 
 			<label class="mb-3 block text-base font-bold" for="minutes">Prep time</label>
-			<div class="mb-4 flex flex-wrap items-center gap-2.5">
+			<div class="mb-3 flex flex-wrap items-center gap-2">
 				<input
 					id="minutes"
 					type="number"
 					min="0"
 					max="180"
 					bind:value={minutes}
-					class="w-24 rounded-lg bg-page px-4 py-2.5 text-xl font-bold text-ink focus:outline-none"
+					class="w-20 rounded-md bg-page px-3.5 py-2 text-lg font-bold text-ink focus:outline-none"
 				/>
-				<span class="text-muted">minutes</span>
+				<span class="text-[15px] text-muted">minutes</span>
 				<input
 					type="number"
 					min="0"
 					max="59"
 					bind:value={seconds}
 					aria-label="Seconds"
-					class="ml-2 w-24 rounded-lg bg-page px-4 py-2.5 text-xl font-bold text-ink focus:outline-none"
+					class="ml-2 w-20 rounded-md bg-page px-3.5 py-2 text-lg font-bold text-ink focus:outline-none"
 				/>
-				<span class="text-muted">seconds</span>
+				<span class="text-[15px] text-muted">seconds</span>
 			</div>
 			<div class="mb-8 flex flex-wrap gap-2">
 				{#each PRESETS as preset (preset)}
 					<button
 						type="button"
-						class="cursor-pointer rounded-lg border px-3.5 py-1.5 text-sm transition-colors {minutes ===
+						class="cursor-pointer rounded-md border px-3 py-1.5 text-[13px] transition-colors {minutes ===
 							preset && !seconds
 							? 'border-selected bg-selected text-ink'
 							: 'border-line text-muted hover:bg-line hover:text-ink'}"
@@ -334,7 +337,7 @@
 				{#each SIDES as option (option.value)}
 					<button
 						type="button"
-						class="cursor-pointer rounded-lg border px-3.5 py-1.5 text-sm transition-colors {side ===
+						class="cursor-pointer rounded-md border px-3 py-1.5 text-[13px] transition-colors {side ===
 						option.value
 							? 'border-selected bg-selected text-ink'
 							: 'border-line text-muted hover:bg-line hover:text-ink'}"
@@ -437,6 +440,11 @@
 	</div>
 {:else}
 	<div class="flex flex-1 flex-col">
+		{#if motion?.videos?.length}
+			<div class="fixed top-4 right-4 z-10">
+				<VideosButton videos={motion.videos} iconClass="size-[1.1rem]" />
+			</div>
+		{/if}
 		<div class="flex justify-center gap-3">
 			<button type="button" class={secondary} disabled={loading} onclick={newMotion}>
 				new motion
@@ -451,7 +459,15 @@
 		     takes exactly that width without widening it. -->
 		<div class="mx-auto flex w-fit max-w-full flex-col items-center text-center">
 			{#if motion}
-				<p class="mb-[3vh] text-[clamp(0.8rem,1.2vw,1rem)] text-muted">{details}</p>
+				<p class="mb-[3vh] text-[clamp(0.8rem,1.2vw,1rem)] text-muted">
+					{#if motion.tab_url}
+						<a
+							href={motion.tab_url}
+							class="underline hover:text-ink"
+							target="_blank"
+							rel="noreferrer">{motion.tournament_name}</a
+						>{:else}{motion.tournament_name}{/if}{details}
+				</p>
 				<h1
 					class="max-w-[34em] text-[clamp(1.25rem,2.5vw,2.25rem)] leading-tight font-bold text-pretty text-ink"
 				>

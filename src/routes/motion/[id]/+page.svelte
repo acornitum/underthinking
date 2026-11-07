@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import { iconButtonClass } from '#lib/iconButton.ts';
+	import VideosButton from '#lib/VideosButton.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	let m = $derived(data.motion);
+	// After the tournament name, which links to its tab when there is one.
 	let details = $derived(
-		[m.tournament_name, m.round, m.style].filter((v) => v && v.trim() !== '-').join(' · ')
+		[m.round, m.style]
+			.filter((v) => v && v.trim() !== '-')
+			.map((v) => ` · ${v}`)
+			.join('')
 	);
 
 	// Edits live only in this tab: nothing is saved, and reloading or closing
@@ -44,6 +50,18 @@
 		({ motion, infoslide } = original());
 	}
 
+	// Copies the motion as shown (edits included), with its infoslide, like the
+	// motion cards do. The icon turns into a checkmark for a second.
+	let copied = $state(false);
+	let copiedTimer: ReturnType<typeof setTimeout>;
+	async function copy() {
+		const text = infoslide.trim() ? `${motion}\n\nInfoslide: ${infoslide}` : motion;
+		await navigator.clipboard.writeText(text);
+		copied = true;
+		clearTimeout(copiedTimer);
+		copiedTimer = setTimeout(() => (copied = false), 1000);
+	}
+
 	function autosize(el: HTMLTextAreaElement) {
 		const resize = () => {
 			el.style.height = 'auto';
@@ -55,11 +73,12 @@
 	}
 
 	// Shared by the text and its edit box, so switching doesn't move anything.
+	// Sized like the motion on the drills page.
 	const box = 'w-full rounded-lg px-4 py-3 text-center';
 	const motionClass =
-		'max-w-[24em] text-[clamp(2rem,5vw,4.75rem)] leading-tight font-bold text-balance text-ink';
+		'max-w-[34em] text-[clamp(1.25rem,2.5vw,2.25rem)] leading-tight font-bold text-balance text-ink';
 	const infoslideClass =
-		'max-w-[48em] text-[clamp(1rem,1.9vw,1.6rem)] leading-relaxed whitespace-pre-line wrap-break-word text-subtle';
+		'max-w-[48em] text-[clamp(0.9rem,1.3vw,1.15rem)] leading-relaxed whitespace-pre-line wrap-break-word text-subtle';
 	// Hovering either one highlights both (see `group` on the wrapper).
 	const shownClass = 'cursor-text transition-colors group-hover:bg-surface/60';
 	const fieldClass = 'block resize-none bg-surface placeholder:text-chip focus:outline-none';
@@ -78,12 +97,48 @@
 	← Back
 </a>
 
+<div class="fixed top-4 right-4 z-10 flex">
+	<button
+		type="button"
+		class={iconButtonClass}
+		aria-label={copied ? 'Copied' : 'Copy motion'}
+		title="Copy motion"
+		onclick={copy}
+	>
+		<svg
+			class="size-[1.1rem] {copied ? 'text-accent' : ''}"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width={copied ? 3 : 2.5}
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			{#if copied}
+				<path d="M20 6 9 17l-5-5" />
+			{:else}
+				<rect x="9" y="9" width="12" height="12" rx="2" />
+				<path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+			{/if}
+		</svg>
+	</button>
+	{#if m.videos?.length}
+		<VideosButton videos={m.videos} iconClass="size-[1.1rem]" />
+	{/if}
+</div>
+
 <!-- Big, centred motion for showing on a projector or second screen. -->
 <div
 	class="flex min-h-dvh flex-col items-center justify-center bg-page px-[6vw] pt-16 pb-24 text-center"
 >
 	{#if !edited}
-		<p class="mb-[4vh] text-[clamp(0.875rem,1.6vw,1.25rem)] text-muted">{details}</p>
+		<p class="mb-[3vh] text-[clamp(0.8rem,1.2vw,1rem)] text-muted">
+			{#if m.tab_url}
+				<a href={m.tab_url} class="underline hover:text-ink" target="_blank" rel="noreferrer"
+					>{m.tournament_name}</a
+				>{:else}{m.tournament_name}{/if}{details}
+		</p>
 	{/if}
 
 	<div bind:this={editor} class="group flex w-full flex-col items-center">
