@@ -58,7 +58,8 @@
 	// A click on the card's empty parts (its padding, the tournament line's
 	// gaps, the stats) opens the video on YouTube; the thumbnail, links and
 	// buttons keep their own clicks. Keyboard users have the link
-	// on the thumbnail.
+	// on the thumbnail. (The styles at the bottom light the corner link over
+	// the same parts.)
 	function openOnYouTube(e: MouseEvent) {
 		const target = e.target as Element;
 		if (target.closest('a, button, iframe')) return;
@@ -142,7 +143,7 @@
 				/>
 				<!-- Dims the thumbnail until the card is hovered. -->
 				<span
-					class="pointer-events-none absolute inset-0 bg-black/25 transition-opacity group-hover/card:opacity-0"
+					class="pointer-events-none absolute inset-0 bg-white/10 transition-opacity dark:bg-black/25 group-hover/card:opacity-0"
 					aria-hidden="true"
 				></span>
 				<span
@@ -174,10 +175,11 @@
 			href="https://www.youtube.com/watch?v={video.id}"
 			target="_blank"
 			rel="noreferrer"
-			class="absolute top-1.5 right-1.5 z-10 rounded-md bg-black/70 p-1 text-white transition hover:opacity-100 hover:not-in-data-[theme=hazel]:text-highlight hover:in-data-[theme=hazel]:text-card-details {playing &&
+			class="absolute top-1.5 right-1.5 z-10 rounded-md bg-black/70 p-1 text-white transition hover:opacity-100 hover:not-in-data-[theme=hazel]:text-[#9cc3ff] hover:in-data-[theme=hazel]:text-card-details {playing &&
 			playerState === 1
 				? 'opacity-10'
 				: 'opacity-100'}"
+			data-open-link
 			aria-label="Open on YouTube (new tab)"
 			title="Open on YouTube"
 		>
@@ -199,6 +201,7 @@
 	<div class="group/title relative mt-2 cursor-auto" data-title>
 		<h2
 			{@attach measureTitle}
+			data-opens={clamped ? undefined : ''}
 			class="line-clamp-3 text-[0.8125rem] {clamped
 				? ''
 				: 'cursor-pointer'} leading-snug font-medium text-motion"
@@ -324,3 +327,24 @@
 		</div>
 	{/if}
 </article>
+
+<style>
+	/* The corner link lights up (as when hovered) while the pointer is over a
+	   part of the card that a click opens the video from (see openOnYouTube):
+	   the card, but not its links, buttons, player or title, unless the title
+	   is a full motion that opens it too. */
+	article:hover:not(:has(a:hover, button:hover, iframe:hover, [data-title]:hover))
+		[data-open-link],
+	article:has(h2[data-opens]:hover) [data-open-link] {
+		/* The box behind it is always dark, so a light blue in every theme but
+		   hazel (the light themes' own highlight is too dark to read on it). */
+		color: #9cc3ff;
+		opacity: 1;
+	}
+	:global([data-theme='hazel'])
+		article:hover:not(:has(a:hover, button:hover, iframe:hover, [data-title]:hover))
+		[data-open-link],
+	:global([data-theme='hazel']) article:has(h2[data-opens]:hover) [data-open-link] {
+		color: var(--color-card-details);
+	}
+</style>
