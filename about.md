@@ -12,11 +12,9 @@ features you might not know about:
 - motion genre filtering also works on random motion / recorded rounds / drills pages!
 - add markers to the timer for drills! hover over timer preview (or timer) and click to do so
 
-have something you want added? changed? any feedback? feel free to dm acon on discord! 
+**want to get a tournament / video added?** feel free to dm acon on discord (or facebook)! (there will be a better flow for this later)
 
-want to add the changes yourself? feel free to make a pull request!
-
-tournament/video you want to add? uhhh feature coming soon to do that probably. feel free to dm until it's updated.
+have feedback / want changes? feel free to reach out (or make a pull request)!
 
 ---
 
@@ -24,4 +22,4 @@ the motion csv was originally taken from debatedata in oct 2026, but has since b
 
 some other debate related sites that you should check out:
 - [DebateComps](https://www.debatecomps.com/) - the world's debate calendar for finding tournaments!
-- [flight.acon.zip](https://flight.acon.zip) - flight tracker to keep track of everyone in your group's flights to various tournaments! 
+- [flight.acon.zip](https://flight.acon.zip) - flight tracker for everyone in your group's flights to tournaments! 
