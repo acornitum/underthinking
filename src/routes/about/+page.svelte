@@ -27,8 +27,7 @@
 		}
 	});
 
-	// Goober perches on the line under the "About" heading. The PNG is one
-	// colour, so it's used as a mask and filled with the theme's highlight.
+	// Goober perches on the line under the "About" heading.
 	const goober = '<span class="goober" aria-hidden="true"></span>';
 	const html = markdown.parse(about, { async: false }).replace('</h1>', `${goober}</h1>`);
 </script>
@@ -54,10 +53,8 @@
 		right: 1.5rem;
 		bottom: 0;
 		height: 4rem;
-		aspect-ratio: 541 / 390;
-		background-color: var(--color-highlight);
-		mask: url('/goober.png') center bottom / contain no-repeat;
-		-webkit-mask: url('/goober.png') center bottom / contain no-repeat;
+		aspect-ratio: 557 / 401;
+		background: url('/goober.png') center bottom / contain no-repeat;
 	}
 </style>
 
