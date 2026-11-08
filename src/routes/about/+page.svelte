@@ -27,7 +27,10 @@
 		}
 	});
 
-	const html = markdown.parse(about, { async: false });
+	// Goober perches on the line under the "About" heading. The PNG is one
+	// colour, so it's used as a mask and filled with the theme's highlight.
+	const goober = '<span class="goober" aria-hidden="true"></span>';
+	const html = markdown.parse(about, { async: false }).replace('</h1>', `${goober}</h1>`);
 </script>
 
 <svelte:head>
@@ -40,6 +43,23 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -- your own about.md -->
 	{@html html}
 </article>
+
+<style>
+	article :global(h1) {
+		position: relative;
+	}
+	/* Sits on the heading's bottom border, flush right. */
+	article :global(.goober) {
+		position: absolute;
+		right: 1.5rem;
+		bottom: 0;
+		height: 4rem;
+		aspect-ratio: 541 / 390;
+		background-color: var(--color-highlight);
+		mask: url('/goober.png') center bottom / contain no-repeat;
+		-webkit-mask: url('/goober.png') center bottom / contain no-repeat;
+	}
+</style>
 
 {#if data.commit}
 	<div class="mt-10 font-mono text-xs text-muted flex flex-wrap space-x-4">
