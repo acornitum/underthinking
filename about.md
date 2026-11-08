@@ -21,3 +21,7 @@ tournament/video you want to add? uhhh feature coming soon to do that probably. 
 ---
 
 the motion csv was originally taken from debatedata in oct 2026, but has since been independently maintained and modified. the site is made with sveltekit and too much claude. there will never be a paywall or ai generated argument features. 
+
+some other debate related sites that you should check out:
+- [DebateComps](https://www.debatecomps.com/) - the world's debate calendar for finding tournaments!
+- [flight.acon.zip](https://flight.acon.zip) - flight tracker to keep track of everyone in your group's flights to various tournaments! 
