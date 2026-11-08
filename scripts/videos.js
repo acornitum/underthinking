@@ -224,13 +224,19 @@ export function readVideos() {
 	}
 }
 
-// Add or replace channels' names and pictures.
+// Add or update channels' names and pictures (and the admin page's scan dates).
 export function writeChannels(infos) {
 	const current = readVideos();
-	const urls = infos.map((c) => c.url);
+	const byUrl = new Map(infos.map((c) => [c.url, c]));
+	const known = new Set(current.channels.map((c) => c.url));
+	// Updated in place, keeping fields not in `infos` (e.g. `scanned`, set by
+	// the admin page); new channels go at the end. In place keeps git diffs small.
 	const out = {
 		...current,
-		channels: [...current.channels.filter((c) => !urls.includes(c.url)), ...infos]
+		channels: [
+			...current.channels.map((c) => ({ ...c, ...byUrl.get(c.url) })),
+			...infos.filter((c) => !known.has(c.url))
+		]
 	};
 	fs.writeFileSync(VIDEOS_PATH, JSON.stringify(out, null, '\t') + '\n');
 	return out;
@@ -239,11 +245,19 @@ export function writeChannels(infos) {
 // Replace the given channels' videos with `videos` (and `unmatched`).
 export function writeVideos(channels, videos, unmatched = []) {
 	const current = readVideos();
-	const others = (list) => (list ?? []).filter((v) => v.channel && !channels.includes(v.channel));
+	const ours = (v) => !v.channel || channels.includes(v.channel);
+	// The new list goes where the channels' old videos started (or at the end),
+	// and keys keep their order, so git diffs stay small.
+	const replace = (list = [], added) => {
+		const at = list.findIndex((v) => v.channel && channels.includes(v.channel));
+		const before = at === -1 ? list : list.slice(0, at);
+		const after = at === -1 ? [] : list.slice(at);
+		return [...before.filter((v) => !ours(v)), ...added, ...after.filter((v) => !ours(v))];
+	};
 	const out = {
-		videos: [...others(current.videos), ...videos],
-		unmatched: [...others(current.unmatched), ...unmatched],
-		channels: current.channels
+		...current,
+		videos: replace(current.videos, videos),
+		unmatched: replace(current.unmatched, unmatched)
 	};
 	fs.writeFileSync(VIDEOS_PATH, JSON.stringify(out, null, '\t') + '\n');
 	return out;

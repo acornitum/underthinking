@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import SearchBar from '#lib/SearchBar.svelte';
 	import VideoGrid from '#lib/VideoGrid.svelte';
@@ -31,10 +32,38 @@
 		return `${url.pathname}${url.search}`;
 	}
 
+	// A sort option's link, keeping the search, filters and channel.
+	function sortHref(sort: string) {
+		const url = new URL(page.url.href);
+		if (sort === 'tournament') url.searchParams.delete('sort');
+		else url.searchParams.set('sort', sort);
+		return `${url.pathname}${url.search}`;
+	}
+
+	let sortOpen = $state(false);
+	let sortMenu = $state<HTMLElement>();
+	let currentSort = $derived(data.sorts.find((s) => s.value === data.sort) ?? data.sorts[0]);
+
+	function pickSort(sort: string) {
+		sortOpen = false;
+		goto(sortHref(sort), { replace: true, reset: false });
+	}
+
+	// The open sort menu closes on a click elsewhere or Escape.
+	function closeSort(e: Event) {
+		if (!sortOpen) return;
+		if (e instanceof KeyboardEvent ? e.key === 'Escape' : !sortMenu?.contains(e.target as Node)) {
+			sortOpen = false;
+		}
+	}
+
 	function scrollRow(direction: 1 | -1) {
 		row?.scrollBy({ left: direction * row.clientWidth * 0.8, behavior: 'smooth' });
 	}
 </script>
+
+<svelte:window onclick={closeSort} onkeydown={closeSort} />
+
 
 {#snippet arrow(direction: 1 | -1)}
 	<div
@@ -66,7 +95,74 @@
 	</p>
 </div>
 
-<SearchBar />
+<!-- Search, with a sort icon beside it that opens the sort orders. -->
+<div class="flex gap-2">
+	<div class="min-w-0 flex-1"><SearchBar /></div>
+	<!-- self-start: otherwise it stretches over the search bar's bottom margin
+	     and the menu opens a gap below the icon. -->
+	<div class="relative shrink-0 self-start" bind:this={sortMenu}>
+		<button
+			type="button"
+			class="flex size-11 cursor-pointer items-center justify-center rounded-lg bg-surface transition-colors focus:outline-none {sortOpen
+				? 'text-highlight'
+				: 'text-muted hover:text-ink'}"
+			aria-haspopup="listbox"
+			aria-expanded={sortOpen}
+			aria-label="Sort by: {currentSort.label}"
+			title="Sort by: {currentSort.label}"
+			onclick={() => (sortOpen = !sortOpen)}
+		>
+			<!-- Arrows up and down: the usual "sort" glyph. -->
+			<svg
+				class="size-5"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+				><path d="m3 8 4-4 4 4" /><path d="M7 4v16" /><path d="m21 16-4 4-4-4" /><path
+					d="M17 20V4"
+				/></svg
+			>
+		</button>
+		{#if sortOpen}
+			<div
+				class="absolute top-full right-0 z-30 mt-1 w-48 overflow-hidden rounded-lg bg-surface py-1 text-sm ring-1 ring-line"
+				role="listbox"
+				aria-label="Sort by"
+			>
+				{#each data.sorts as s (s.value)}
+					{@const on = s.value === data.sort}
+					<button
+						type="button"
+						class="flex w-full cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-left transition-colors focus:outline-none {on
+							? 'text-ink'
+							: 'text-muted hover:text-ink focus:text-ink'}"
+						role="option"
+						aria-selected={on}
+						onclick={() => (on ? (sortOpen = false) : pickSort(s.value))}
+					>
+						{s.label}
+						{#if on}
+							<svg
+								class="size-4 shrink-0"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg
+							>
+						{/if}
+					</button>
+				{/each}
+			</div>
+		{/if}
+	</div>
+</div>
 
 <!-- The channels the videos come from, the one with the newest recorded
      tournament first. Each opens on YouTube. -->

@@ -10,7 +10,14 @@ type SavedVideo = VideoStats & {
 	motion: string;
 };
 type UnmatchedVideo = { id: string; title: string; channel: string; reason: string };
-type ChannelInfo = { url: string; name: string; link: string; avatar: string | null };
+// `scanned` (YYYY-MM-DD): when the admin page last saved a scan of the channel.
+type ChannelInfo = {
+	url: string;
+	name: string;
+	link: string;
+	avatar: string | null;
+	scanned?: string;
+};
 type VideosFile = { videos: SavedVideo[]; unmatched: UnmatchedVideo[]; channels: ChannelInfo[] };
 
 export const VIDEOS_PATH: string;
@@ -21,7 +28,7 @@ export function cleanest<T extends { id: number; motion: string }>(rows: T[]): T
 export function listUploads(url: string): Promise<({ id: string; title: string } & VideoStats)[]>;
 export function channelInfo(url: string): Promise<ChannelInfo>;
 export function readVideos(): VideosFile;
-export function writeChannels(infos: ChannelInfo[]): VideosFile;
+export function writeChannels(infos: (Partial<ChannelInfo> & { url: string })[]): VideosFile;
 export function writeVideos(
 	channels: string[],
 	videos: SavedVideo[],

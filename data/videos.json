@@ -28,7 +28,8 @@
 			"url": "https://www.youtube.com/@hwsroundrobin/videos",
 			"name": "HWS ROUND ROBIN",
 			"link": "https://www.youtube.com/@hwsroundrobin",
-			"avatar": "https://yt3.googleusercontent.com/KNeyoHzlnJubQbanGWBnWGVj_09bo6JeEFLlT4wkqVfVfYJNyGrfJz0F_UnDJGEtVUR59BmB800=s176-c-k-c0x00ffffff-no-rj"
+			"avatar": "https://yt3.googleusercontent.com/KNeyoHzlnJubQbanGWBnWGVj_09bo6JeEFLlT4wkqVfVfYJNyGrfJz0F_UnDJGEtVUR59BmB800=s176-c-k-c0x00ffffff-no-rj",
+			"scanned": "2026-11-07"
 		},
 		{
 			"url": "https://www.youtube.com/@PrincetonDebatePanel/videos",
@@ -2878,13 +2879,13 @@
 		},
 		{
 			"id": "o6HTyWH5YPw",
-			"title": "HWS Round Robin 2026  Final   SD 480p",
+			"title": "HWS Round Robin 2026- Final",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
 			"label": "",
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Grand Final",
 			"motion": "This house believes that depictions of Satan as tragic are more socially valuable than depictions of him as purely evil",
-			"views": 1700,
+			"views": 1900,
 			"published": "2026-10-31",
 			"duration": 4626
 		},
@@ -2896,7 +2897,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 5",
 			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies",
-			"views": 416,
+			"views": 499,
 			"published": "2026-10-31",
 			"duration": 3989
 		},
@@ -2908,7 +2909,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 5",
 			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies",
-			"views": 266,
+			"views": 309,
 			"published": "2026-10-31",
 			"duration": 3975
 		},
@@ -2920,7 +2921,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 5",
 			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies",
-			"views": 683,
+			"views": 723,
 			"published": "2026-10-30",
 			"duration": 3867
 		},
@@ -2932,7 +2933,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 5",
 			"motion": "This house supports the development of legally binding AI constitutions drafted by representative citizen assemblies",
-			"views": 709,
+			"views": 740,
 			"published": "2026-10-29",
 			"duration": 3889
 		},
@@ -2944,7 +2945,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 4",
 			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today",
-			"views": 449,
+			"views": 481,
 			"published": "2026-10-29",
 			"duration": 5800
 		},
@@ -2956,7 +2957,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 4",
 			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today",
-			"views": 289,
+			"views": 326,
 			"published": "2026-10-29",
 			"duration": 5909
 		},
@@ -2968,7 +2969,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 4",
 			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today",
-			"views": 1500,
+			"views": 1600,
 			"published": "2026-10-29",
 			"duration": 5328
 		},
@@ -2980,7 +2981,7 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 4",
 			"motion": "This house Predicts that the average person's moral beliefs in 2100 will be better than the average person's moral beliefs today",
-			"views": 355,
+			"views": 401,
 			"published": "2026-10-29",
 			"duration": 6401
 		},
@@ -2992,8 +2993,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 3",
 			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle",
-			"views": 954,
-			"published": "2026-10-21",
+			"views": 1000,
+			"published": "2026-10-25",
 			"duration": 6261
 		},
 		{
@@ -3004,8 +3005,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 3",
 			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle",
-			"views": 1200,
-			"published": "2026-10-21",
+			"views": 1300,
+			"published": "2026-10-25",
 			"duration": 5641
 		},
 		{
@@ -3016,8 +3017,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 3",
 			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle",
-			"views": 770,
-			"published": "2026-10-21",
+			"views": 776,
+			"published": "2026-10-18",
 			"duration": 6010
 		},
 		{
@@ -3029,7 +3030,7 @@
 			"round": "Round 3",
 			"motion": "This house believes that transgender content creators should focus their content on trans joy rather than trans struggle",
 			"views": 1300,
-			"published": "2026-10-21",
+			"published": "2026-10-18",
 			"duration": 5523
 		},
 		{
@@ -3040,8 +3041,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 2",
 			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation",
-			"views": 1800,
-			"published": "2026-10-14",
+			"views": 2000,
+			"published": "2026-10-18",
 			"duration": 5848
 		},
 		{
@@ -3052,8 +3053,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 2",
 			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation",
-			"views": 745,
-			"published": "2026-10-14",
+			"views": 751,
+			"published": "2026-10-18",
 			"duration": 6286
 		},
 		{
@@ -3065,7 +3066,7 @@
 			"round": "Round 2",
 			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation",
 			"views": 1000,
-			"published": "2026-10-07",
+			"published": "2026-10-08",
 			"duration": 5516
 		},
 		{
@@ -3076,8 +3077,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 2",
 			"motion": "This house, as the CCP, would prioritize stimulating domestic consumption over accelerating technological innovation",
-			"views": 584,
-			"published": "2026-10-07",
+			"views": 609,
+			"published": "2026-10-08",
 			"duration": 5705
 		},
 		{
@@ -3089,7 +3090,7 @@
 			"round": "Round 1",
 			"motion": "This house regrets the rise of abstract (i.e., non-representational) art",
 			"views": 1100,
-			"published": "2026-10-04",
+			"published": "2026-10-08",
 			"duration": 5327
 		},
 		{
@@ -3100,8 +3101,8 @@
 			"tournament_name": "HWS Round Robin 2026",
 			"round": "Round 1",
 			"motion": "This house regrets the rise of abstract (i.e., non-representational) art",
-			"views": 3500,
-			"published": "2026-10-04",
+			"views": 3600,
+			"published": "2026-10-08",
 			"duration": 5682
 		},
 		{
@@ -3113,7 +3114,7 @@
 			"round": "Round 1",
 			"motion": "This house regrets the rise of abstract (i.e., non-representational) art",
 			"views": 1500,
-			"published": "2026-10-04",
+			"published": "2026-10-08",
 			"duration": 5449
 		},
 		{
@@ -3125,7 +3126,7 @@
 			"round": "Round 1",
 			"motion": "This house regrets the rise of abstract (i.e., non-representational) art",
 			"views": 1800,
-			"published": "2026-10-04",
+			"published": "2026-10-08",
 			"duration": 5841
 		},
 		{
@@ -3136,8 +3137,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion).",
-			"views": 735,
-			"published": "2026-10-04",
+			"views": 754,
+			"published": "2026-10-08",
 			"duration": 3991
 		},
 		{
@@ -3148,8 +3149,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion).",
-			"views": 404,
-			"published": "2026-10-04",
+			"views": 406,
+			"published": "2026-10-08",
 			"duration": 3353
 		},
 		{
@@ -3160,8 +3161,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion).",
-			"views": 482,
-			"published": "2026-10-04",
+			"views": 494,
+			"published": "2026-10-08",
 			"duration": 3902
 		},
 		{
@@ -3172,8 +3173,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion).",
-			"views": 654,
-			"published": "2026-10-04",
+			"views": 659,
+			"published": "2026-10-08",
 			"duration": 3925
 		},
 		{
@@ -3185,7 +3186,7 @@
 			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies).",
 			"views": 1300,
-			"published": "2026-10-04",
+			"published": "2026-10-08",
 			"duration": 3872
 		},
 		{
@@ -3196,8 +3197,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies).",
-			"views": 818,
-			"published": "2026-10-04",
+			"views": 825,
+			"published": "2026-10-08",
 			"duration": 3864
 		},
 		{
@@ -3208,8 +3209,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies).",
-			"views": 820,
-			"published": "2026-10-04",
+			"views": 827,
+			"published": "2026-10-08",
 			"duration": 3960
 		},
 		{
@@ -3220,8 +3221,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 5",
 			"motion": "This house believes that East African national governments should prioritize investments in agriculture (e.g., irrigation, R&D, and inputs like fertilizer) over accelerating industrialization (e.g., building infrastructure, export promotion).",
-			"views": 385,
-			"published": "2026-10-04",
+			"views": 389,
+			"published": "2026-10-08",
 			"duration": 3863
 		},
 		{
@@ -3232,8 +3233,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 4",
 			"motion": "This house prefers a world where genius only develops after adulthood (so that there are no child prodigies).",
-			"views": 490,
-			"published": "2026-10-04",
+			"views": 495,
+			"published": "2026-10-08",
 			"duration": 3863
 		},
 		{
@@ -3245,7 +3246,7 @@
 			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare.",
 			"views": 1200,
-			"published": "2026-10-04",
+			"published": "2026-10-08",
 			"duration": 3842
 		},
 		{
@@ -3256,8 +3257,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare.",
-			"views": 434,
-			"published": "2026-10-04",
+			"views": 443,
+			"published": "2026-10-08",
 			"duration": 3894
 		},
 		{
@@ -3268,8 +3269,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare.",
-			"views": 349,
-			"published": "2026-10-04",
+			"views": 356,
+			"published": "2026-10-08",
 			"duration": 3877
 		},
 		{
@@ -3280,8 +3281,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 3",
 			"motion": "This house believes that breaking up large meat companies is in the interests of animal welfare.",
-			"views": 325,
-			"published": "2026-10-04",
+			"views": 331,
+			"published": "2026-10-08",
 			"duration": 4003
 		},
 		{
@@ -3292,8 +3293,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League.",
-			"views": 465,
-			"published": "2026-10-04",
+			"views": 473,
+			"published": "2026-10-08",
 			"duration": 3967
 		},
 		{
@@ -3304,8 +3305,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League.",
-			"views": 305,
-			"published": "2026-10-04",
+			"views": 312,
+			"published": "2026-10-08",
 			"duration": 3922
 		},
 		{
@@ -3316,8 +3317,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League.",
-			"views": 512,
-			"published": "2026-10-04",
+			"views": 523,
+			"published": "2026-10-08",
 			"duration": 3870
 		},
 		{
@@ -3328,8 +3329,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 2",
 			"motion": "This house regrets the Indian Premier League.",
-			"views": 363,
-			"published": "2026-10-04",
+			"views": 368,
+			"published": "2026-10-08",
 			"duration": 3810
 		},
 		{
@@ -3340,8 +3341,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms.",
-			"views": 461,
-			"published": "2026-10-04",
+			"views": 465,
+			"published": "2026-10-08",
 			"duration": 3998
 		},
 		{
@@ -3352,8 +3353,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms.",
-			"views": 491,
-			"published": "2026-10-04",
+			"views": 501,
+			"published": "2026-10-08",
 			"duration": 3850
 		},
 		{
@@ -3364,8 +3365,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms.",
-			"views": 586,
-			"published": "2026-10-04",
+			"views": 599,
+			"published": "2026-10-08",
 			"duration": 3791
 		},
 		{
@@ -3376,8 +3377,8 @@
 			"tournament_name": "HWS Round Robin 2025",
 			"round": "Round 1",
 			"motion": "This house prefers that progressive journalists focus their efforts on working within and reforming mainstream news platforms, as opposed to establishing their own platforms.",
-			"views": 499,
-			"published": "2026-10-04",
+			"views": 505,
+			"published": "2026-10-08",
 			"duration": 3803
 		},
 		{
@@ -3389,7 +3390,7 @@
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
 			"views": 2300,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3400,8 +3401,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 495,
-			"published": "2025-11-04",
+			"views": 498,
+			"published": "2025-11-08",
 			"duration": 410
 		},
 		{
@@ -3413,7 +3414,7 @@
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
 			"views": 4500,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3424,8 +3425,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 829,
-			"published": "2025-11-04",
+			"views": 833,
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3437,7 +3438,7 @@
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
 			"views": 1000,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3448,8 +3449,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 282,
-			"published": "2025-11-04",
+			"views": 283,
+			"published": "2025-11-08",
 			"duration": 321
 		},
 		{
@@ -3460,8 +3461,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 836,
-			"published": "2025-11-04",
+			"views": 841,
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3472,8 +3473,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 427,
-			"published": "2025-11-04",
+			"views": 429,
+			"published": "2025-11-08",
 			"duration": 392
 		},
 		{
@@ -3484,8 +3485,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 252,
-			"published": "2025-11-04",
+			"views": 254,
+			"published": "2025-11-08",
 			"duration": 305
 		},
 		{
@@ -3496,8 +3497,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 4",
 			"motion": "This house would choose to be born on North Sentinel Island over being born randomly somewhere else in the world.",
-			"views": 260,
-			"published": "2025-11-04",
+			"views": 264,
+			"published": "2025-11-08",
 			"duration": 424
 		},
 		{
@@ -3509,7 +3510,7 @@
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
 			"views": 1000,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3520,8 +3521,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
-			"views": 318,
-			"published": "2025-11-04",
+			"views": 324,
+			"published": "2025-11-08",
 			"duration": 310
 		},
 		{
@@ -3533,7 +3534,7 @@
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
 			"views": 1100,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3544,8 +3545,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
-			"views": 291,
-			"published": "2025-11-04",
+			"views": 294,
+			"published": "2025-11-08",
 			"duration": 341
 		},
 		{
@@ -3556,8 +3557,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
-			"views": 243,
-			"published": "2025-11-04",
+			"views": 247,
+			"published": "2025-11-08",
 			"duration": 507
 		},
 		{
@@ -3568,8 +3569,8 @@
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
-			"views": 616,
-			"published": "2025-11-04",
+			"views": 622,
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3581,7 +3582,7 @@
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
 			"views": 1900,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3593,7 +3594,7 @@
 			"round": "Grand Final",
 			"motion": "This house, as the chemist, would take the chemical weapons job",
 			"views": 11000,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3591
 		},
 		{
@@ -3605,7 +3606,7 @@
 			"round": "Round 8",
 			"motion": "This house regrets the predominance of romantic love in popular culture.",
 			"views": 1200,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 369
 		},
 		{
@@ -3617,7 +3618,7 @@
 			"round": "Grand Final",
 			"motion": "This house, as the chemist, would take the chemical weapons job",
 			"views": 2400,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 638
 		},
 		{
@@ -3629,19 +3630,19 @@
 			"round": "Round 3",
 			"motion": "This house believes that social policies should be decided by mini-publics.",
 			"views": 2300,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3872
 		},
 		{
 			"id": "_LzU6daMy_o",
 			"title": "2024 HWS Open Round Robin - Round 3, Room Sanford",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"label": "Room Sanford",
+			"label": "Sanford",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 3",
 			"motion": "This house believes that social policies should be decided by mini-publics.",
 			"views": 3200,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3928
 		},
 		{
@@ -3653,7 +3654,7 @@
 			"round": "Round 2",
 			"motion": "This house prefers the establishment of an inclusive literary canon to the elimination of any literary canon.",
 			"views": 3800,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3696
 		},
 		{
@@ -3665,19 +3666,19 @@
 			"round": "Round 2",
 			"motion": "This house prefers the establishment of an inclusive literary canon to the elimination of any literary canon.",
 			"views": 2000,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3913
 		},
 		{
 			"id": "WClBw8PGYP4",
 			"title": "2024 HWS Open Round Robin - Round 1, Room Sanford",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"label": "Room Sanford",
+			"label": "Sanford",
 			"tournament_name": "HWS Round Robin 2024",
 			"round": "Round 1",
 			"motion": "This house believes that the UK should have provided extensive military support to the independent state of Biafra.",
 			"views": 4900,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3813
 		},
 		{
@@ -3689,7 +3690,7 @@
 			"round": "Round 1",
 			"motion": "This house believes that the UK should have provided extensive military support to the independent state of Biafra.",
 			"views": 1500,
-			"published": "2025-11-04",
+			"published": "2025-11-08",
 			"duration": 3879
 		},
 		{
@@ -3701,7 +3702,7 @@
 			"round": "Grand Final",
 			"motion": "This house believes that feminist movements in developing nations should prioritize the strategy of advocating for carceral feminism.",
 			"views": 9200,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3991
 		},
 		{
@@ -3713,7 +3714,7 @@
 			"round": "5",
 			"motion": "This house opposes the norm of company founders remaining in key C-suite roles in the company after its IPO.",
 			"views": 2600,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3897
 		},
 		{
@@ -3725,7 +3726,7 @@
 			"round": "5",
 			"motion": "This house opposes the norm of company founders remaining in key C-suite roles in the company after its IPO.",
 			"views": 3800,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3836
 		},
 		{
@@ -3737,7 +3738,7 @@
 			"round": "5",
 			"motion": "This house opposes the norm of company founders remaining in key C-suite roles in the company after its IPO.",
 			"views": 2100,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3780
 		},
 		{
@@ -3749,7 +3750,7 @@
 			"round": "4",
 			"motion": "As a parent, This house would raise their child to prefer being single.",
 			"views": 1600,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3874
 		},
 		{
@@ -3761,7 +3762,7 @@
 			"round": "4",
 			"motion": "As a parent, This house would raise their child to prefer being single.",
 			"views": 4800,
-			"published": "2024-11-04",
+			"published": "2024-11-08",
 			"duration": 3858
 		},
 		{
@@ -3773,7 +3774,7 @@
 			"round": "4",
 			"motion": "As a parent, This house would raise their child to prefer being single.",
 			"views": 2500,
-			"published": "2024-11-04",
+			"published": "2023-11-08",
 			"duration": 3910
 		},
 		{
@@ -3785,7 +3786,7 @@
 			"round": "3",
 			"motion": "This house would legalize active non-voluntary euthanasia.",
 			"views": 2300,
-			"published": "2023-11-04",
+			"published": "2023-11-08",
 			"duration": 3883
 		},
 		{
@@ -3797,7 +3798,7 @@
 			"round": "3",
 			"motion": "This house would legalize active non-voluntary euthanasia.",
 			"views": 2100,
-			"published": "2023-11-04",
+			"published": "2023-11-08",
 			"duration": 3781
 		},
 		{
@@ -3809,7 +3810,7 @@
 			"round": "2",
 			"motion": "This house believes that it is in the interest of Saudi Arabia to develop closer ties with China, even if this will substantially weaken ties with the US.",
 			"views": 3500,
-			"published": "2023-11-04",
+			"published": "2023-11-08",
 			"duration": 3828
 		},
 		{
@@ -3821,7 +3822,7 @@
 			"round": "1",
 			"motion": "In post conflict societies, This house would actively suppress information and interpretations that portray any past dictator or tyrannical regime in a sympathetic light.",
 			"views": 2100,
-			"published": "2023-11-04",
+			"published": "2023-11-08",
 			"duration": 3829
 		},
 		{
@@ -3833,7 +3834,7 @@
 			"round": "1",
 			"motion": "In post conflict societies, This house would actively suppress information and interpretations that portray any past dictator or tyrannical regime in a sympathetic light.",
 			"views": 3000,
-			"published": "2023-11-04",
+			"published": "2023-11-08",
 			"duration": 3848
 		},
 		{
@@ -3845,7 +3846,7 @@
 			"round": "Round 2",
 			"motion": "This house believes that companies should implement policies that require management to work entry level jobs periodically.",
 			"views": 3600,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3858
 		},
 		{
@@ -3857,7 +3858,7 @@
 			"round": "Round 1",
 			"motion": "As a charity successfully making the world better, this house would reject donations from immoral actors.",
 			"views": 3200,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3886
 		},
 		{
@@ -3869,7 +3870,7 @@
 			"round": "Round 2",
 			"motion": "This house believes that companies should implement policies that require management to work entry level jobs periodically.",
 			"views": 2000,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3836
 		},
 		{
@@ -3881,7 +3882,7 @@
 			"round": "Round 1",
 			"motion": "As a charity successfully making the world better, this house would reject donations from immoral actors.",
 			"views": 4100,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3851
 		},
 		{
@@ -3893,7 +3894,7 @@
 			"round": "Round 5",
 			"motion": "This house regrets major internet companies (e.g., Facebook, Google, etc.) operating on the basis of selling advertising as a business model.",
 			"views": 3200,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3854
 		},
 		{
@@ -3905,7 +3906,7 @@
 			"round": "Round 2",
 			"motion": "This house believes that companies should implement policies that require management to work entry level jobs periodically.",
 			"views": 10000,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3877
 		},
 		{
@@ -3917,7 +3918,7 @@
 			"round": "Round 1",
 			"motion": "As a charity successfully making the world better, this house would reject donations from immoral actors.",
 			"views": 5200,
-			"published": "2022-11-04",
+			"published": "2022-11-08",
 			"duration": 3840
 		},
 		{
@@ -3928,8 +3929,8 @@
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
 			"motion": "This house would replace 'real world' prison incarceration with simulated incarceration, for people not sentenced to a life sentence.",
-			"views": 5100,
-			"published": "2021-11-04",
+			"views": 5200,
+			"published": "2021-11-08",
 			"duration": 3796
 		},
 		{
@@ -3941,7 +3942,7 @@
 			"round": "Round 4",
 			"motion": "This house would replace 'real world' prison incarceration with simulated incarceration, for people not sentenced to a life sentence.",
 			"views": 6600,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3943
 		},
 		{
@@ -3953,7 +3954,7 @@
 			"round": "Round 4",
 			"motion": "This house would replace 'real world' prison incarceration with simulated incarceration, for people not sentenced to a life sentence.",
 			"views": 6900,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3804
 		},
 		{
@@ -3964,8 +3965,8 @@
 			"tournament_name": "HWS RR 2021",
 			"round": "Round 4",
 			"motion": "This house would replace 'real world' prison incarceration with simulated incarceration, for people not sentenced to a life sentence.",
-			"views": 8300,
-			"published": "2021-11-04",
+			"views": 8400,
+			"published": "2021-11-08",
 			"duration": 3840
 		},
 		{
@@ -3977,7 +3978,7 @@
 			"round": "Round 3",
 			"motion": "This house supports the cult of productivity.",
 			"views": 5600,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3897
 		},
 		{
@@ -3989,7 +3990,7 @@
 			"round": "Round 3",
 			"motion": "This house supports the cult of productivity.",
 			"views": 3900,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3872
 		},
 		{
@@ -4001,7 +4002,7 @@
 			"round": "Round 3",
 			"motion": "This house supports the cult of productivity.",
 			"views": 19000,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3798
 		},
 		{
@@ -4013,7 +4014,7 @@
 			"round": "Round 2",
 			"motion": "This house would expropriate foreign and white-owned businesses in Southern Africa (i.e., South Africa, Namibia, Botswana, Zimbabwe).",
 			"views": 5400,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3959
 		},
 		{
@@ -4025,7 +4026,7 @@
 			"round": "Round 2",
 			"motion": "This house would expropriate foreign and white-owned businesses in Southern Africa (i.e., South Africa, Namibia, Botswana, Zimbabwe).",
 			"views": 2900,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 4001
 		},
 		{
@@ -4037,7 +4038,7 @@
 			"round": "Round 2",
 			"motion": "This house would expropriate foreign and white-owned businesses in Southern Africa (i.e., South Africa, Namibia, Botswana, Zimbabwe).",
 			"views": 5400,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3898
 		},
 		{
@@ -4049,7 +4050,7 @@
 			"round": "Round 1",
 			"motion": "This house prefers a world where children are raised communally.",
 			"views": 3000,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3774
 		},
 		{
@@ -4061,7 +4062,7 @@
 			"round": "Round 1",
 			"motion": "This house prefers a world where children are raised communally.",
 			"views": 3300,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3817
 		},
 		{
@@ -4073,7 +4074,7 @@
 			"round": "Round 1",
 			"motion": "This house prefers a world where children are raised communally.",
 			"views": 18000,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3688
 		},
 		{
@@ -4085,7 +4086,7 @@
 			"round": "Round 1",
 			"motion": "This house prefers a world where children are raised communally.",
 			"views": 5700,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3899
 		},
 		{
@@ -4097,7 +4098,7 @@
 			"round": "Round 5",
 			"motion": "This house prefers a world where there exists a world government with sovereign power.",
 			"views": 5100,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3764
 		},
 		{
@@ -4109,7 +4110,7 @@
 			"round": "Round 5",
 			"motion": "This house prefers a world where there exists a world government with sovereign power.",
 			"views": 4700,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 4430
 		},
 		{
@@ -4121,7 +4122,7 @@
 			"round": "Round 4",
 			"motion": "This house prefers a world in which innate intelligence is distributed equally.",
 			"views": 6300,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3925
 		},
 		{
@@ -4132,8 +4133,8 @@
 			"tournament_name": "HWS RR 2020",
 			"round": "Round 3",
 			"motion": "This house believes that artists should prioritize the political impact of their works over their aesthetic value.",
-			"views": 4900,
-			"published": "2021-11-04",
+			"views": 5000,
+			"published": "2021-11-08",
 			"duration": 3754
 		},
 		{
@@ -4145,7 +4146,7 @@
 			"round": "Round 2",
 			"motion": "As the Chinese Communist Party, this house would allow state-owned firms to default on domestic bond repayments.",
 			"views": 1700,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 4207
 		},
 		{
@@ -4157,7 +4158,7 @@
 			"round": "Round 2",
 			"motion": "As the Chinese Communist Party, this house would allow state-owned firms to default on domestic bond repayments.",
 			"views": 2400,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3735
 		},
 		{
@@ -4169,7 +4170,7 @@
 			"round": "Round 1",
 			"motion": "This house believes that parents of minorities should encourage their children to embrace positive stereotypes about themselves.",
 			"views": 1500,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3831
 		},
 		{
@@ -4181,7 +4182,7 @@
 			"round": "Round 1",
 			"motion": "This house believes that parents of minorities should encourage their children to embrace positive stereotypes about themselves.",
 			"views": 5200,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 4095
 		},
 		{
@@ -4193,7 +4194,7 @@
 			"round": "Round 1",
 			"motion": "This house believes that parents of minorities should encourage their children to embrace positive stereotypes about themselves.",
 			"views": 2700,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 4023
 		},
 		{
@@ -4205,7 +4206,7 @@
 			"round": "Open Finals",
 			"motion": "This house believes that individuals have a moral obligation to not have biological children.",
 			"views": 19000,
-			"published": "2021-11-04",
+			"published": "2021-11-08",
 			"duration": 3925
 		},
 		{
@@ -4217,7 +4218,7 @@
 			"round": "Open Final",
 			"motion": "This house believes that the interests of the Chinese people would be better served by a peaceful transition into a democracy, rather than a continuation of one party rule.",
 			"views": 13000,
-			"published": "2020-11-04",
+			"published": "2020-11-08",
 			"duration": 3565
 		},
 		{
@@ -4229,7 +4230,7 @@
 			"round": "4",
 			"motion": "This house would take a pill that permanently made one contented with one’s current life situation.",
 			"views": 5500,
-			"published": "2020-11-04",
+			"published": "2020-11-08",
 			"duration": 3896
 		},
 		{
@@ -4241,7 +4242,7 @@
 			"round": "5",
 			"motion": "This house opposes the centrality of sport to national identity.",
 			"views": 11000,
-			"published": "2020-11-04",
+			"published": "2019-11-08",
 			"duration": 3827
 		},
 		{
@@ -4253,7 +4254,7 @@
 			"round": "3",
 			"motion": "In the event that current talks produce a compromise Brexit deal, this house would put it to a referendum with “remain” as an alternative.",
 			"views": 3400,
-			"published": "2020-11-04",
+			"published": "2019-11-08",
 			"duration": 3979
 		},
 		{
@@ -4265,7 +4266,7 @@
 			"round": "4",
 			"motion": "This house would take a pill that permanently made one contented with one’s current life situation.",
 			"views": 4200,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3814
 		},
 		{
@@ -4277,7 +4278,7 @@
 			"round": "2",
 			"motion": "This house supports laws that protect the health of fetuses (whose mothers intend to carry them to term).",
 			"views": 3200,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 2939
 		},
 		{
@@ -4289,7 +4290,7 @@
 			"round": "1",
 			"motion": "This house regrets the decline of the humanities in higher education.",
 			"views": 9800,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3820
 		},
 		{
@@ -4301,7 +4302,7 @@
 			"round": "5",
 			"motion": "This house opposes the centrality of sport to national identity.",
 			"views": 3900,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3789
 		},
 		{
@@ -4313,7 +4314,7 @@
 			"round": "4",
 			"motion": "This house would take a pill that permanently made one contented with one’s current life situation.",
 			"views": 5100,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3814
 		},
 		{
@@ -4325,7 +4326,7 @@
 			"round": "3",
 			"motion": "In the event that current talks produce a compromise Brexit deal, this house would put it to a referendum with “remain” as an alternative.",
 			"views": 2500,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3716
 		},
 		{
@@ -4337,7 +4338,7 @@
 			"round": "2",
 			"motion": "This house supports laws that protect the health of fetuses (whose mothers intend to carry them to term).",
 			"views": 3600,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3741
 		},
 		{
@@ -4349,7 +4350,7 @@
 			"round": "1",
 			"motion": "This house regrets the decline of the humanities in higher education.",
 			"views": 4000,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3856
 		},
 		{
@@ -4361,7 +4362,7 @@
 			"round": "Open Final",
 			"motion": "This house believes that the Black Lives Matter movement should embrace open carry gun laws and engage in armed community patrols.",
 			"views": 23000,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 4002
 		},
 		{
@@ -4373,7 +4374,7 @@
 			"round": "4",
 			"motion": "This house prefers a world in which, upon childhood, all people intuitively come to know their natural expiration date.",
 			"views": 3800,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3744
 		},
 		{
@@ -4385,7 +4386,7 @@
 			"round": "1",
 			"motion": "This house believes that the criminal justice system should not consider retribution as a factor in sentencing. ",
 			"views": 3700,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3811
 		},
 		{
@@ -4397,7 +4398,7 @@
 			"round": "2",
 			"motion": "This house prefers a world in which universities charged tuition based on student earnings after graduation.",
 			"views": 2600,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3792
 		},
 		{
@@ -4409,7 +4410,7 @@
 			"round": "1",
 			"motion": "This house believes that the criminal justice system should not consider retribution as a factor in sentencing. ",
 			"views": 6500,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3744
 		},
 		{
@@ -4421,7 +4422,7 @@
 			"round": "4",
 			"motion": "This house prefers a world in which, upon childhood, all people intuitively come to know their natural expiration date.",
 			"views": 2200,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3721
 		},
 		{
@@ -4433,7 +4434,7 @@
 			"round": "5",
 			"motion": "When responding to civilian casualties, this house believes that the military action taken does not have to meet the principle of proportionality.",
 			"views": 4100,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3868
 		},
 		{
@@ -4445,7 +4446,7 @@
 			"round": "4",
 			"motion": "This house prefers a world in which, upon childhood, all people intuitively come to know their natural expiration date.",
 			"views": 3100,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3856
 		},
 		{
@@ -4457,7 +4458,7 @@
 			"round": "3",
 			"motion": "This house believes that governments should prioritize the economic improvement of minority communities over the preservation of their culture.",
 			"views": 3600,
-			"published": "2019-11-04",
+			"published": "2019-11-08",
 			"duration": 3832
 		},
 		{
@@ -4469,7 +4470,7 @@
 			"round": "3",
 			"motion": "This house believes that governments should prioritize the economic improvement of minority communities over the preservation of their culture.",
 			"views": 6600,
-			"published": "2018-11-04",
+			"published": "2018-11-08",
 			"duration": 3952
 		},
 		{
@@ -4481,7 +4482,7 @@
 			"round": "2",
 			"motion": "This house prefers a world in which universities charged tuition based on student earnings after graduation.",
 			"views": 4600,
-			"published": "2018-11-04",
+			"published": "2018-11-08",
 			"duration": 3828
 		},
 		{
@@ -4493,7 +4494,7 @@
 			"round": "1",
 			"motion": "This house believes that the criminal justice system should not consider retribution as a factor in sentencing. ",
 			"views": 7900,
-			"published": "2018-11-04",
+			"published": "2018-11-08",
 			"duration": 3767
 		},
 		{
@@ -4505,7 +4506,7 @@
 			"round": "4",
 			"motion": "Given the choice as an individual who is a typical, healthy 30-year-old, this house would elect to never again feel the emotion of sorrow.",
 			"views": 4700,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3749
 		},
 		{
@@ -4517,7 +4518,7 @@
 			"round": "5",
 			"motion": "This house believes that the US should issue guest worker visas, under which minimum wage laws would not apply.",
 			"views": 4700,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3743
 		},
 		{
@@ -4529,7 +4530,7 @@
 			"round": "4",
 			"motion": "Given the choice as an individual who is a typical, healthy 30-year-old, this house would elect to never again feel the emotion of sorrow.",
 			"views": 2700,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3734
 		},
 		{
@@ -4541,7 +4542,7 @@
 			"round": "5",
 			"motion": "This house believes that the US should issue guest worker visas, under which minimum wage laws would not apply.",
 			"views": 13000,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3724
 		},
 		{
@@ -4553,7 +4554,7 @@
 			"round": "3",
 			"motion": "This house regrets the shift in focus within the academic study of history from studying great figures and institutions to studying cultural forces and the experiences of ordinary people.",
 			"views": 3600,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3730
 		},
 		{
@@ -4565,7 +4566,7 @@
 			"round": "4",
 			"motion": "Given the choice as an individual who is a typical, healthy 30-year-old, this house would elect to never again feel the emotion of sorrow.",
 			"views": 6900,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3760
 		},
 		{
@@ -4577,7 +4578,7 @@
 			"round": "3",
 			"motion": "This house regrets the shift in focus within the academic study of history from studying great figures and institutions to studying cultural forces and the experiences of ordinary people.",
 			"views": 3700,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3789
 		},
 		{
@@ -4589,7 +4590,7 @@
 			"round": "3",
 			"motion": "This house regrets the shift in focus within the academic study of history from studying great figures and institutions to studying cultural forces and the experiences of ordinary people.",
 			"views": 4200,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3784
 		},
 		{
@@ -4601,7 +4602,7 @@
 			"round": "2",
 			"motion": "This house supports democratic governments using social disgust as a grounds for restricting public speech or display.",
 			"views": 8400,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3904
 		},
 		{
@@ -4613,7 +4614,7 @@
 			"round": "2",
 			"motion": "This house supports democratic governments using social disgust as a grounds for restricting public speech or display.",
 			"views": 5500,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3772
 		},
 		{
@@ -4625,7 +4626,7 @@
 			"round": "1",
 			"motion": "This house supports the use of “eye in the sky” policing in urban areas with high crime rates.",
 			"views": 4900,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3675
 		},
 		{
@@ -4637,7 +4638,7 @@
 			"round": "2",
 			"motion": "This house supports democratic governments using social disgust as a grounds for restricting public speech or display.",
 			"views": 3200,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3720
 		},
 		{
@@ -4649,7 +4650,7 @@
 			"round": "1",
 			"motion": "This house supports the use of “eye in the sky” policing in urban areas with high crime rates.",
 			"views": 10000,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 3751
 		},
 		{
@@ -4661,7 +4662,7 @@
 			"round": "Open Final",
 			"motion": "This house supports health insurance companies offering terminally ill patients the option of a lump sum payment to forgo expensive life-extending treatments.",
 			"views": 32000,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 4156
 		},
 		{
@@ -4673,7 +4674,7 @@
 			"round": "Open Final",
 			"motion": "This house believes that governments should abandon the strategy of 'decapitation' in fighting terrorism.",
 			"views": 57000,
-			"published": "2017-11-04",
+			"published": "2017-11-08",
 			"duration": 4235
 		},
 		{
@@ -4685,7 +4686,7 @@
 			"round": "4",
 			"motion": "This house prefers a world with memory writing technology",
 			"views": 2300,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3724
 		},
 		{
@@ -4697,7 +4698,7 @@
 			"round": "3",
 			"motion": "This house believes that criminal defendants who hire private counsel should not be afforded the right against self-incrimination at trial.",
 			"views": 2000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 4066
 		},
 		{
@@ -4709,7 +4710,7 @@
 			"round": "2",
 			"motion": "This house supports filial responsibility laws (infoslide provided)",
 			"views": 2000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3711
 		},
 		{
@@ -4721,7 +4722,7 @@
 			"round": "2",
 			"motion": "This house supports filial responsibility laws (infoslide provided)",
 			"views": 2500,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3768
 		},
 		{
@@ -4733,7 +4734,7 @@
 			"round": "2",
 			"motion": "This house supports filial responsibility laws (infoslide provided)",
 			"views": 1600,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3799
 		},
 		{
@@ -4745,7 +4746,7 @@
 			"round": "1",
 			"motion": "This house would require the use of a draft by lottery when engaged in extended military intervention.",
 			"views": 1900,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3878
 		},
 		{
@@ -4757,7 +4758,7 @@
 			"round": "1",
 			"motion": "This house would require the use of a draft by lottery when engaged in extended military intervention.",
 			"views": 2000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3757
 		},
 		{
@@ -4768,8 +4769,8 @@
 			"tournament_name": "HWS Round Robin 2016",
 			"round": "3",
 			"motion": "This house believes that criminal defendants who hire private counsel should not be afforded the right against self-incrimination at trial.",
-			"views": 1600,
-			"published": "2016-11-04",
+			"views": 1700,
+			"published": "2016-11-08",
 			"duration": 3707
 		},
 		{
@@ -4781,7 +4782,7 @@
 			"round": "5",
 			"motion": "This house believes that Israel should set aside a certain percentage of seats in the Knesset to be elected by diaspora Jews.",
 			"views": 1000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3362
 		},
 		{
@@ -4793,7 +4794,7 @@
 			"round": "1",
 			"motion": "This house would require the use of a draft by lottery when engaged in extended military intervention.",
 			"views": 4900,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3830
 		},
 		{
@@ -4805,7 +4806,7 @@
 			"round": "4",
 			"motion": "This house prefers a world with memory writing technology",
 			"views": 3800,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3766
 		},
 		{
@@ -4817,7 +4818,7 @@
 			"round": "2",
 			"motion": "This house supports filial responsibility laws (infoslide provided)",
 			"views": 24000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3851
 		},
 		{
@@ -4829,7 +4830,7 @@
 			"round": "4",
 			"motion": "This house prefers a world with memory writing technology",
 			"views": 2200,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3810
 		},
 		{
@@ -4841,7 +4842,7 @@
 			"round": "3",
 			"motion": "This house believes that criminal defendants who hire private counsel should not be afforded the right against self-incrimination at trial.",
 			"views": 3200,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3801
 		},
 		{
@@ -4853,7 +4854,7 @@
 			"round": "5",
 			"motion": "This house believes that Israel should set aside a certain percentage of seats in the Knesset to be elected by diaspora Jews.",
 			"views": 2000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3781
 		},
 		{
@@ -4865,7 +4866,7 @@
 			"round": "4",
 			"motion": "This house prefers a world with memory writing technology",
 			"views": 22000,
-			"published": "2016-11-04",
+			"published": "2016-11-08",
 			"duration": 3736
 		},
 		{
@@ -4877,7 +4878,7 @@
 			"round": "2",
 			"motion": "This house would measure gross national happiness and base policy decisions on those measurements.",
 			"views": 2400,
-			"published": "2015-11-04",
+			"published": "2015-11-08",
 			"duration": 3722
 		},
 		{
@@ -4889,7 +4890,7 @@
 			"round": "3",
 			"motion": "This house would disallow exclusive private arbitration for contracts between corporations and individuals.",
 			"views": 6900,
-			"published": "2015-11-04",
+			"published": "2015-11-08",
 			"duration": 3772
 		},
 		{
@@ -4901,7 +4902,7 @@
 			"round": "Open Final",
 			"motion": "This house believes prominent civil society activists should choose not to run for public office",
 			"views": 45000,
-			"published": "2015-11-04",
+			"published": "2015-11-08",
 			"duration": 3704
 		},
 		{
@@ -4913,31 +4914,31 @@
 			"round": "1",
 			"motion": "This house supports establishing an independent state of Kurdistan.",
 			"views": 6400,
-			"published": "2015-11-04",
+			"published": "2015-11-08",
 			"duration": 3753
 		},
 		{
 			"id": "NZ2JQpgV5hU",
 			"title": "HWS Round Robin 2014 Final Round",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"label": "Round",
+			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
 			"motion": "This house believes that, within broad budgetary constraints, environmental policy should be decided by unelected scientific experts selected by their peers.",
 			"views": 17000,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3722
 		},
 		{
 			"id": "IkS5rzM9sCo",
 			"title": "Round Robin 2014 Round 5 Room 2 (missing PM speech)",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"label": "Room 2 missing Pm speech",
+			"label": "Room 2",
 			"tournament_name": "HWS Round Robin",
 			"round": "5",
 			"motion": "This house would permit parents to stunt physical development of their severely mentally disabled children.",
 			"views": 1200,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3306
 		},
 		{
@@ -4949,7 +4950,7 @@
 			"round": "5",
 			"motion": "This house would permit parents to stunt physical development of their severely mentally disabled children.",
 			"views": 1700,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3691
 		},
 		{
@@ -4961,7 +4962,7 @@
 			"round": "4",
 			"motion": "This house believes that full gender emancipation requires the end of monogamy as a dominant social norm. ",
 			"views": 1600,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3749
 		},
 		{
@@ -4973,7 +4974,7 @@
 			"round": "4",
 			"motion": "This house believes that full gender emancipation requires the end of monogamy as a dominant social norm. ",
 			"views": 2200,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3679
 		},
 		{
@@ -4985,7 +4986,7 @@
 			"round": "4",
 			"motion": "This house believes that full gender emancipation requires the end of monogamy as a dominant social norm. ",
 			"views": 2400,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3777
 		},
 		{
@@ -4997,7 +4998,7 @@
 			"round": "3",
 			"motion": "This house supports the boycotting of Israeli academics.",
 			"views": 1100,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3653
 		},
 		{
@@ -5009,7 +5010,7 @@
 			"round": "3",
 			"motion": "This house supports the boycotting of Israeli academics.",
 			"views": 1200,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3727
 		},
 		{
@@ -5021,7 +5022,7 @@
 			"round": "2",
 			"motion": "This house believes that a world without organized religion would be a better world. ",
 			"views": 2700,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3718
 		},
 		{
@@ -5033,7 +5034,7 @@
 			"round": "2",
 			"motion": "This house believes that a world without organized religion would be a better world. ",
 			"views": 1300,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3751
 		},
 		{
@@ -5045,7 +5046,7 @@
 			"round": "1",
 			"motion": "This house would measure the efficacy of charities and strip those with comparatively low social value of their charitable status. ",
 			"views": 1800,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3788
 		},
 		{
@@ -5057,7 +5058,7 @@
 			"round": "2",
 			"motion": "This house believes that a world without organized religion would be a better world. ",
 			"views": 2100,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3772
 		},
 		{
@@ -5069,19 +5070,19 @@
 			"round": "1",
 			"motion": "This house would measure the efficacy of charities and strip those with comparatively low social value of their charitable status. ",
 			"views": 3000,
-			"published": "2014-11-04",
+			"published": "2014-11-08",
 			"duration": 3720
 		},
 		{
 			"id": "GP1TrQxm4pY",
 			"title": "HWS/IDEA Debate Round Robin 2013 Final Round",
 			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"label": "Round",
+			"label": "",
 			"tournament_name": "HWS Round Robin",
 			"round": "Open Final",
 			"motion": "This house supports diversity quotas for university admissions. ",
 			"views": 6500,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3725
 		},
 		{
@@ -5093,7 +5094,7 @@
 			"round": "5",
 			"motion": "This house believes that governments should use corporal punishment instead of incarceration for a significant number of crimes. ",
 			"views": 1300,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3730
 		},
 		{
@@ -5105,7 +5106,7 @@
 			"round": "4",
 			"motion": "This house believes that the discovery of a means to stop the human aging process would be a curse to humanity.",
 			"views": 1100,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3706
 		},
 		{
@@ -5117,7 +5118,7 @@
 			"round": "4",
 			"motion": "This house believes that the discovery of a means to stop the human aging process would be a curse to humanity.",
 			"views": 1100,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3706
 		},
 		{
@@ -5128,8 +5129,8 @@
 			"tournament_name": "HWS Round Robin",
 			"round": "4",
 			"motion": "This house believes that the discovery of a means to stop the human aging process would be a curse to humanity.",
-			"views": 943,
-			"published": "2013-11-04",
+			"views": 944,
+			"published": "2013-11-08",
 			"duration": 3741
 		},
 		{
@@ -5140,8 +5141,8 @@
 			"tournament_name": "HWS Round Robin",
 			"round": "3",
 			"motion": "This house would prohibit provincial and local governments from offering tax incentives to lure corporations to open business in their domain. ",
-			"views": 810,
-			"published": "2013-11-04",
+			"views": 811,
+			"published": "2013-11-08",
 			"duration": 3704
 		},
 		{
@@ -5153,7 +5154,7 @@
 			"round": "3",
 			"motion": "This house would prohibit provincial and local governments from offering tax incentives to lure corporations to open business in their domain. ",
 			"views": 1400,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3704
 		},
 		{
@@ -5165,7 +5166,7 @@
 			"round": "2",
 			"motion": "This house would establish a US federal court with the authority to approve targeted killings of unlawful combatants. ",
 			"views": 1600,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3742
 		},
 		{
@@ -5177,7 +5178,7 @@
 			"round": "2",
 			"motion": "This house would establish a US federal court with the authority to approve targeted killings of unlawful combatants. ",
 			"views": 1000,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3730
 		},
 		{
@@ -5189,7 +5190,7 @@
 			"round": "1",
 			"motion": "This house would allow legislation through voter initiated referenda. ",
 			"views": 3100,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3692
 		},
 		{
@@ -5201,7 +5202,7 @@
 			"round": "1",
 			"motion": "This house would allow legislation through voter initiated referenda. ",
 			"views": 2200,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3723
 		},
 		{
@@ -5212,8 +5213,8 @@
 			"tournament_name": "HWS Round Robin",
 			"round": "1",
 			"motion": "This house would allow legislation through voter initiated referenda. ",
-			"views": 859,
-			"published": "2013-11-04",
+			"views": 862,
+			"published": "2013-11-08",
 			"duration": 3753
 		},
 		{
@@ -5225,8 +5226,20 @@
 			"round": "1",
 			"motion": "This house would allow legislation through voter initiated referenda. ",
 			"views": 1400,
-			"published": "2013-11-04",
+			"published": "2013-11-08",
 			"duration": 3859
+		},
+		{
+			"id": "QOEDM2P0HNw",
+			"title": "2025 HWS Round Robin- Final",
+			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
+			"label": "",
+			"tournament_name": "HWS Round Robin 2025",
+			"round": "Grand Final",
+			"motion": "Assuming a peaceful and democratic transition, this house supports the United States of America being separated into several, more politically-homogeneous, sovereign states.",
+			"views": 1100,
+			"published": "2026-11-05",
+			"duration": 4028
 		},
 		{
 			"id": "l9ynI_b5dWA",
@@ -10558,42 +10571,6 @@
 		}
 	],
 	"unmatched": [
-		{
-			"id": "hhg-ig7BxOA",
-			"title": "2025 HWS Open Round Robin  Keynote Speaker",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no round in title"
-		},
-		{
-			"id": "HTJDuhnhL2s",
-			"title": "2022 HWS Round Robin - Round 3, Room C",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "j56GAP7wi0c",
-			"title": "2022 HWS Round Robin - Round 3, Room B",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "vakAFZQml7w",
-			"title": "2022 HWS Round Robin - Round 4, Room C",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "RVwwNsVAjvs",
-			"title": "2022 HWS Round Robin - Round 3, Room D",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no motion for this round"
-		},
-		{
-			"id": "KwAMglcgW_w",
-			"title": "2011 HWS Round Robin Finals",
-			"channel": "https://www.youtube.com/@hwsroundrobin/videos",
-			"reason": "no motion for this round"
-		},
 		{
 			"id": "xb7No1iM_Y8",
 			"title": "Princeton IV 2025 | Grand Finals",
