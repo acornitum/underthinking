@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { HAS_NOTES } from '#lib/filters.ts';
-	import favicon from '#lib/assets/catfavicon.png';
 	import logo from '#lib/assets/underthinklogo.svg';
 	import cat from '#lib/assets/underthinkcat.png';
 	import { ADMIN_OUTLINE, adminSlot, isAdminPage } from '#lib/admin-slots.ts';
@@ -51,10 +50,6 @@
 		mounted = true;
 	});
 </script>
-
-<svelte:head>
-	<link rel="icon" type="image/png" href={favicon} />
-</svelte:head>
 
 {#snippet toggle()}
 	<button

@@ -242,5 +242,5 @@
 		<VideoGrid initial={data.motions} query={data.query} total={data.rounds} />
 	{/key}
 {:else}
-	<p class="text-muted">No recorded rounds match these filters.</p>
+	<p class="text-muted">no recorded rounds found :( maybe try removing some filters?</p>
 {/if}

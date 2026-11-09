@@ -8,6 +8,10 @@
 
 <svelte:head>
 	<title>underthink.ing</title>
+	<meta
+		name="description"
+		content="A searchable database of competitive debate motions, with recorded rounds and a drills timer."
+	/>
 </svelte:head>
 
 <div class="mb-4 flex items-baseline justify-between gap-4">
