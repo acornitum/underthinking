@@ -46,6 +46,7 @@ function nameYear(name) {
 // Outround stages, checked in order (first match wins), so e.g. "Pre-Semis"
 // is caught before "Semis" and "Semi Finals" before "Finals".
 const OUTROUNDS = [
+	[String.raw`quadruple[- ]?oct`, 95],
 	[String.raw`(triple|double)[- ]?oct|pre-?octo`, 100],
 	[String.raw`partial.*oct`, 105],
 	[String.raw`octo|octa|octav|oitav|\br16\b|round of 16`, 110],
