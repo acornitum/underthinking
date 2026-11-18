@@ -12,9 +12,9 @@ features you might not know about:
 - motion genre filtering also works on random motion / recorded rounds / drills pages!
 - add markers to the timer for drills! hover over timer preview (or timer) and click to do so
 
-**want to get a tournament / video added?** feel free to dm acon on discord (or facebook)! (there will be a better flow for this later)
+**want to get a tournament / video added?** submit it to [underthink.ing/add](/add)! (or, feel free to dm acon on discord or facebook!)
 
-have feedback / want changes? feel free to reach out (or make a pull request)!
+**have feedback / want changes?** feel free to reach out (or make a pull request)!
 
 ---
 
