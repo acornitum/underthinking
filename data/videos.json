@@ -174,7 +174,7 @@
 			"name": "UBC Debate Society",
 			"link": "https://www.youtube.com/@UBCDebateSociety",
 			"avatar": "https://yt3.googleusercontent.com/Jdv4Bdfd7Un5bschj7CUjDc38FPbmv1ZDncvl4sSUnWFjUK8aFIsB4YV1WOHOo9EC4XTpqYF=s176-c-k-c0x00ffffff-no-rj",
-			"scanned": "2026-11-23"
+			"scanned": "2026-11-24"
 		}
 	],
 	"videos": [
@@ -13977,6 +13977,18 @@
 			"views": 68,
 			"published": "2026-11-23",
 			"duration": 4380
+		},
+		{
+			"id": "ELl-71VMaOM",
+			"title": "CUDC 2026 R5 Full",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Round 5",
+			"motion": "This House Supports the US government nationalizing major AI companies and AI subsidiaries within larger companies in the United States",
+			"views": 30,
+			"published": "2026-11-24",
+			"duration": 3731
 		}
 	],
 	"unmatched": [
