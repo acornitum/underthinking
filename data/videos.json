@@ -168,6 +168,13 @@
 			"link": "https://www.youtube.com/@RumenMarinov652",
 			"avatar": "https://yt3.googleusercontent.com/YrdSlL1d2nvMvnv-S-A5Kfr62cFRZb2gUDOYqsQplbnAM21GNhbLKDR4shG_vigPgQccXINPyQ=s176-c-k-c0x00ffffff-no-rj",
 			"scanned": "2026-11-13"
+		},
+		{
+			"url": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"name": "UBC Debate Society",
+			"link": "https://www.youtube.com/@UBCDebateSociety",
+			"avatar": "https://yt3.googleusercontent.com/Jdv4Bdfd7Un5bschj7CUjDc38FPbmv1ZDncvl4sSUnWFjUK8aFIsB4YV1WOHOo9EC4XTpqYF=s176-c-k-c0x00ffffff-no-rj",
+			"scanned": "2026-11-23"
 		}
 	],
 	"videos": [
@@ -13934,6 +13941,42 @@
 			"views": 1500,
 			"published": "2024-11-13",
 			"duration": 3477
+		},
+		{
+			"id": "fxM6GHFwBak",
+			"title": "CUDC 2026 R3 (MG, MO, OW redacted, PM partially redacted)",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Round 3",
+			"motion": "This House Believes that the Internet has done more good than harm for people's sexual wellbeing",
+			"views": 19,
+			"published": "2026-11-23",
+			"duration": 3769
+		},
+		{
+			"id": "P4-Z_jEhSWs",
+			"title": "CUDC 2026 R2 (DLO, MO redacted)",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Round 2",
+			"motion": "This House Believes That Sanae Takaichi has done more good than harm",
+			"views": 55,
+			"published": "2026-11-23",
+			"duration": 4163
+		},
+		{
+			"id": "aP-OU-K2ZHc",
+			"title": "CUDC 2026 R1 Full",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Round 1",
+			"motion": "This House Supports the feminist movement promoting female role models for boys",
+			"views": 68,
+			"published": "2026-11-23",
+			"duration": 4380
 		}
 	],
 	"unmatched": [
