@@ -174,7 +174,7 @@
 			"name": "UBC Debate Society",
 			"link": "https://www.youtube.com/@UBCDebateSociety",
 			"avatar": "https://yt3.googleusercontent.com/Jdv4Bdfd7Un5bschj7CUjDc38FPbmv1ZDncvl4sSUnWFjUK8aFIsB4YV1WOHOo9EC4XTpqYF=s176-c-k-c0x00ffffff-no-rj",
-			"scanned": "2026-11-24"
+			"scanned": "2026-11-25"
 		}
 	],
 	"videos": [
@@ -13989,6 +13989,42 @@
 			"views": 30,
 			"published": "2026-11-24",
 			"duration": 3731
+		},
+		{
+			"id": "3mjSdXdpiGQ",
+			"title": "CUDC 2026 Open Final Full",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Grand Final",
+			"motion": "This House Supports significantly deregulating the genetic modification of embryos",
+			"views": 8,
+			"published": "2026-11-25",
+			"duration": 3473
+		},
+		{
+			"id": "8w1Khq-nYTA",
+			"title": "CUDC 2026 Open Semifinals (MO, GW, OW redacted)",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Semifinals",
+			"motion": "This House Believes That the ECB should buy French government bonds before the 2027 French presidential election",
+			"views": 14,
+			"published": "2026-11-25",
+			"duration": 2224
+		},
+		{
+			"id": "tRpZyamk63w",
+			"title": "CUDC 2026 Open Quarterfinals (LO, DLO redacted)",
+			"channel": "https://www.youtube.com/@UBCDebateSociety/videos",
+			"label": "",
+			"tournament_name": "Canadian Universities Debating Championship 2026",
+			"round": "Quarterfinals",
+			"motion": "This House Opposes the BC Mental Health Act",
+			"views": 14,
+			"published": "2026-11-25",
+			"duration": 2611
 		}
 	],
 	"unmatched": [
